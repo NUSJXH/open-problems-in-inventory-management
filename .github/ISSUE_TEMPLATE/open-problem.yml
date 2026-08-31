@@ -1,0 +1,65 @@
+name: Open-problem submission or status challenge
+description: Propose a candidate, correction, possible resolution, or change of status.
+title: "[Submission] "
+labels: []
+body:
+  - type: dropdown
+    id: submission-type
+    attributes:
+      label: Submission type
+      options:
+        - Candidate formal open problem
+        - Research agenda
+        - Correction to an existing record
+        - Possible resolution or status change
+    validations:
+      required: true
+  - type: input
+    id: record-id
+    attributes:
+      label: Existing record ID
+      description: Leave blank for a new candidate.
+      placeholder: IM-000
+  - type: textarea
+    id: question
+    attributes:
+      label: Proposed question or correction
+      description: State the precise gap and keep the model scope explicit.
+    validations:
+      required: true
+  - type: textarea
+    id: model
+    attributes:
+      label: Inventory system, decisions, and uncertainty
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Anchor source
+      description: Provide a DOI, publisher page, or stable preprint URL.
+    validations:
+      required: true
+  - type: textarea
+    id: passage
+    attributes:
+      label: Exact source passage and location
+      description: Quote only what is needed and give the page, section, proposition, or appendix location.
+    validations:
+      required: true
+  - type: textarea
+    id: progress
+    attributes:
+      label: Known progress and literature-search scope
+      description: List related results, forward citations, search dates, and any possible resolution.
+    validations:
+      required: true
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: Declaration
+      options:
+        - label: I understand that submission does not certify that the problem remains open.
+          required: true
+        - label: I have not uploaded copyrighted material without permission.
+          required: true

@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this registry, please cite the website and its versioned dataset."
+title: "Open Problems in Inventory Management"
+type: dataset
+authors:
+  - family-names: Jiang
+    given-names: Xianghua
+    email: xianghuaj@u.nus.edu
+  - family-names: Gong
+    given-names: Xiting
+    email: xtgong@cuhk.edu.hk
+version: 1.0.0
+date-released: 2026-08-31
+url: "https://nusjxh.github.io/open-problems-in-inventory-management/"
+repository-code: "https://github.com/NUSJXH/open-problems-in-inventory-management"
+license: CC-BY-4.0

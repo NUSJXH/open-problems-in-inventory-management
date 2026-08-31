@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Editorial scope, evidence taxonomy, and verification protocol for Open Problems in Inventory Management."
+    />
+    <meta property="og:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
+    <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/methodology.html" />
+    <title>Methodology · Open Problems in Inventory Management</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#methodology">Skip to methodology</a>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">IM</span>
+        <span>Open Problems in Inventory Management</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html">Problems</a>
+        <a class="active" href="methodology.html">Methodology</a>
+        <a href="about.html">About &amp; contact</a>
+      </nav>
+    </header>
+
+    <main id="methodology">
+      <section class="shell methodology-hero">
+        <p class="eyebrow">Editorial manual v1.0</p>
+        <h1>Inventory must be the mechanism, not merely the setting.</h1>
+        <p class="lede">
+          The registry uses a two-gate boundary test, three evidence types, separate research-status and
+          workflow codes, and a dated literature audit. This keeps a promising agenda from being mislabeled
+          as an unsolved theorem.
+        </p>
+      </section>
+
+      <section class="shell gate-section" aria-labelledby="boundary-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Boundary</p>
+            <h2 id="boundary-title">The two-gate test</h2>
+          </div>
+        </div>
+        <div class="gate-flow">
+          <article>
+            <span class="step-number">01</span>
+            <h3>Operations at the heart</h3>
+            <p>Is the central question about designing, planning, controlling, or improving an operating process?</p>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article>
+            <span class="step-number">02</span>
+            <h3>Inventory at the heart</h3>
+            <p>Do stock-flow state, inventory actions, and intertemporal inventory trade-offs determine the result?</p>
+          </article>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <article class="accent-card">
+            <span class="step-number">03</span>
+            <h3>Deletion test</h3>
+            <p>If inventory balance and availability are removed, does the problem disappear or materially change?</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="shell methodology-block" aria-labelledby="evidence-title">
+        <div>
+          <p class="eyebrow">Evidence taxonomy</p>
+          <h2 id="evidence-title">How a record enters the registry</h2>
+        </div>
+        <div class="taxonomy-grid">
+          <article>
+            <span class="badge badge-a">Type A</span>
+            <h3>Explicit formal problem</h3>
+            <p>The source states a precise open, unknown, unresolved, complexity, policy-structure, or bound question.</p>
+            <small>Still requires a current-status audit.</small>
+          </article>
+          <article>
+            <span class="badge badge-b">Type B</span>
+            <h3>Explicit research challenge</h3>
+            <p>The source identifies an important structural, computational, empirical, or implementation challenge.</p>
+            <small>Must not be presented as a theorem or conjecture.</small>
+          </article>
+          <article>
+            <span class="badge badge-c">Type C</span>
+            <h3>Editorially synthesized candidate</h3>
+            <p>Editors combine multiple sources into a sharper candidate question and disclose that synthesis.</p>
+            <small>Candidate only; source authors did not state the exact question.</small>
+          </article>
+        </div>
+      </section>
+
+      <section id="verification" class="shell methodology-block" aria-labelledby="verification-title">
+        <div>
+          <p class="eyebrow">Verification</p>
+          <h2 id="verification-title">A record earns trust in stages</h2>
+        </div>
+        <ol class="verification-timeline">
+          <li><span>EX</span><div><strong>Extracted</strong><p>Candidate text and source pointer recorded.</p></div></li>
+          <li><span>SV</span><div><strong>Source verified</strong><p>A human checks the exact passage, location, metadata, and scope.</p></div></li>
+          <li><span>LA</span><div><strong>Literature audited</strong><p>Backward, forward, semantic, and author/version searches are logged.</p></div></li>
+          <li><span>EV</span><div><strong>Expert verified</strong><p>A conflict-free domain expert confirms the statement and dated current status.</p></div></li>
+        </ol>
+        <div class="method-note">
+          <strong>Important:</strong> EX, SV, LA, and EV should be stored as separate completed steps. A
+          composite label such as “SV-LA (provisional)” is not sufficiently auditable.
+        </div>
+      </section>
+
+      <section class="shell methodology-block" aria-labelledby="publication-title">
+        <div>
+          <p class="eyebrow">Publication rule</p>
+          <h2 id="publication-title">What the public interface is allowed to say</h2>
+        </div>
+        <div class="rule-table" role="table" aria-label="Public display rules">
+          <div class="rule-row rule-head" role="row">
+            <span role="columnheader">Track</span><span role="columnheader">Allowed label</span><span role="columnheader">Minimum condition</span>
+          </div>
+          <div class="rule-row" role="row"><strong>Formal candidate</strong><span>Provisional formal candidate</span><span>Type A + exact source passage; LA before prominent display</span></div>
+          <div class="rule-row" role="row"><strong>Research agenda</strong><span>Source-backed research challenge</span><span>Type B + source verification</span></div>
+          <div class="rule-row" role="row"><strong>Candidate incubation</strong><span>Synthesized by editors</span><span>Type C + sources and rationale</span></div>
+          <div class="rule-row" role="row"><strong>Resolved archive</strong><span>Resolved / archived</span><span>Resolution scope mapped to the original question</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div><strong>Methodology version</strong><p>v1.0 · 31 August 2026</p></div>
+        <a href="index.html#problem-registry">Browse records →</a>
+      </div>
+    </footer>
+  </body>
+</html>
