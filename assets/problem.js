@@ -41,7 +41,6 @@ function render(record) {
   document.title = `${record.id}: ${record.titleEn} · Open Problems in Inventory Management`;
   setText("record-id", record.id);
   setText("record-title", record.titleEn);
-  setText("record-title-zh", record.titleZh);
   const source = document.querySelector("#record-source");
   const link = document.createElement("a");
   link.href = record.doiUrl;
@@ -89,7 +88,7 @@ async function init() {
     return;
   }
   try {
-    const response = await fetch("data/problems.json");
+    const response = await fetch("data/problems.json?v=2026-09-02");
     if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
     const data = await response.json();
     const record = data.records.find((item) => item.id === recordId);
@@ -103,3 +102,4 @@ async function init() {
 }
 
 init();
+

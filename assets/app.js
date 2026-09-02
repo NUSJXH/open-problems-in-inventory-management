@@ -76,7 +76,6 @@ function render(records) {
     const titleLink = card.querySelector(".problem-link");
     titleLink.href = href;
     titleLink.textContent = record.titleEn;
-    card.querySelector(".title-zh").textContent = record.titleZh;
     card.querySelector(".question-preview").textContent = truncate(record.question);
     card.querySelector(".domain").textContent = record.primaryDomain;
     card.querySelector(".source").textContent = `${record.sourceAuthors} · ${record.journal}`;
@@ -105,7 +104,7 @@ function applyFilters() {
   const filters = readFilters();
   let records = state.records.filter((record) => {
     const haystack = [
-      record.id, record.titleEn, record.titleZh, record.primaryDomain, record.sourceAuthors,
+      record.id, record.titleEn, record.primaryDomain, record.sourceAuthors,
       record.sourceTitle, record.question, record.inventoryObject, record.decision, record.uncertainty,
     ].join(" ").toLowerCase();
     return (!filters.query || haystack.includes(filters.query)) &&
@@ -151,7 +150,7 @@ function clearFilters() {
 
 async function init() {
   try {
-    const response = await fetch("data/problems.json");
+    const response = await fetch("data/problems.json?v=2026-09-02");
     if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
     const data = await response.json();
     state.records = data.records;
@@ -176,3 +175,4 @@ async function init() {
 elements.search.addEventListener("input", applyFilters);
 elements.clear.addEventListener("click", clearFilters);
 init();
+
