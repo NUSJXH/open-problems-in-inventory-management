@@ -175,4 +175,3 @@ async function init() {
 elements.search.addEventListener("input", applyFilters);
 elements.clear.addEventListener("click", clearFilters);
 init();
-

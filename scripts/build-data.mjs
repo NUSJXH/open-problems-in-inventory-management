@@ -502,4 +502,3 @@ data.summary = {
 
 await fs.writeFile(outputPath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 console.log(`Curated ${data.records.length} records in English at ${outputPath}`);
-

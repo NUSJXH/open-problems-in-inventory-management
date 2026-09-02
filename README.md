@@ -66,4 +66,3 @@ Website code is available under the MIT License. Original editorial text and the
 - Complete conflict-free expert review for active records.
 - Maintain assumption-level mappings when a later paper may resolve an earlier problem.
 - Preserve EX, SV, LA, and EV as separate workflow fields.
-
