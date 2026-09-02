@@ -3,202 +3,102 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="A date-stamped, evidence-aware registry of open problems and research agendas in inventory management."
-    />
+    <meta name="description" content="A source-led list of open questions, stated limitations, and status updates in inventory management." />
     <meta property="og:title" content="Open Problems in Inventory Management" />
-    <meta
-      property="og:description"
-      content="Formal candidates, research agendas, editorial candidates, and resolved controls—kept rigorously separate."
-    />
-    <meta property="og:image:width" content="1728" />
-    <meta property="og:image:height" content="920" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Open Problems in Inventory Management" />
-    <meta
-      name="twitter:description"
-      content="An evidence-aware registry for the inventory research community."
-    />
-    <meta name="twitter:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
+    <meta property="og:description" content="What inventory papers state, what they establish, and what they explicitly leave open." />
     <meta property="og:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" />
     <title>Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=1.1.0" />
-    <script defer src="assets/app.js?v=1.1.0"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=2.0.0" />
+    <script defer src="assets/app.js?v=2.0.0"></script>
   </head>
   <body>
-    <a class="skip-link" href="#problem-registry">Skip to the registry</a>
+    <a class="skip-link" href="#paper-list">Skip to the paper list</a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Open Problems in Inventory Management home">
-        <span class="brand-mark" aria-hidden="true">IM</span>
-        <span>Open Problems in Inventory Management</span>
-      </a>
+      <a class="brand" href="index.html">Open Problems in Inventory Management</a>
       <nav aria-label="Primary navigation">
-        <a class="active" href="index.html">Problems</a>
+        <a class="active" href="index.html">Paper list</a>
+        <a href="#literature-path">Literature paths</a>
         <a href="methodology.html">Methodology</a>
-        <a href="about.html">About &amp; contact</a>
+        <a href="about.html">About</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero shell" aria-labelledby="page-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Editorial prototype · audit dated 2 Sep 2026</p>
-          <h1 id="page-title">A rigorous map of what inventory research has not yet settled.</h1>
+      <section class="hero shell">
+        <div>
+          <p class="eyebrow">Source-led research registry · audit dated 2 September 2026</p>
+          <h1>What inventory papers state, establish, and leave open.</h1>
           <p class="lede">
-            Formal mathematical candidates, source-backed research agendas, editorially synthesized
-            candidates, and resolved controls—separated by evidence rather than blended into one list.
+            This site records research questions only when a paper states a conjecture, an open question,
+            or a limitation or extension in its own text. Editorially inferred ideas are not presented as
+            open problems.
           </p>
         </div>
-        <aside class="hero-note" aria-label="Project status">
-          <span class="status-light" aria-hidden="true"></span>
-          <div>
-            <strong>Work in progress</strong>
-            <p>No active record has yet received conflict-free expert verification.</p>
-          </div>
+        <aside class="principle-note">
+          <strong>Public wording rule</strong>
+          <p>Report the source. Preserve its scope. Do not add an importance or novelty judgment.</p>
         </aside>
       </section>
 
-      <section class="shell stats-grid" aria-label="Registry overview">
-        <article>
-          <span id="stat-total" class="stat-value">35</span>
-          <span class="stat-label">records audited</span>
-        </article>
-        <article>
-          <span id="stat-formal" class="stat-value">5</span>
-          <span class="stat-label">formal candidates</span>
-        </article>
-        <article>
-          <span id="stat-agenda" class="stat-value">20</span>
-          <span class="stat-label">research agendas</span>
-        </article>
-        <article>
-          <span id="stat-expert" class="stat-value">0</span>
-          <span class="stat-label">expert-verified active records</span>
-        </article>
+      <section class="shell summary-strip" aria-label="Registry summary">
+        <div><strong id="stat-open">4</strong><span>source-stated items</span></div>
+        <div><strong id="stat-topics">3</strong><span>inventory streams</span></div>
+        <div><strong id="stat-updates">3</strong><span>status updates</span></div>
+        <div><strong>2026-09-02</strong><span>audit through</span></div>
       </section>
 
-      <section class="shell evidence-banner" aria-label="Verification warning">
-        <div class="banner-kicker">Read the badges</div>
-        <p>
-          “Open” is a date-stamped editorial assessment within a documented search scope—not proof that
-          no solution exists. Formal candidates remain provisional until the source passage, literature
-          audit, and expert review are complete.
-        </p>
-        <a href="methodology.html#verification">How verification works <span aria-hidden="true">→</span></a>
-      </section>
-
-      <section id="problem-registry" class="shell registry" aria-labelledby="registry-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Browse the registry</p>
-            <h2 id="registry-title">Problems and research agendas</h2>
-          </div>
+      <section id="paper-list" class="shell registry-section" aria-labelledby="paper-list-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">Paper list</p><h2 id="paper-list-title">Questions stated in the literature</h2></div>
           <p id="result-count" class="result-count" aria-live="polite">Loading records…</p>
         </div>
-
-        <form class="filter-panel" id="filters" role="search">
+        <div class="list-tools">
           <label class="search-field">
-            <span>Search</span>
-            <span class="input-wrap">
-              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" /></svg>
-              <input id="search" type="search" placeholder="Title, domain, source, decision…" autocomplete="off" />
-            </span>
+            <span class="sr-only">Search records</span>
+            <input id="search" type="search" placeholder="Search title, author, topic, or phrase…" autocomplete="off" />
           </label>
-          <label>
-            <span>Track</span>
-            <select id="track-filter"><option value="">All tracks</option></select>
-          </label>
-          <label>
-            <span>Domain</span>
-            <select id="domain-filter"><option value="">All domains</option></select>
-          </label>
-          <label>
-            <span>Evidence</span>
-            <select id="evidence-filter"><option value="">All evidence types</option></select>
-          </label>
-          <label>
-            <span>Sort</span>
-            <select id="sort-filter">
-              <option value="id">Registry order</option>
-              <option value="confidence">Confidence first</option>
-              <option value="audit">Latest audit first</option>
-            </select>
-          </label>
-          <button id="clear-filters" class="secondary-button" type="button">Clear filters</button>
-        </form>
-
-        <div id="active-filters" class="active-filters" aria-live="polite"></div>
-        <div id="problem-list" class="problem-list"></div>
-        <div id="empty-state" class="empty-state" hidden>
-          <h3>No matching records</h3>
-          <p>Try a broader phrase or clear one of the filters.</p>
+          <div id="topic-filters" class="topic-filters" aria-label="Filter by topic"></div>
         </div>
+        <div id="open-list" class="paper-list"></div>
+        <div id="empty-state" class="empty-state" hidden><h3>No matching paper statements</h3><p>Clear the search or select a different topic.</p></div>
       </section>
 
-      <section id="data-notes" class="shell data-notes" aria-labelledby="data-notes-title">
-        <div>
-          <p class="eyebrow">Data notes</p>
-          <h2 id="data-notes-title">What this first release can—and cannot—claim</h2>
+      <section class="shell status-section" aria-labelledby="status-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">Status control</p><h2 id="status-title">Questions that should not be listed as open</h2></div>
+          <p>Later results and scope corrections recorded separately.</p>
         </div>
-        <div class="note-columns">
-          <article>
-            <h3>What is supported</h3>
-            <p>
-              The registry separates evidence type, research status, verification stage, and inclusion
-              track. Four resolved controls test whether the editorial process retires stale labels.
-            </p>
-          </article>
-          <article>
-            <h3>What remains provisional</h3>
-            <p>
-              Active formal candidates still require page-level source quotations and conflict-free expert
-              review. Research-agenda entries are not mathematical conjectures.
-            </p>
-          </article>
-          <article>
-            <h3>How to cite the status</h3>
-            <p>
-              Use bounded language: “As of 2 September 2026, no resolution was identified within the recorded
-              search scope.” Do not state that nonexistence has been proved.
-            </p>
-          </article>
+        <div id="status-list" class="status-list"></div>
+      </section>
+
+      <section id="literature-path" class="shell path-section" aria-labelledby="path-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">Descriptive literature path</p><h2 id="path-title">From sample-based inventory to learning capped base-stock policies</h2></div>
+          <p>This chronology reports each paper's benchmark and result; it does not itself assert an open problem.</p>
+        </div>
+        <div id="path-list" class="path-list"></div>
+      </section>
+
+      <section class="shell trends-section" aria-labelledby="trends-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">Bibliometric trends</p><h2 id="trends-title">Web of Science query protocol</h2></div>
+          <p>Counts will be published only after a reproducible Core Collection export is archived.</p>
+        </div>
+        <div class="data-notice">
+          <strong>No WoS counts are shown in this release.</strong>
+          <p>The current audit session did not have an authenticated institutional Web of Science connection. The category definitions and deduplication rule are ready for an exported CSV or Excel file.</p>
+          <a href="methodology.html#wos-protocol">View the query and classification protocol →</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-grid">
-        <div>
-          <strong>Open Problems in Inventory Management</strong>
-          <p>Maintained by Xianghua Jiang and Xiting Gong. Prototype content is not expert-certified.</p>
-        </div>
-        <div>
-          <span>Data version</span>
-          <strong>v1.1 · 2026-09-02</strong>
-        </div>
+        <div><strong>Open Problems in Inventory Management</strong><p>Maintained by Xianghua Jiang and Xiting Gong.</p></div>
+        <div><span>Data version</span><strong>v2.0 · 2026-09-02</strong></div>
       </div>
     </footer>
-
-    <template id="problem-card-template">
-      <article class="problem-card">
-        <div class="card-index"></div>
-        <div class="card-body">
-          <div class="badge-row"></div>
-          <h3><a class="problem-link"></a></h3>
-          <p class="question-preview"></p>
-          <div class="card-meta">
-            <span class="domain"></span>
-            <span class="source"></span>
-            <span class="audit-date"></span>
-          </div>
-          <div class="card-footer">
-            <span class="verification"></span>
-            <a class="detail-link">Review record <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-    </template>
   </body>
 </html>

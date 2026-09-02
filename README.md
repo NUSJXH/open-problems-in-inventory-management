@@ -1,33 +1,38 @@
 # Open Problems in Inventory Management
 
-This folder is a standalone, static website designed for GitHub Pages. It intentionally does not require a database, a backend, or a JavaScript build step.
+This repository hosts a source-led, English-language inventory-management research registry on GitHub Pages:
 
-Live URL after Pages is enabled: https://nusjxh.github.io/open-problems-in-inventory-management/
+https://nusjxh.github.io/open-problems-in-inventory-management/
 
-## What is included
+## Public editorial rule
 
-- A searchable and filterable registry of 35 audited records.
-- Four public tracks: formal candidates, research agendas, candidate incubation, and resolved archive.
-- Evidence, status, confidence, audit-date, and verification-stage badges.
-- EX, SV, LA, and EV are emitted as four separate workflow fields while the workbook's original composite label is retained for provenance.
-- A detail page for every record.
-- A methodology page explaining the two-gate boundary test and verification protocol.
-- Explicit warnings that no active record is expert-verified yet.
-- An original social-preview image at `assets/open-graph.png`.
-- A public contribution workflow through GitHub Issues.
-- An English-only public dataset and interface.
-- A documented comparison with Open Problems in OR and a targeted 2024-2026 UTD-journal update.
+The paper list contains only:
+
+- explicit conjectures;
+- explicit open questions;
+- limitations or extensions stated by the source authors; and
+- status updates that retire or narrow earlier open labels.
+
+The site does not publish editor-created research ideas as open problems. Each record reports what the source states, what it establishes, and the scope boundary that should be preserved.
+
+## Current release
+
+- Four source-stated items.
+- Three status updates.
+- A nine-paper descriptive path from offline sample-based inventory to capped base-stock learning and nonstationary lost-sales control.
+- A reproducible Web of Science query and classification protocol. Bibliometric counts are withheld until a Core Collection export is archived.
+- A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 
 ## Maintainers
 
 - Xianghua Jiang — xianghuaj@u.nus.edu
 - Xiting Gong — xtgong@cuhk.edu.hk
 
-For corrections and candidate submissions, use the repository's Issues page so that the editorial record remains public and versioned.
+Corrections should be submitted through the repository's public issue tracker with the primary-source link and the relevant page or section.
 
 ## Local preview
 
-From this folder, run a static web server. For example:
+Run a static server from the repository root:
 
 ```powershell
 python -m http.server 8000
@@ -35,34 +40,18 @@ python -m http.server 8000
 
 Then open `http://localhost:8000/`.
 
-Opening `index.html` directly from the file system will not load the JSON data because browsers block that cross-file request.
-
-## Curate the data
-
-Public copy is maintained in an explicit English editorial layer. After revising that layer, rebuild the versioned JSON with:
+## Validate the public data
 
 ```powershell
-node scripts/build-data.mjs
+node scripts/validate-data.mjs
 ```
 
-## Publish on GitHub Pages
+The validator checks required fields, duplicate record IDs, HTTPS source links, and the English-only public-data rule.
 
-1. Create a new public GitHub repository, for example `open-problems-in-inventory-management`.
-2. Make this folder the repository root and push it to the `main` branch.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select `main` and `/ (root)`, then save.
-6. The site will appear at `https://<github-username>.github.io/open-problems-in-inventory-management/`.
+## Web of Science import
 
-No GitHub password, personal access token, or API key should be placed in this folder. Authentication should happen through GitHub's normal browser or credential-manager flow.
+The methodology page specifies the fields and topic queries required for a reproducible trend analysis. Do not publish hand-entered counts. Archive the export date, collection, timespan, document types, query strings, and deduplication rule with every update.
 
 ## License
 
-Website code is available under the MIT License. Original editorial text and the curated dataset are available under CC BY 4.0. Third-party article titles, citations, quotations, and links remain subject to their respective rights.
-
-## Editorial priorities
-
-- Finish exact source-quote and page-location fields for every Type A candidate.
-- Complete conflict-free expert review for active records.
-- Maintain assumption-level mappings when a later paper may resolve an earlier problem.
-- Preserve EX, SV, LA, and EV as separate workflow fields.
+Website code is available under the MIT License. Original editorial text and the curated dataset are available under CC BY 4.0. Third-party article titles, citations, and links remain subject to their respective rights.

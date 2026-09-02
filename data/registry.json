@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "2.0",
+  "dataVersion": "2026-09-02",
+  "auditThrough": "2026-09-02",
+  "scopeNote": "The public list contains only source-stated conjectures, open questions, limitations, extensions, and status updates.",
+  "openItems": [
+    {
+      "id": "OIM-001",
+      "evidenceClass": "Explicit conjecture",
+      "topic": "Lost sales policies",
+      "title": "Optimality of the fixed non-stockout-probability policy",
+      "statement": "For the classical periodic-review lost-sales model with linear holding and penalty costs and continuous demand, the paper conjectures that the FP3 policy whose target satisfies its optimality equation is optimal.",
+      "paperEstablishes": "The paper derives an optimality equation, develops an FP3 policy and its approximation, and reports numerical comparisons. Its long-lead-time discussion argues that FP3 approaches a constant-order policy after assuming that the system reaches stationarity.",
+      "scopeBoundary": "The conjecture is stronger than the long-lead-time argument. The paper states that the numerical evidence is not a formal proof of close-to-optimality.",
+      "source": {
+        "authors": "de Kok and Meijer",
+        "year": 2024,
+        "title": "Fixed Non-Stockout-Probability Policies for the Single-Item Lost-Sales Model",
+        "outlet": "Working paper",
+        "location": "p. 18, Conjecture; p. 12, asymptotic discussion",
+        "url": "https://arxiv.org/abs/2304.06936"
+      }
+    },
+    {
+      "id": "OIM-002",
+      "evidenceClass": "Explicit open question",
+      "topic": "Nonstationary inventory",
+      "title": "Matching lower bounds for nonstationary lost sales with positive lead times",
+      "statement": "For nonstationary lost-sales systems with strictly positive lead times, the paper identifies matching lower bounds for its dynamic-regret guarantees as an open question.",
+      "paperEstablishes": "The paper develops adaptive algorithms for backlogging and lost-sales systems under piecewise-stationary demand. The positive-lead-time lost-sales guarantee is weaker than the rates obtained for backlogging and zero-lead-time lost sales.",
+      "scopeBoundary": "The benchmark is the time-varying optimal base-stock policy. The question does not concern regret relative to the globally optimal dynamic inventory policy.",
+      "source": {
+        "authors": "Amiri, Sinclair, and Udenio",
+        "year": 2026,
+        "title": "Non-Stationary Inventory Control with Lead Times",
+        "outlet": "arXiv working paper",
+        "location": "p. 4 and p. 24; Theorem 4 discussion",
+        "url": "https://arxiv.org/abs/2602.05799"
+      }
+    },
+    {
+      "id": "OIM-003",
+      "evidenceClass": "Source-stated extension",
+      "topic": "Nonstationary inventory",
+      "title": "Demand drift, stochastic lead times, and transient-cost regret",
+      "statement": "The paper lists gradually drifting demand and stochastic lead times as extensions and asks whether positive-lead-time regret bounds under transient expected cost can retain the same dependence on the horizon while remaining sublinear in the number of demand regimes when that number is unknown.",
+      "paperEstablishes": "The paper studies unknown piecewise-stationary demand, deterministic lead times, and base-stock-policy optimization. It reports guarantees under stationary-average-cost regret and discusses a transient-cost comparison separately.",
+      "scopeBoundary": "This item records the extensions named in the paper's conclusion; it does not assert that every stationary inventory theorem fails under nonstationarity.",
+      "source": {
+        "authors": "Amiri, Sinclair, and Udenio",
+        "year": 2026,
+        "title": "Non-Stationary Inventory Control with Lead Times",
+        "outlet": "arXiv working paper",
+        "location": "pp. 30–31, conclusion",
+        "url": "https://arxiv.org/abs/2602.05799"
+      }
+    },
+    {
+      "id": "OIM-004",
+      "evidenceClass": "Explicit open question",
+      "topic": "Disruptions and networks",
+      "title": "Sharp constant in the disrupted-mode decentralization condition",
+      "statement": "The paper asks whether the sufficient requirement lambda at least a plus 1 can be tightened to lambda at least a plus epsilon-zero for a universal positive constant. It also records a counterexample implying epsilon-zero must exceed 0.25.",
+      "paperEstablishes": "The paper proves the Poisson-tail comparison needed for its decentralization criterion under the stated plus-1 condition and uses the result in a multitier inventory network with expediting and disruptions.",
+      "scopeBoundary": "The question concerns the constant in the paper's tail comparison and the associated sufficient condition; it is not a general characterization of optimal disruption allocation.",
+      "source": {
+        "authors": "Zhao, Birge, DeValve, and Inman",
+        "year": 2026,
+        "title": "Managing Multitier Inventory Networks with Expediting Under Normal and Disrupted Modes",
+        "outlet": "Manufacturing & Service Operations Management",
+        "location": "Endnote 3",
+        "url": "https://doi.org/10.1287/msom.2023.0249"
+      }
+    }
+  ],
+  "statusUpdates": [
+    {
+      "status": "Resolved in stated regime",
+      "topic": "Lost sales policies",
+      "title": "Long-lead-time asymptotic optimality of PIL",
+      "summary": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions.",
+      "citation": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
+      "url": "https://doi.org/10.1287/opre.2021.0032"
+    },
+    {
+      "status": "Resolved for the base-stock benchmark",
+      "topic": "Data-driven lost sales",
+      "title": "Square-root regret under censored demand and positive lead times",
+      "summary": "Zhang, Chao, and Shi give an affirmative answer to the rate question posed after Huh et al. (2009): their nonparametric algorithm attains the square-root regret rate relative to the full-information optimal base-stock policy.",
+      "citation": "Zhang, Chao, and Shi (2020), Management Science 66(5):1962–1980",
+      "url": "https://doi.org/10.1287/mnsc.2019.3288"
+    },
+    {
+      "status": "New partial resolution",
+      "topic": "Lost sales policies",
+      "title": "A constant-factor guarantee for capped base-stock policies",
+      "summary": "A July 2026 working paper proves that the best capped base-stock policy is a 7/3-approximation. The paper describes approximation guarantees for this policy class as previously open and identifies a ratio below 2 as a possible direction for refinement.",
+      "citation": "Xin (2026), Capped Base-Stock Policies: A 2.33-Approximation",
+      "url": "https://ssrn.com/abstract=7134538"
+    }
+  ],
+  "literaturePath": [
+    {
+      "year": 2007,
+      "dataRegime": "Offline i.i.d. samples",
+      "policyBenchmark": "Single-period newsvendor and a multiperiod inventory model",
+      "paper": "Levi, Roundy, and Shmoys",
+      "result": "Computes sample-based policies and provides distribution-free sample-size guarantees for near-optimal expected cost.",
+      "boundary": "This is the sampling-based starting point; it is not the canonical positive-lead-time censored lost-sales model.",
+      "url": "https://doi.org/10.1287/moor.1070.0272"
+    },
+    {
+      "year": 2009,
+      "dataRegime": "Online censored sales",
+      "policyBenchmark": "Best base-stock policy in lost sales with positive lead times",
+      "paper": "Huh, Janakiraman, Muckstadt, and Rusmevichientong",
+      "result": "Develops a nonparametric adaptive algorithm with a cubic-root convergence rate.",
+      "boundary": "The benchmark is the best base-stock policy, not the globally optimal dynamic policy.",
+      "url": "https://doi.org/10.1287/moor.1080.0367"
+    },
+    {
+      "year": 2020,
+      "dataRegime": "Online censored sales",
+      "policyBenchmark": "Best base-stock policy in lost sales with positive lead times",
+      "paper": "Zhang, Chao, and Shi",
+      "result": "Attains the square-root regret lower bound with a simulated cycle-update policy.",
+      "boundary": "The paper closes the rate question for the base-stock benchmark.",
+      "url": "https://doi.org/10.1287/mnsc.2019.3288"
+    },
+    {
+      "year": 2021,
+      "dataRegime": "Known demand distribution",
+      "policyBenchmark": "Capped base-stock policy",
+      "paper": "Xin",
+      "result": "Shows convergence to a constant-order policy and constructs a sequence that is asymptotically optimal as lead time grows.",
+      "boundary": "This paper analyzes policy performance rather than learning from historical or censored data.",
+      "url": "https://doi.org/10.1287/opre.2020.2019"
+    },
+    {
+      "year": 2023,
+      "dataRegime": "Offline censored transactions",
+      "policyBenchmark": "Finite-inventory pricing policies",
+      "paper": "Bu, Simchi-Levi, and Wang",
+      "result": "Studies offline pricing and demand learning with censored data and develops near-optimal or minimax-optimal procedures under the paper's identifiable and unidentifiable settings.",
+      "boundary": "The model allocates a fixed initial inventory through pricing; it does not learn a replenishment policy with positive lead times or a capped base-stock benchmark.",
+      "url": "https://doi.org/10.1287/mnsc.2022.4382"
+    },
+    {
+      "year": 2024,
+      "dataRegime": "Online censored sales",
+      "policyBenchmark": "Best capped base-stock and best base-stock policies",
+      "paper": "Lyu, Zhang, and Xin",
+      "result": "Uses a UCB framework with a Kaplan–Meier estimator; the regret is tight up to a logarithmic factor in the horizon.",
+      "boundary": "For capped base-stock learning, Remark 5 reports an upper bound with exponential dependence on lead time and attributes it to policy switching. The paper states that this dependence seems inevitable for the capped base-stock system.",
+      "url": "https://doi.org/10.1287/opre.2022.0273"
+    },
+    {
+      "year": 2026,
+      "dataRegime": "Offline censored sales",
+      "policyBenchmark": "Data-driven newsvendor policies",
+      "paper": "Kumar and Mouchtaki",
+      "result": "Provides an exact worst-case analysis for data-driven newsvendor policies under censored observations and examines the roles of Kaplan–Meier estimation and exploration.",
+      "boundary": "The model is single-period; it does not address positive-lead-time lost-sales replenishment or offline learning of capped base-stock policies.",
+      "url": "https://arxiv.org/abs/2602.16842"
+    },
+    {
+      "year": 2026,
+      "dataRegime": "Online nonstationary demand",
+      "policyBenchmark": "Time-varying best base-stock policy",
+      "paper": "Amiri, Sinclair, and Udenio",
+      "result": "Provides dynamic-regret guarantees for backlogging and lost-sales systems with and without lead times.",
+      "boundary": "For lost sales with positive lead times, the paper reports weaker rates and explicitly leaves matching lower bounds open.",
+      "url": "https://arxiv.org/abs/2602.05799"
+    },
+    {
+      "year": 2026,
+      "dataRegime": "Known demand distribution",
+      "policyBenchmark": "Best capped base-stock policy",
+      "paper": "Xin",
+      "result": "Proves a 7/3 approximation guarantee for the best capped base-stock policy.",
+      "boundary": "This working paper concerns full-information approximation, not offline statistical estimation or online regret.",
+      "url": "https://ssrn.com/abstract=7134538"
+    }
+  ]
+}

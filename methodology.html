@@ -3,174 +3,80 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Editorial scope, evidence taxonomy, and verification protocol for Open Problems in Inventory Management."
-    />
-    <meta property="og:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
+    <meta name="description" content="Source and bibliometric protocols for Open Problems in Inventory Management." />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/methodology.html" />
     <title>Methodology · Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=1.1.0" />
+    <link rel="stylesheet" href="assets/styles.css?v=2.0.0" />
   </head>
   <body>
     <a class="skip-link" href="#methodology">Skip to methodology</a>
     <header class="site-header">
-      <a class="brand" href="index.html">
-        <span class="brand-mark" aria-hidden="true">IM</span>
-        <span>Open Problems in Inventory Management</span>
-      </a>
+      <a class="brand" href="index.html">Open Problems in Inventory Management</a>
       <nav aria-label="Primary navigation">
-        <a href="index.html">Problems</a>
+        <a href="index.html">Paper list</a>
+        <a href="index.html#literature-path">Literature paths</a>
         <a class="active" href="methodology.html">Methodology</a>
-        <a href="about.html">About &amp; contact</a>
+        <a href="about.html">About</a>
       </nav>
     </header>
 
     <main id="methodology">
-      <section class="shell methodology-hero">
-        <p class="eyebrow">Editorial manual v1.1</p>
-        <h1>Inventory must be the mechanism, not merely the setting.</h1>
-        <p class="lede">
-          The registry uses a two-gate boundary test, three evidence types, separate research-status and
-          workflow codes, and a dated literature audit. This keeps a promising agenda from being mislabeled
-          as an unsolved theorem.
-        </p>
+      <section class="page-hero shell">
+        <p class="eyebrow">Editorial protocol v2.0</p>
+        <h1>Source statements are the unit of publication.</h1>
+        <p class="lede">The registry no longer promotes editorial syntheses to public open-problem records. Every listed item must be traceable to a paper, a source location, and a bounded paraphrase.</p>
       </section>
 
-      <section id="literature-audit" class="shell methodology-block" aria-labelledby="literature-audit-title">
-        <div>
-          <p class="eyebrow">Cross-registry and literature audit</p>
-          <h2 id="literature-audit-title">Candidates are screened for relevance and current status</h2>
-        </div>
-        <div class="taxonomy-grid">
-          <article>
-            <span class="badge badge-b">Registry comparison</span>
-            <h3>Open Problems in OR</h3>
-            <p>
-              We screened all 159 records in the comparison dataset. Only one record placed reusable
-              inventory at the heart of the model. It enters this registry as a scope-sensitive resolved
-              control, not as an active problem.
-            </p>
-            <small>Comparison completed 2 September 2026.</small>
-          </article>
-          <article>
-            <span class="badge badge-a">Recent UTD literature</span>
-            <h3>Targeted 2024-2026 surveillance</h3>
-            <p>
-              The update added two explicit structural questions from recent M&amp;SOM articles and one
-              source-backed agenda on age-sensitive perishable inventory. Publisher records and paper-level
-              statements anchor each addition.
-            </p>
-            <small>Coverage is targeted rather than a claim of bibliographic exhaustiveness.</small>
-          </article>
-          <article>
-            <span class="badge badge-c">Promotion rule</span>
-            <h3>No automatic carryover</h3>
-            <p>
-              A record is not imported merely because it contains the word inventory. It must pass the
-              two-gate test, preserve the source model, and survive a dated search for later resolutions.
-            </p>
-            <small>Resolution scope is mapped assumption by assumption.</small>
-          </article>
+      <section class="shell method-grid" aria-labelledby="evidence-title">
+        <div class="method-heading"><p class="eyebrow">Evidence classes</p><h2 id="evidence-title">What may appear in the paper list</h2></div>
+        <div class="method-cards">
+          <article><span class="tag tag-conjecture">Explicit conjecture</span><h3>A formal proposition stated as unproved</h3><p>The public text identifies the conjecture, the source location, and the assumptions used by the paper.</p></article>
+          <article><span class="tag tag-open">Explicit open question</span><h3>A question the authors directly call open</h3><p>The record paraphrases the paper and links to the primary source; it does not broaden the benchmark.</p></article>
+          <article><span class="tag tag-extension">Source-stated extension</span><h3>A limitation or future direction stated by the authors</h3><p>This class is not presented as a mathematical conjecture and carries no editorial novelty claim.</p></article>
+          <article><span class="tag tag-resolved">Status update</span><h3>A later result or a scope correction</h3><p>Resolved and partially resolved questions are kept outside the active list to prevent stale labels.</p></article>
         </div>
       </section>
 
-      <section class="shell gate-section" aria-labelledby="boundary-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Boundary</p>
-            <h2 id="boundary-title">The two-gate test</h2>
+      <section class="shell method-grid" aria-labelledby="wording-title">
+        <div class="method-heading"><p class="eyebrow">Wording discipline</p><h2 id="wording-title">What the site does not say</h2></div>
+        <div class="prose-block">
+          <p>Records do not rank importance, promise publishability, claim that no later paper exists, or infer an author's research priorities. Phrases such as “the literature has ignored,” “the problem is important,” and “this direction is novel” are excluded unless they are part of a properly attributed source statement.</p>
+          <p>A literature path may place papers in chronological order and report their model, benchmark, and theorem. The chronology is descriptive: a gap is published only when one of the evidence classes above is satisfied.</p>
+        </div>
+      </section>
+
+      <section id="wos-protocol" class="shell method-grid" aria-labelledby="wos-title">
+        <div class="method-heading"><p class="eyebrow">Bibliometric protocol</p><h2 id="wos-title">Web of Science trend construction</h2></div>
+        <div class="prose-block">
+          <p>The intended source is the Web of Science Core Collection. The export should include the unique accession number, publication year, title, abstract, author keywords, Keywords Plus, source title, document type, DOI, and cited references. Counts are grouped by publication year after deduplication on accession number and DOI.</p>
+          <div class="query-table-wrap">
+            <table class="query-table">
+              <thead><tr><th>Category</th><th>Advanced-search query</th></tr></thead>
+              <tbody>
+                <tr><td>Lost sales</td><td><code>TS=(("lost sales" OR "lost-sale") NEAR/5 inventor*)</code></td></tr>
+                <tr><td>Data-driven inventory</td><td><code>TS=(inventor* NEAR/5 ("data-driven" OR learning OR "machine learning" OR "offline learning"))</code></td></tr>
+                <tr><td>Nonstationarity</td><td><code>TS=(inventor* NEAR/5 (nonstationar* OR "demand drift" OR "regime change" OR "structural break"))</code></td></tr>
+                <tr><td>Censored demand</td><td><code>TS=(inventor* NEAR/5 ("censored demand" OR "sales censoring"))</code></td></tr>
+                <tr><td>Perishability</td><td><code>TS=(inventor* NEAR/5 (perishab* OR "shelf life" OR outdat*))</code></td></tr>
+                <tr><td>Supply uncertainty</td><td><code>TS=(inventor* NEAR/5 ("supply disruption" OR "supply uncertainty" OR "random yield"))</code></td></tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-        <div class="gate-flow">
-          <article>
-            <span class="step-number">01</span>
-            <h3>Operations at the heart</h3>
-            <p>Is the central question about designing, planning, controlling, or improving an operating process?</p>
-          </article>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <article>
-            <span class="step-number">02</span>
-            <h3>Inventory at the heart</h3>
-            <p>Do stock-flow state, inventory actions, and intertemporal inventory trade-offs determine the result?</p>
-          </article>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <article class="accent-card">
-            <span class="step-number">03</span>
-            <h3>Deletion test</h3>
-            <p>If inventory balance and availability are removed, does the problem disappear or materially change?</p>
-          </article>
+          <p>Category counts are overlapping and must not be added. For a mutually exclusive chart, records are assigned by the priority order shown above after title, abstract, and keyword screening. Any chart must state the database, collection, query date, timespan, document types, and whether 2026 is partial.</p>
         </div>
       </section>
 
-      <section class="shell methodology-block" aria-labelledby="evidence-title">
-        <div>
-          <p class="eyebrow">Evidence taxonomy</p>
-          <h2 id="evidence-title">How a record enters the registry</h2>
-        </div>
-        <div class="taxonomy-grid">
-          <article>
-            <span class="badge badge-a">Type A</span>
-            <h3>Explicit formal problem</h3>
-            <p>The source states a precise open, unknown, unresolved, complexity, policy-structure, or bound question.</p>
-            <small>Still requires a current-status audit.</small>
-          </article>
-          <article>
-            <span class="badge badge-b">Type B</span>
-            <h3>Explicit research challenge</h3>
-            <p>The source identifies an important structural, computational, empirical, or implementation challenge.</p>
-            <small>Must not be presented as a theorem or conjecture.</small>
-          </article>
-          <article>
-            <span class="badge badge-c">Type C</span>
-            <h3>Editorially synthesized candidate</h3>
-            <p>Editors combine multiple sources into a sharper candidate question and disclose that synthesis.</p>
-            <small>Candidate only; source authors did not state the exact question.</small>
-          </article>
-        </div>
-      </section>
-
-      <section id="verification" class="shell methodology-block" aria-labelledby="verification-title">
-        <div>
-          <p class="eyebrow">Verification</p>
-          <h2 id="verification-title">A record earns trust in stages</h2>
-        </div>
-        <ol class="verification-timeline">
-          <li><span>EX</span><div><strong>Extracted</strong><p>Candidate text and source pointer recorded.</p></div></li>
-          <li><span>SV</span><div><strong>Source verified</strong><p>A human checks the exact passage, location, metadata, and scope.</p></div></li>
-          <li><span>LA</span><div><strong>Literature audited</strong><p>Backward, forward, semantic, and author/version searches are logged.</p></div></li>
-          <li><span>EV</span><div><strong>Expert verified</strong><p>A conflict-free domain expert confirms the statement and dated current status.</p></div></li>
+      <section class="shell method-grid" aria-labelledby="audit-title">
+        <div class="method-heading"><p class="eyebrow">Status audit</p><h2 id="audit-title">How a statement is retired</h2></div>
+        <ol class="numbered-protocol">
+          <li>Preserve the original model, benchmark, asymptotic regime, and information structure.</li>
+          <li>Search the primary journal record, author or institutional versions, and recent forward citations.</li>
+          <li>Map a later theorem to the original statement assumption by assumption.</li>
+          <li>Move the item to status updates when the original scope is resolved; list broader variants separately.</li>
         </ol>
-        <div class="method-note">
-          <strong>Important:</strong> EX, SV, LA, and EV should be stored as separate completed steps. A
-          composite label such as “SV-LA (provisional)” is not sufficiently auditable.
-        </div>
-      </section>
-
-      <section class="shell methodology-block" aria-labelledby="publication-title">
-        <div>
-          <p class="eyebrow">Publication rule</p>
-          <h2 id="publication-title">What the public interface is allowed to say</h2>
-        </div>
-        <div class="rule-table" role="table" aria-label="Public display rules">
-          <div class="rule-row rule-head" role="row">
-            <span role="columnheader">Track</span><span role="columnheader">Allowed label</span><span role="columnheader">Minimum condition</span>
-          </div>
-          <div class="rule-row" role="row"><strong>Formal candidate</strong><span>Provisional formal candidate</span><span>Type A + exact source passage; LA before prominent display</span></div>
-          <div class="rule-row" role="row"><strong>Research agenda</strong><span>Source-backed research challenge</span><span>Type B + source verification</span></div>
-          <div class="rule-row" role="row"><strong>Candidate incubation</strong><span>Synthesized by editors</span><span>Type C + sources and rationale</span></div>
-          <div class="rule-row" role="row"><strong>Resolved archive</strong><span>Resolved / archived</span><span>Resolution scope mapped to the original question</span></div>
-        </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div><strong>Methodology version</strong><p>v1.1 · 2 September 2026</p></div>
-        <a href="index.html#problem-registry">Browse records →</a>
-      </div>
-    </footer>
+    <footer class="site-footer"><div class="shell footer-grid"><div><strong>Evidence before labels.</strong><p>Corrections are versioned through GitHub.</p></div><a href="about.html">Contact the maintainers →</a></div></footer>
   </body>
 </html>

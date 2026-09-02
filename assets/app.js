@@ -1,177 +1,165 @@
-const state = { records: [], filtered: [] };
+const registryUrl = "data/registry.json?v=2.0.0";
 
-const confidenceRank = { High: 0, Medium: 1, Low: 2 };
-const trackClass = {
-  "Formal candidate": "badge-formal",
-  "Research agenda": "badge-agenda",
-  "Candidate incubation": "badge-candidate",
-  "Resolved archive": "badge-resolved",
-};
+const openList = document.querySelector("#open-list");
+const statusList = document.querySelector("#status-list");
+const pathList = document.querySelector("#path-list");
+const resultCount = document.querySelector("#result-count");
+const topicFilters = document.querySelector("#topic-filters");
+const searchInput = document.querySelector("#search");
+const emptyState = document.querySelector("#empty-state");
 
-const elements = {
-  search: document.querySelector("#search"),
-  track: document.querySelector("#track-filter"),
-  domain: document.querySelector("#domain-filter"),
-  evidence: document.querySelector("#evidence-filter"),
-  sort: document.querySelector("#sort-filter"),
-  clear: document.querySelector("#clear-filters"),
-  list: document.querySelector("#problem-list"),
-  empty: document.querySelector("#empty-state"),
-  resultCount: document.querySelector("#result-count"),
-  activeFilters: document.querySelector("#active-filters"),
-  template: document.querySelector("#problem-card-template"),
-};
+const state = { query: "", topic: "All topics" };
+let registry = null;
 
-function option(value, count) {
-  const node = document.createElement("option");
-  node.value = value;
-  node.textContent = `${value} (${count})`;
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
   return node;
 }
 
-function populateSelect(select, values) {
-  const counts = new Map();
-  values.forEach((value) => counts.set(value, (counts.get(value) || 0) + 1));
-  [...counts.entries()].sort(([a], [b]) => a.localeCompare(b)).forEach(([value, count]) => select.append(option(value, count)));
+function externalLink(label, url, className = "") {
+  const link = el("a", className, label);
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  return link;
 }
 
-function badge(text, className = "") {
-  const node = document.createElement("span");
-  node.className = `badge ${className}`.trim();
-  node.textContent = text;
-  return node;
+function tagClass(label) {
+  if (label === "Explicit conjecture") return "tag tag-conjecture";
+  if (label === "Explicit open question") return "tag tag-open";
+  if (label === "Source-stated extension") return "tag tag-extension";
+  return "tag tag-resolved";
 }
 
-function truncate(text, limit = 245) {
-  if (!text || text.length <= limit) return text || "";
-  return `${text.slice(0, limit).trim()}…`;
+function searchableText(item) {
+  return [
+    item.id,
+    item.evidenceClass,
+    item.topic,
+    item.title,
+    item.statement,
+    item.paperEstablishes,
+    item.scopeBoundary,
+    item.source.authors,
+    item.source.title,
+    item.source.outlet,
+  ].join(" ").toLowerCase();
 }
 
-function workflowSummary(record) {
-  const labels = [
-    ["EX", record.workflow?.extracted],
-    ["SV", record.workflow?.sourceVerified],
-    ["LA", record.workflow?.literatureAudited],
-    ["EV", record.workflow?.expertVerified],
-  ];
-  return labels.map(([code, status]) => `${code} ${status || "not-recorded"}`).join(" · ");
-}
+function renderOpenItems() {
+  const query = state.query.trim().toLowerCase();
+  const visible = registry.openItems.filter((item) => {
+    const topicMatch = state.topic === "All topics" || item.topic === state.topic;
+    return topicMatch && (!query || searchableText(item).includes(query));
+  });
 
-function render(records) {
-  elements.list.replaceChildren();
-  const fragment = document.createDocumentFragment();
-  records.forEach((record) => {
-    const card = elements.template.content.cloneNode(true);
-    const article = card.querySelector(".problem-card");
-    article.dataset.id = record.id;
-    card.querySelector(".card-index").textContent = record.id;
-    const badgeRow = card.querySelector(".badge-row");
-    badgeRow.append(
-      badge(record.track, trackClass[record.track]),
-      badge(record.evidenceType, `badge-${record.evidenceType.slice(-1).toLowerCase()}`),
-      badge(record.statusCode, `badge-${record.statusCode.toLowerCase()}`),
+  openList.replaceChildren();
+  visible.forEach((item, index) => {
+    const article = el("article", "paper-row");
+    const number = el("div", "paper-number", String(index + 1).padStart(2, "0"));
+    const body = el("div", "paper-body");
+    const tags = el("div", "paper-tags");
+    tags.append(el("span", tagClass(item.evidenceClass), item.evidenceClass));
+    tags.append(el("span", "tag tag-topic", item.topic));
+    body.append(tags, el("h3", "paper-title", item.title), el("p", "paper-statement", item.statement));
+
+    const established = el("p", "paper-detail");
+    established.append(el("strong", "", "Paper establishes. "), document.createTextNode(item.paperEstablishes));
+    const boundary = el("p", "paper-detail paper-boundary");
+    boundary.append(el("strong", "", "Recorded boundary. "), document.createTextNode(item.scopeBoundary));
+
+    const citation = el("p", "paper-citation");
+    citation.append(
+      externalLink(
+        `${item.source.authors} (${item.source.year}). ${item.source.title}. ${item.source.outlet}.`,
+        item.source.url,
+      ),
+      document.createTextNode(` Source location: ${item.source.location}.`),
     );
-    if (record.auditFlags?.length) badgeRow.append(badge("Re-audit flag", "badge-candidate"));
-    const href = `problem.html?id=${encodeURIComponent(record.id)}`;
-    const titleLink = card.querySelector(".problem-link");
-    titleLink.href = href;
-    titleLink.textContent = record.titleEn;
-    card.querySelector(".question-preview").textContent = truncate(record.question);
-    card.querySelector(".domain").textContent = record.primaryDomain;
-    card.querySelector(".source").textContent = `${record.sourceAuthors} · ${record.journal}`;
-    card.querySelector(".audit-date").textContent = `Audited ${record.lastAuditDate}`;
-    card.querySelector(".verification").textContent = `${workflowSummary(record)} · Confidence: ${record.confidence}`;
-    const detail = card.querySelector(".detail-link");
-    detail.href = href;
-    fragment.append(card);
+    body.append(established, boundary, citation);
+    article.append(number, body);
+    openList.append(article);
   });
-  elements.list.append(fragment);
-  elements.empty.hidden = records.length !== 0;
-  elements.resultCount.textContent = `Showing ${records.length} of ${state.records.length} records`;
+
+  resultCount.textContent = `Showing ${visible.length} of ${registry.openItems.length} source-stated items`;
+  emptyState.hidden = visible.length !== 0;
 }
 
-function readFilters() {
-  return {
-    query: elements.search.value.trim().toLowerCase(),
-    track: elements.track.value,
-    domain: elements.domain.value,
-    evidence: elements.evidence.value,
-    sort: elements.sort.value,
-  };
-}
-
-function applyFilters() {
-  const filters = readFilters();
-  let records = state.records.filter((record) => {
-    const haystack = [
-      record.id, record.titleEn, record.primaryDomain, record.sourceAuthors,
-      record.sourceTitle, record.question, record.inventoryObject, record.decision, record.uncertainty,
-    ].join(" ").toLowerCase();
-    return (!filters.query || haystack.includes(filters.query)) &&
-      (!filters.track || record.track === filters.track) &&
-      (!filters.domain || record.primaryDomain === filters.domain) &&
-      (!filters.evidence || record.evidenceType === filters.evidence);
-  });
-  if (filters.sort === "confidence") {
-    records.sort((a, b) => confidenceRank[a.confidence] - confidenceRank[b.confidence] || a.id.localeCompare(b.id));
-  } else if (filters.sort === "audit") {
-    records.sort((a, b) => b.lastAuditDate.localeCompare(a.lastAuditDate) || a.id.localeCompare(b.id));
-  } else {
-    records.sort((a, b) => a.id.localeCompare(b.id));
-  }
-  state.filtered = records;
-  render(records);
-  renderActiveFilters(filters);
-}
-
-function renderActiveFilters(filters) {
-  elements.activeFilters.replaceChildren();
-  const labels = [];
-  if (filters.query) labels.push(`Search: ${elements.search.value.trim()}`);
-  if (filters.track) labels.push(`Track: ${filters.track}`);
-  if (filters.domain) labels.push(`Domain: ${filters.domain}`);
-  if (filters.evidence) labels.push(`Evidence: ${filters.evidence}`);
-  labels.forEach((label) => {
-    const chip = document.createElement("span");
-    chip.className = "filter-chip";
-    chip.textContent = label;
-    elements.activeFilters.append(chip);
+function renderTopicFilters() {
+  const topics = ["All topics", ...new Set(registry.openItems.map((item) => item.topic))];
+  topicFilters.replaceChildren();
+  topics.forEach((topic) => {
+    const button = el("button", "topic-button", topic);
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(topic === state.topic));
+    button.addEventListener("click", () => {
+      state.topic = topic;
+      topicFilters.querySelectorAll("button").forEach((candidate) => {
+        candidate.setAttribute("aria-pressed", String(candidate.textContent === topic));
+      });
+      renderOpenItems();
+    });
+    topicFilters.append(button);
   });
 }
 
-function clearFilters() {
-  elements.search.value = "";
-  elements.track.value = "";
-  elements.domain.value = "";
-  elements.evidence.value = "";
-  elements.sort.value = "id";
-  applyFilters();
+function renderStatusUpdates() {
+  statusList.replaceChildren();
+  registry.statusUpdates.forEach((item) => {
+    const article = el("article", "status-row");
+    const header = el("div", "status-header");
+    header.append(el("span", "tag tag-resolved", item.status), el("span", "status-topic", item.topic));
+    article.append(header, el("h3", "", item.title), el("p", "", item.summary));
+    article.append(externalLink(item.citation, item.url, "citation-link"));
+    statusList.append(article);
+  });
+}
+
+function renderLiteraturePath() {
+  pathList.replaceChildren();
+  registry.literaturePath.forEach((item) => {
+    const article = el("article", "path-row");
+    const year = el("div", "path-year", String(item.year));
+    const body = el("div", "path-body");
+    const meta = el("div", "path-meta");
+    meta.append(el("span", "tag tag-topic", item.dataRegime), el("span", "tag tag-benchmark", item.policyBenchmark));
+    body.append(meta, externalLink(item.paper, item.url, "path-paper"), el("p", "", item.result));
+    const boundary = el("p", "path-boundary");
+    boundary.append(el("strong", "", "Scope. "), document.createTextNode(item.boundary));
+    body.append(boundary);
+    article.append(year, body);
+    pathList.append(article);
+  });
+}
+
+function updateStats() {
+  document.querySelector("#stat-open").textContent = registry.openItems.length;
+  document.querySelector("#stat-topics").textContent = new Set(registry.openItems.map((item) => item.topic)).size;
+  document.querySelector("#stat-updates").textContent = registry.statusUpdates.length;
 }
 
 async function init() {
   try {
-    const response = await fetch("data/problems.json?v=2026-09-02");
-    if (!response.ok) throw new Error(`Data request failed: ${response.status}`);
-    const data = await response.json();
-    state.records = data.records;
-    populateSelect(elements.track, state.records.map((r) => r.track));
-    populateSelect(elements.domain, state.records.map((r) => r.primaryDomain));
-    populateSelect(elements.evidence, state.records.map((r) => r.evidenceType));
-    document.querySelector("#stat-total").textContent = data.summary.totalRecords;
-    document.querySelector("#stat-formal").textContent = data.summary.formalCandidates;
-    document.querySelector("#stat-agenda").textContent = data.summary.researchAgendas;
-    document.querySelector("#stat-expert").textContent = data.summary.expertVerifiedActive;
-    applyFilters();
+    const response = await fetch(registryUrl);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    registry = await response.json();
+    updateStats();
+    renderTopicFilters();
+    renderOpenItems();
+    renderStatusUpdates();
+    renderLiteraturePath();
   } catch (error) {
-    elements.resultCount.textContent = "Registry unavailable";
-    elements.empty.hidden = false;
-    elements.empty.querySelector("h3").textContent = "The data could not be loaded";
-    elements.empty.querySelector("p").textContent = "Serve this folder through a local web server or GitHub Pages.";
+    resultCount.textContent = "The registry could not be loaded.";
+    openList.replaceChildren(el("p", "load-error", "Please reload the page or report the problem through the public issue tracker."));
     console.error(error);
   }
 }
 
-[elements.track, elements.domain, elements.evidence, elements.sort].forEach((el) => el.addEventListener("change", applyFilters));
-elements.search.addEventListener("input", applyFilters);
-elements.clear.addEventListener("click", clearFilters);
+searchInput?.addEventListener("input", (event) => {
+  state.query = event.target.value;
+  renderOpenItems();
+});
+
 init();
