@@ -17,10 +17,12 @@ The site does not publish editor-created research ideas as open problems. Each r
 
 ## Current release
 
-- Six source-stated items.
-- Four status updates.
+- Seven source-stated items.
+- Six status updates.
 - A twelve-paper descriptive path from offline sample-based inventory to fixed-cost learning, capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
 - Reproducible, overlapping keyword-screening counts from 6,105 Web of Science Core Collection records across six journals and 2021–2025. The licensed export is summarized rather than redistributed; its cited-reference field is empty, so the release does not claim a citation-network analysis.
+- A public OpenAlex cross-check covering 20,854 records from the same six journals over 2000–2026; its 2,174 inventory-scope records and 59 open-language candidates are discovery inputs rather than open-problem counts.
+- A complete audit of the 159-record Open Problems in OR snapshot. The specified filtered page contains no inventory-management record; its one inventory-adjacent reusable-resource item is recorded as resolved in a subsequent working paper rather than copied into the active list.
 - A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 
 ## Maintainers

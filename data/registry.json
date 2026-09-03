@@ -105,6 +105,23 @@
         "location": "Section 6, p. 18 of the article file",
         "url": "https://doi.org/10.1111/poms.13820"
       }
+    },
+    {
+      "id": "OIM-007",
+      "evidenceClass": "Explicit open question",
+      "topic": "Compound-Poisson lost sales",
+      "title": "Exact pipeline distribution under partial rejection and general compound-Poisson demand",
+      "statement": "For a continuous-review (S − 1, S) lost-sales system with independently and identically distributed replenishment lead times, the source paper asks for the exact stationary distribution of the number of units on order under general compound-Poisson demand. Subsequent work narrows the unresolved case to partial rejection with a nongeometric demand-size distribution.",
+      "paperEstablishes": "Chen, Jackson, and Muckstadt derive an exact stationary distribution for geometric demand sizes, also called stuttering Poisson demand, and show that this distribution depends on the lead-time distribution only through its mean. Kouki, Babai, Jemai, and Minner later give an exact recursive procedure for general compound-Poisson demand under complete rejection.",
+      "scopeBoundary": "Under partial rejection, the 2019 recursion is exact for geometric demand sizes and approximate for a general demand-size distribution. The active question records only this residual exact-analysis case; it excludes complete rejection and the stuttering-Poisson model.",
+      "source": {
+        "authors": "Chen, Jackson, and Muckstadt",
+        "year": 2011,
+        "title": "Exact Analysis of a Lost Sales Model Under Stuttering Poisson Demand",
+        "outlet": "Operations Research 59(1):249–253",
+        "location": "Abstract; source manuscript, Section 5",
+        "url": "https://doi.org/10.1287/opre.1100.0872"
+      }
     }
   ],
   "statusUpdates": [
@@ -139,6 +156,22 @@
       "summary": "A July 2026 working paper proves that the best capped base-stock policy is a 7/3-approximation. The paper describes approximation guarantees for this policy class as previously open and identifies a ratio below 2 as a possible direction for refinement.",
       "citation": "Xin (2026), Capped Base-Stock Policies: A 2.33-Approximation",
       "url": "https://ssrn.com/abstract=7134538"
+    },
+    {
+      "status": "Resolved in a subsequent working paper",
+      "topic": "Reusable-resource allocation",
+      "title": "Logarithmic loss in the large-capacity guarantee",
+      "summary": "Feng, Niazadeh, and Saberi ask whether the square-root logarithmic loss in their large-inventory guarantee for reusable-resource Bayesian online assortment can be removed. Aminian, Niazadeh, and Nuti subsequently state that their Bayesian online allocation policy attains 1 − sqrt(2/(pi k)) + O(1/k), matches the best explicit nonreusable bound, and solves the earlier reusable-resource open problem. The follow-up is currently a working paper, and this record does not extend its resolution claim beyond the model and reductions stated by its authors.",
+      "citation": "Aminian, Niazadeh, and Nuti (2026), Optimal Bayesian Online Allocation of Reusable Resources",
+      "url": "https://ssrn.com/abstract=6384158"
+    },
+    {
+      "status": "Partially resolved; residual case retained",
+      "topic": "Compound-Poisson lost sales",
+      "title": "Stationary distribution of units on order",
+      "summary": "Chen, Jackson, and Muckstadt identify exact analysis under general compound-Poisson demand as open. Kouki, Babai, Jemai, and Minner give an exact recursive procedure under complete rejection; under partial rejection, their procedure is exact for geometric demand sizes and approximate for a general demand-size distribution. The active list therefore retains only the latter residual case.",
+      "citation": "Kouki, Babai, Jemai, and Minner (2019), International Journal of Production Economics 209:172–182",
+      "url": "https://doi.org/10.1016/j.ijpe.2018.01.021"
     }
   ],
   "literaturePath": [
