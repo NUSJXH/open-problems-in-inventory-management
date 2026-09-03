@@ -18,8 +18,8 @@ The site does not publish editor-created research ideas as open problems. Each r
 ## Current release
 
 - Four source-stated items.
-- Three status updates.
-- A nine-paper descriptive path from offline sample-based inventory to capped base-stock learning and nonstationary lost-sales control.
+- Four status updates.
+- A ten-paper descriptive path from offline sample-based inventory to capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
 - A reproducible Web of Science query and classification protocol. Bibliometric counts are withheld until a Core Collection export is archived.
 - A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 

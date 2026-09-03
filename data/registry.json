@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0",
-  "dataVersion": "2026-09-02",
-  "auditThrough": "2026-09-02",
+  "dataVersion": "2026-09-03",
+  "auditThrough": "2026-09-03",
   "scopeNote": "The public list contains only source-stated conjectures, open questions, limitations, extensions, and status updates.",
   "openItems": [
     {
@@ -81,6 +81,14 @@
       "summary": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions.",
       "citation": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
       "url": "https://doi.org/10.1287/opre.2021.0032"
+    },
+    {
+      "status": "Resolved in additional regimes",
+      "topic": "Perishable inventory",
+      "title": "PIL guarantees for perishable systems with positive lead times",
+      "summary": "Bu, Gong, and Yin establish asymptotic optimality of the best PIL policy as the unit penalty grows for a broad class of unbounded demand distributions in perishable backlogging and lost-sales systems. They also report large-population asymptotic guarantees. The asymptotic regimes stated in the paper are penalty and demand population size, rather than lead time.",
+      "citation": "Bu, Gong, and Yin (2026), Management Science, Articles in Advance",
+      "url": "https://ssrn.com/abstract=4638265"
     },
     {
       "status": "Resolved for the base-stock benchmark",
@@ -180,6 +188,15 @@
       "result": "Proves a 7/3 approximation guarantee for the best capped base-stock policy.",
       "boundary": "This working paper concerns full-information approximation, not offline statistical estimation or online regret.",
       "url": "https://ssrn.com/abstract=7134538"
+    },
+    {
+      "year": 2026,
+      "dataRegime": "Known demand distribution",
+      "policyBenchmark": "Best projected-inventory-level and base-stock policies for perishable systems",
+      "paper": "Bu, Gong, and Yin",
+      "result": "Establishes PIL asymptotic optimality in large-penalty and large-demand-population regimes and compares PIL with base-stock policies across issuance rules.",
+      "boundary": "The stated asymptotic regimes are penalty and demand population size; the paper does not report long-lead-time asymptotic optimality.",
+      "url": "https://ssrn.com/abstract=4638265"
     }
   ]
 }
