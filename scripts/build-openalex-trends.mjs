@@ -43,7 +43,7 @@ const payload = {
   inventoryPattern: screen.inventoryPattern,
   categoryPatterns: Object.fromEntries(Object.entries(labels).map(([key, label]) => [label, screen.categoryPatterns[key]])),
   categoriesOverlap: true,
-  note: "Counts use titles, available abstracts, and OpenAlex keywords. The broad discovery screen differs from the WoS screen and should not be pooled with it. Topic categories overlap. Abstract availability and database coverage vary by year. The 2026 column is an incomplete indexing-year snapshot and can include papers assigned to later 2026 issues; it is not a full-year total or a forecast. Keyword hits and open-language candidates do not establish that a problem remains open."
+  note: "Counts use titles, available abstracts, and OpenAlex keywords. The broad discovery screen differs from the WoS screen and should not be pooled with it. Topic categories overlap. Abstract availability and database coverage vary by year. The 2026 row is an incomplete indexing-year snapshot and can include papers assigned to later 2026 issues; it is not a full-year total or a forecast. Keyword hits and open-language candidates do not establish that a problem remains open."
 };
 if (payload.journalScope.some((journal) => !journal)) throw new Error("Missing journal name in source manifest");
 await writeFile(path.join(siteRoot, "data", "openalex-trends.json"), JSON.stringify(payload, null, 2) + "\n");

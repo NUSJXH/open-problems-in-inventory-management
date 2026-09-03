@@ -443,5 +443,5 @@
     "Supply uncertainty": "\\b(random yield|yield uncertainty|supply uncertainty|supply disruption|unreliable suppl\\w*|lead[- ]time uncertainty)\\b"
   },
   "categoriesOverlap": true,
-  "note": "Counts use titles, available abstracts, and OpenAlex keywords. The broad discovery screen differs from the WoS screen and should not be pooled with it. Topic categories overlap. Abstract availability and database coverage vary by year. The 2026 column is an incomplete indexing-year snapshot and can include papers assigned to later 2026 issues; it is not a full-year total or a forecast. Keyword hits and open-language candidates do not establish that a problem remains open."
+  "note": "Counts use titles, available abstracts, and OpenAlex keywords. The broad discovery screen differs from the WoS screen and should not be pooled with it. Topic categories overlap. Abstract availability and database coverage vary by year. The 2026 row is an incomplete indexing-year snapshot and can include papers assigned to later 2026 issues; it is not a full-year total or a forecast. Keyword hits and open-language candidates do not establish that a problem remains open."
 }
