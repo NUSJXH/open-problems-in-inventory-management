@@ -7,7 +7,7 @@ const rootDir = path.resolve(scriptDir, "..");
 const registryPath = path.join(rootDir, "data", "registry.json");
 const registry = JSON.parse(await fs.readFile(registryPath, "utf8"));
 
-const requiredTopLevel = ["schemaVersion", "dataVersion", "auditThrough", "openItems", "statusUpdates", "literaturePath"];
+const requiredTopLevel = ["schemaVersion", "dataVersion", "auditThrough", "openItems", "statusUpdates", "literaturePath", "bibliometrics"];
 for (const field of requiredTopLevel) {
   if (!(field in registry)) throw new Error(`Missing top-level field: ${field}`);
 }
@@ -27,6 +27,38 @@ for (const item of registry.openItems) {
 const serialized = JSON.stringify(registry);
 if (/\p{Script=Han}/u.test(serialized)) throw new Error("The public registry contains Han characters.");
 
+for (const [index, item] of registry.statusUpdates.entries()) {
+  for (const field of ["status", "topic", "title", "summary", "citation", "url"]) {
+    if (!item[field]) throw new Error(`Status update ${index + 1} is missing ${field}`);
+  }
+}
+
+for (const [index, item] of registry.literaturePath.entries()) {
+  for (const field of ["year", "dataRegime", "policyBenchmark", "paper", "result", "boundary", "url"]) {
+    if (!item[field]) throw new Error(`Literature-path entry ${index + 1} is missing ${field}`);
+  }
+}
+
+const bibliometrics = registry.bibliometrics;
+for (const field of ["database", "exportDate", "timespan", "journalScope", "totalRecords", "inventoryScopeRecords", "series", "note"]) {
+  if (bibliometrics[field] === undefined || bibliometrics[field] === "") throw new Error(`Bibliometrics is missing ${field}`);
+}
+if (!Array.isArray(bibliometrics.series) || bibliometrics.series.length === 0) {
+  throw new Error("Bibliometrics series must be a nonempty array.");
+}
+const trendYears = ["2021", "2022", "2023", "2024", "2025"];
+for (const series of bibliometrics.series) {
+  if (!series.category || !series.values) throw new Error("A bibliometric series is missing its category or values.");
+  for (const year of trendYears) {
+    if (!Number.isInteger(series.values[year]) || series.values[year] < 0) {
+      throw new Error(`Invalid bibliometric count for ${series.category}, ${year}.`);
+    }
+  }
+}
+if (bibliometrics.inventoryScopeRecords > bibliometrics.totalRecords) {
+  throw new Error("Inventory-scope records cannot exceed total records.");
+}
+
 const urls = [];
 for (const item of registry.openItems) urls.push(item.source.url);
 for (const item of registry.statusUpdates) urls.push(item.url);
@@ -35,4 +67,4 @@ for (const url of urls) {
   if (!/^https:\/\//.test(url)) throw new Error(`Non-HTTPS source URL: ${url}`);
 }
 
-console.log(`Validated ${registry.openItems.length} source-stated items, ${registry.statusUpdates.length} status updates, and ${registry.literaturePath.length} literature-path entries.`);
+console.log(`Validated ${registry.openItems.length} source-stated items, ${registry.statusUpdates.length} status updates, ${registry.literaturePath.length} literature-path entries, and ${registry.bibliometrics.series.length} bibliometric series.`);

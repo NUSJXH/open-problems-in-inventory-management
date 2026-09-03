@@ -9,8 +9,8 @@ authors:
   - family-names: Gong
     given-names: Xiting
     email: xtgong@cuhk.edu.hk
-version: 2.0.0
-date-released: 2026-09-02
+version: 2.1.0
+date-released: 2026-09-04
 url: "https://nusjxh.github.io/open-problems-in-inventory-management/"
 repository-code: "https://github.com/NUSJXH/open-problems-in-inventory-management"
 license: CC-BY-4.0

@@ -6,7 +6,7 @@
     <meta name="description" content="Source and bibliometric protocols for Open Problems in Inventory Management." />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/methodology.html" />
     <title>Methodology · Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.0.0" />
+    <link rel="stylesheet" href="assets/styles.css?v=2.1.0" />
   </head>
   <body>
     <a class="skip-link" href="#methodology">Skip to methodology</a>
@@ -22,7 +22,7 @@
 
     <main id="methodology">
       <section class="page-hero shell">
-        <p class="eyebrow">Editorial protocol v2.0</p>
+        <p class="eyebrow">Editorial protocol v2.1</p>
         <h1>Source statements are the unit of publication.</h1>
         <p class="lede">The registry no longer promotes editorial syntheses to public open-problem records. Every listed item must be traceable to a paper, a source location, and a bounded paraphrase.</p>
       </section>
@@ -48,21 +48,31 @@
       <section id="wos-protocol" class="shell method-grid" aria-labelledby="wos-title">
         <div class="method-heading"><p class="eyebrow">Bibliometric protocol</p><h2 id="wos-title">Web of Science trend construction</h2></div>
         <div class="prose-block">
-          <p>The intended source is the Web of Science Core Collection. The export should include the unique accession number, publication year, title, abstract, author keywords, Keywords Plus, source title, document type, DOI, and cited references. Counts are grouped by publication year after deduplication on accession number and DOI.</p>
+          <p>The published trend table uses a Web of Science Core Collection export dated 10 January 2026. It contains 6,105 records published from 2021 through 2025 in <em>Management Science</em>, <em>Operations Research</em>, <em>Manufacturing &amp; Service Operations Management</em>, <em>Production and Operations Management</em>, <em>INFORMS Journal on Computing</em>, and <em>Journal of Operations Management</em>. A conservative title, abstract, and keyword screen identifies 640 inventory-scope records.</p>
+          <p>The archived export includes accession numbers, publication years, titles, abstracts, keywords, source titles, document types, and DOIs. Its cited-reference field is empty. The current release therefore reports descriptive keyword counts only; it does not report a citation network or forward-citation analysis.</p>
           <div class="query-table-wrap">
             <table class="query-table">
-              <thead><tr><th>Category</th><th>Advanced-search query</th></tr></thead>
+              <thead><tr><th>Category</th><th>Local screening definition</th></tr></thead>
               <tbody>
-                <tr><td>Lost sales</td><td><code>TS=(("lost sales" OR "lost-sale") NEAR/5 inventor*)</code></td></tr>
-                <tr><td>Data-driven inventory</td><td><code>TS=(inventor* NEAR/5 ("data-driven" OR learning OR "machine learning" OR "offline learning"))</code></td></tr>
-                <tr><td>Nonstationarity</td><td><code>TS=(inventor* NEAR/5 (nonstationar* OR "demand drift" OR "regime change" OR "structural break"))</code></td></tr>
-                <tr><td>Censored demand</td><td><code>TS=(inventor* NEAR/5 ("censored demand" OR "sales censoring"))</code></td></tr>
-                <tr><td>Perishability</td><td><code>TS=(inventor* NEAR/5 (perishab* OR "shelf life" OR outdat*))</code></td></tr>
-                <tr><td>Supply uncertainty</td><td><code>TS=(inventor* NEAR/5 ("supply disruption" OR "supply uncertainty" OR "random yield"))</code></td></tr>
+                <tr><td>Lost sales</td><td><code>"lost sales" OR "lost-sale"</code></td></tr>
+                <tr><td>Data-driven inventory</td><td><code>inventory scope AND ("data-driven" OR "offline learning" OR "machine learning" OR learning)</code></td></tr>
+                <tr><td>Nonstationarity</td><td><code>inventory scope AND (nonstationar* OR "demand drift" OR "regime change" OR "structural break")</code></td></tr>
+                <tr><td>Censored demand</td><td><code>inventory scope AND ("censored demand" OR "sales censoring" OR "censored sales")</code></td></tr>
+                <tr><td>Perishability</td><td><code>inventory scope AND (perishab* OR "shelf life" OR outdat*)</code></td></tr>
+                <tr><td>Supply uncertainty</td><td><code>inventory scope AND ("supply disruption" OR "supply uncertainty" OR "random yield" OR "yield uncertainty" OR "random supply" OR "stochastic supply")</code></td></tr>
               </tbody>
             </table>
           </div>
-          <p>Category counts are overlapping and must not be added. For a mutually exclusive chart, records are assigned by the priority order shown above after title, abstract, and keyword screening. Any chart must state the database, collection, query date, timespan, document types, and whether 2026 is partial.</p>
+          <p>Inventory scope requires at least one of the following term families: inventory, stockout, lost sales, replenishment, newsvendor, base stock, order-up-to, or safety stock. Category definitions are applied to titles, abstracts, author keywords, and Keywords Plus. Counts overlap and must not be added. Every open-language candidate is then checked in full text: a keyword match is never sufficient for publication as an open problem.</p>
+          <p><strong>Reproducibility record.</strong> The source workbook is <code>core6_records_2021_2025.xlsx</code> (SHA-256: <code>E50FA1383CA9BC4C17551D2E729A4B309C22A724B84359D58064DB448B6C1CFB</code>). The public repository stores only aggregate counts and editorial records, not licensed row-level Web of Science data.</p>
+        </div>
+      </section>
+
+      <section class="shell method-grid" aria-labelledby="external-title">
+        <div class="method-heading"><p class="eyebrow">External registry screen</p><h2 id="external-title">Comparison with Open Problems in OR</h2></div>
+        <div class="prose-block">
+          <p>The public <a href="https://ai-in-math-or.github.io/open-problems-in-or/">Open Problems in OR</a> data snapshot dated 28 August 2026 contained 159 records. A title, category, keyword, and statement screen found no record directly transferable to the present registry's traditional inventory-control scope.</p>
+          <p>One record concerns reusable-resource Bayesian online assortment and uses the keyword “inventory with returns.” It remains outside this registry because its model and benchmark concern online assortment with reusable resources rather than physical-inventory replenishment. This exclusion is a scope decision, not a judgment about the question's importance.</p>
         </div>
       </section>
 

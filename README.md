@@ -17,10 +17,10 @@ The site does not publish editor-created research ideas as open problems. Each r
 
 ## Current release
 
-- Four source-stated items.
+- Six source-stated items.
 - Four status updates.
-- A ten-paper descriptive path from offline sample-based inventory to capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
-- A reproducible Web of Science query and classification protocol. Bibliometric counts are withheld until a Core Collection export is archived.
+- A twelve-paper descriptive path from offline sample-based inventory to fixed-cost learning, capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
+- Reproducible, overlapping keyword-screening counts from 6,105 Web of Science Core Collection records across six journals and 2021–2025. The licensed export is summarized rather than redistributed; its cited-reference field is empty, so the release does not claim a citation-network analysis.
 - A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 
 ## Maintainers
@@ -50,7 +50,15 @@ The validator checks required fields, duplicate record IDs, HTTPS source links, 
 
 ## Web of Science import
 
-The methodology page specifies the fields and topic queries required for a reproducible trend analysis. Do not publish hand-entered counts. Archive the export date, collection, timespan, document types, query strings, and deduplication rule with every update.
+The methodology page records the fields, topic definitions, journal scope, export date, workbook checksum, and classification rules used for the trend table. Do not interpret the keyword-screening counts as counts of open problems.
+
+To reproduce the aggregate table from an authorized export:
+
+```powershell
+python scripts/build-wos-trends.py path\to\wos-export.xlsx path\to\aggregate-output.json
+```
+
+The script requires `pandas` and `openpyxl` and writes no row-level bibliographic data.
 
 ## License
 

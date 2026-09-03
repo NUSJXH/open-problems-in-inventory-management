@@ -10,8 +10,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" />
     <title>Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.0.0" />
-    <script defer src="assets/app.js?v=2.0.0"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=2.1.0" />
+    <script defer src="assets/app.js?v=2.1.0"></script>
   </head>
   <body>
     <a class="skip-link" href="#paper-list">Skip to the paper list</a>
@@ -28,7 +28,7 @@
     <main>
       <section class="hero shell">
         <div>
-          <p class="eyebrow">Source-led research registry · audit dated 2 September 2026</p>
+          <p class="eyebrow">Source-led research registry · audit dated 4 September 2026</p>
           <h1>What inventory papers state, establish, and leave open.</h1>
           <p class="lede">
             This site records research questions only when a paper states a conjecture, an open question,
@@ -43,10 +43,10 @@
       </section>
 
       <section class="shell summary-strip" aria-label="Registry summary">
-        <div><strong id="stat-open">4</strong><span>source-stated items</span></div>
-        <div><strong id="stat-topics">3</strong><span>inventory streams</span></div>
-        <div><strong id="stat-updates">3</strong><span>status updates</span></div>
-        <div><strong>2026-09-02</strong><span>audit through</span></div>
+        <div><strong id="stat-open">6</strong><span>source-stated items</span></div>
+        <div><strong id="stat-topics">4</strong><span>inventory streams</span></div>
+        <div><strong id="stat-updates">4</strong><span>status updates</span></div>
+        <div><strong id="stat-audit">2026-09-04</strong><span>audit through</span></div>
       </section>
 
       <section id="paper-list" class="shell registry-section" aria-labelledby="paper-list-title">
@@ -83,21 +83,25 @@
 
       <section class="shell trends-section" aria-labelledby="trends-title">
         <div class="section-intro">
-          <div><p class="eyebrow">Bibliometric trends</p><h2 id="trends-title">Web of Science query protocol</h2></div>
-          <p>Counts will be published only after a reproducible Core Collection export is archived.</p>
+          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals, 2021–2025</h2></div>
+          <p>Keyword-screening counts support literature discovery; they are not counts of open problems.</p>
         </div>
-        <div class="data-notice">
-          <strong>No WoS counts are shown in this release.</strong>
-          <p>The current audit session did not have an authenticated institutional Web of Science connection. The category definitions and deduplication rule are ready for an exported CSV or Excel file.</p>
-          <a href="methodology.html#wos-protocol">View the query and classification protocol →</a>
+        <div class="trend-summary" aria-label="Bibliometric source summary">
+          <div><strong id="trend-records">6,105</strong><span>records in the export</span></div>
+          <div><strong id="trend-inventory">640</strong><span>inventory-scope records</span></div>
+          <div><strong>6</strong><span>journal titles</span></div>
+          <div><strong>5</strong><span>complete publication years</span></div>
         </div>
+        <div id="trend-table" class="trend-table-wrap"></div>
+        <p id="trend-note" class="trend-note"></p>
+        <a class="method-link" href="methodology.html#wos-protocol">Definitions, provenance, and reproducibility notes →</a>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div><strong>Open Problems in Inventory Management</strong><p>Maintained by Xianghua Jiang and Xiting Gong.</p></div>
-        <div><span>Data version</span><strong>v2.0 · 2026-09-02</strong></div>
+        <div><span>Data version</span><strong id="footer-version">2026-09-04</strong></div>
       </div>
     </footer>
   </body>

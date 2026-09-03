@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0",
-  "dataVersion": "2026-09-03",
-  "auditThrough": "2026-09-03",
+  "dataVersion": "2026-09-04",
+  "auditThrough": "2026-09-04",
   "scopeNote": "The public list contains only source-stated conjectures, open questions, limitations, extensions, and status updates.",
   "openItems": [
     {
@@ -70,6 +70,40 @@
         "outlet": "Manufacturing & Service Operations Management",
         "location": "Endnote 3",
         "url": "https://doi.org/10.1287/msom.2023.0249"
+      }
+    },
+    {
+      "id": "OIM-005",
+      "evidenceClass": "Source-stated extension",
+      "topic": "Fixed ordering costs",
+      "title": "Policy structure under exponentially growing loss functions",
+      "statement": "Perera and Sethi identify the existence of feedback policies and the optimality of an (s, S) policy under exponentially growing loss functions as a mathematical extension of the discrete-time fixed-cost inventory literature.",
+      "paperEstablishes": "The survey reports that the available existence and structural results it reviews permit loss functions with at most polynomial growth.",
+      "scopeBoundary": "This record attributes a research direction to the survey. It does not assert that every risk-sensitive, exponential-utility, or otherwise nonlinear inventory model lacks a structural result.",
+      "source": {
+        "authors": "Perera and Sethi",
+        "year": 2023,
+        "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+        "outlet": "Production and Operations Management 32(1):131–153",
+        "location": "Section 6, p. 18 of the article file",
+        "url": "https://doi.org/10.1111/poms.13820"
+      }
+    },
+    {
+      "id": "OIM-006",
+      "evidenceClass": "Source-stated extension",
+      "topic": "Fixed ordering costs",
+      "title": "Forecast horizons for stochastic fixed-cost inventory models",
+      "statement": "Perera and Sethi propose establishing decision and forecast horizons for stochastic inventory models with fixed ordering costs as a direction for future research.",
+      "paperEstablishes": "The survey synthesizes optimality results for (s, S) and related policy structures across discrete-time stochastic inventory models with fixed costs.",
+      "scopeBoundary": "This statement concerns the stochastic fixed-cost setting reviewed by the survey. Earlier forecast-horizon results for deterministic lot-sizing or stationary continuous-review approximations do not by themselves settle this stated extension.",
+      "source": {
+        "authors": "Perera and Sethi",
+        "year": 2023,
+        "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+        "outlet": "Production and Operations Management 32(1):131–153",
+        "location": "Section 6, p. 18 of the article file",
+        "url": "https://doi.org/10.1111/poms.13820"
       }
     }
   ],
@@ -145,6 +179,15 @@
       "url": "https://doi.org/10.1287/opre.2020.2019"
     },
     {
+      "year": 2021,
+      "dataRegime": "Online censored sales",
+      "policyBenchmark": "Clairvoyant full-information benchmark",
+      "paper": "Yuan, Luo, and Shi",
+      "result": "Combines stochastic gradient descent, bandit control, and simulation in a (δ, S) learning policy and proves cumulative regret of order O(√T log T), tight up to a logarithmic factor.",
+      "boundary": "The model is single-product and online. It does not provide an offline estimator for capped base-stock policies in positive-lead-time lost-sales systems.",
+      "url": "https://doi.org/10.1287/mnsc.2020.3799"
+    },
+    {
       "year": 2023,
       "dataRegime": "Offline censored transactions",
       "policyBenchmark": "Finite-inventory pricing policies",
@@ -161,6 +204,15 @@
       "result": "Uses a UCB framework with a Kaplan–Meier estimator; the regret is tight up to a logarithmic factor in the horizon.",
       "boundary": "For capped base-stock learning, Remark 5 reports an upper bound with exponential dependence on lead time and attributes it to policy switching. The paper states that this dependence seems inevitable for the capped base-stock system.",
       "url": "https://doi.org/10.1287/opre.2022.0273"
+    },
+    {
+      "year": 2024,
+      "dataRegime": "Offline uncensored demand samples",
+      "policyBenchmark": "Data-driven (s, S) policy",
+      "paper": "Zhang, Ye, and Haskell",
+      "result": "Accounts for recursive estimation-error propagation and establishes influence-function representations and joint asymptotic normality for the estimated policy parameters.",
+      "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems.",
+      "url": "https://doi.org/10.1287/opre.2020.0568"
     },
     {
       "year": 2026,
@@ -198,5 +250,24 @@
       "boundary": "The stated asymptotic regimes are penalty and demand population size; the paper does not report long-lead-time asymptotic optimality.",
       "url": "https://ssrn.com/abstract=4638265"
     }
-  ]
+  ],
+  "bibliometrics": {
+    "database": "Web of Science Core Collection",
+    "exportDate": "2026-01-10",
+    "timespan": "2021–2025",
+    "journalScope": "Management Science; Operations Research; Manufacturing & Service Operations Management; Production and Operations Management; INFORMS Journal on Computing; Journal of Operations Management",
+    "totalRecords": 6105,
+    "inventoryScopeRecords": 640,
+    "citedReferencesIncluded": false,
+    "categoriesOverlap": true,
+    "series": [
+      { "category": "Lost sales", "values": { "2021": 6, "2022": 13, "2023": 18, "2024": 11, "2025": 14 } },
+      { "category": "Data-driven inventory", "values": { "2021": 10, "2022": 31, "2023": 24, "2024": 18, "2025": 47 } },
+      { "category": "Nonstationarity", "values": { "2021": 1, "2022": 4, "2023": 6, "2024": 2, "2025": 6 } },
+      { "category": "Censored demand", "values": { "2021": 2, "2022": 3, "2023": 4, "2024": 5, "2025": 5 } },
+      { "category": "Perishability", "values": { "2021": 2, "2022": 8, "2023": 10, "2024": 3, "2025": 9 } },
+      { "category": "Supply uncertainty", "values": { "2021": 2, "2022": 7, "2023": 4, "2024": 7, "2025": 10 } }
+    ],
+    "note": "Counts are keyword-screening statistics for literature discovery, not counts of open problems. Categories overlap and therefore must not be added. The export contains no cited-reference data and cannot support a citation-network analysis."
+  }
 }
