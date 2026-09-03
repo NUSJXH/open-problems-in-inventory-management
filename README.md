@@ -21,7 +21,8 @@ The site does not publish editor-created research ideas as open problems. Each r
 - Six status updates.
 - A twelve-paper descriptive path from offline sample-based inventory to fixed-cost learning, capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
 - Reproducible, overlapping keyword-screening counts from 6,105 Web of Science Core Collection records across six journals and 2021–2025. The licensed export is summarized rather than redistributed; its cited-reference field is empty, so the release does not claim a citation-network analysis.
-- A public OpenAlex cross-check covering 20,854 records from the same six journals over 2000–2026; its 2,174 inventory-scope records and 59 open-language candidates are discovery inputs rather than open-problem counts.
+- A separate, downloadable OpenAlex historical table covering 20,854 records from the same six journals over 2000–2026, with 27 annual rows and explicit incomplete-year labeling. Its 2,174 broad inventory-scope records and 59 open-language candidates are discovery inputs rather than open-problem counts. Its broader definitions are not pooled with the WoS series.
+- A long-run licensed WoS acquisition has archived 5,000 of 16,819 query results locally. This incomplete relevance-ordered prefix is not used for trend or citation-network claims.
 - A complete audit of the 159-record Open Problems in OR snapshot. The specified filtered page contains no inventory-management record; its one inventory-adjacent reusable-resource item is recorded as resolved in a subsequent working paper rather than copied into the active list.
 - A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 
@@ -61,6 +62,14 @@ python scripts/build-wos-trends.py path\to\wos-export.xlsx path\to\aggregate-out
 ```
 
 The script requires `pandas` and `openpyxl` and writes no row-level bibliographic data.
+
+To rebuild the public historical aggregate from the separately archived OpenAlex snapshot:
+
+```powershell
+node scripts/build-openalex-trends.mjs path\to\core6_2000_2026
+```
+
+The input directory must contain `manifest.json` and the reproducible `derived/screen_manifest.json` and `derived/topic_trends_2000_2026.json` outputs. The public JSON retains exact screening patterns and annual metadata-coverage counts, but no article-level records.
 
 ## License
 

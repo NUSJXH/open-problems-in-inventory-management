@@ -10,8 +10,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" />
     <title>Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.2.0" />
-    <script defer src="assets/app.js?v=2.2.0"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=2.3.0" />
+    <script defer src="assets/app.js?v=2.3.0"></script>
   </head>
   <body>
     <a class="skip-link" href="#paper-list">Skip to the paper list</a>
@@ -83,10 +83,11 @@
 
       <section class="shell trends-section" aria-labelledby="trends-title">
         <div class="section-intro">
-          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals, 2021–2025</h2></div>
+          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals</h2></div>
           <p>Keyword-screening counts support literature discovery; they are not counts of open problems.</p>
         </div>
-        <div class="trend-summary" aria-label="Bibliometric source summary">
+        <h3 class="trend-subheading">Web of Science, 2021–2025</h3>
+        <div class="trend-summary" aria-label="Web of Science source summary">
           <div><strong id="trend-records">6,105</strong><span>records in the export</span></div>
           <div><strong id="trend-inventory">640</strong><span>inventory-scope records</span></div>
           <div><strong>6</strong><span>journal titles</span></div>
@@ -95,6 +96,20 @@
         <div id="trend-table" class="trend-table-wrap"></div>
         <p id="trend-note" class="trend-note"></p>
         <a class="method-link" href="methodology.html#wos-protocol">Definitions, provenance, and reproducibility notes →</a>
+        <h3 class="trend-subheading">OpenAlex, 2000–2026</h3>
+        <p class="trend-note">A separate public-data screen with broader topic definitions. These counts are not pooled with the Web of Science series.</p>
+        <div class="trend-summary" aria-label="OpenAlex source summary">
+          <div><strong id="openalex-records">20,854</strong><span>records in the public snapshot</span></div>
+          <div><strong id="openalex-inventory">2,174</strong><span>broad inventory-scope records</span></div>
+          <div><strong id="openalex-abstracts">17,823</strong><span>records with available abstracts</span></div>
+          <div><strong>2026</strong><span>incomplete indexing year</span></div>
+        </div>
+        <details class="historical-screen">
+          <summary>Annual keyword counts, 2000–2026</summary>
+          <div id="openalex-trend-table" class="trend-table-wrap"></div>
+        </details>
+        <p id="openalex-note" class="trend-note"></p>
+        <a class="method-link" href="data/openalex-trends.json" download>Download aggregate data and screening definitions →</a>
       </section>
     </main>
 

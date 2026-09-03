@@ -1,0 +1,447 @@
+{
+  "database": "OpenAlex",
+  "retrievedAt": "2026-09-03T17:48:48.178Z",
+  "asOfDate": "2026-09-04",
+  "timespan": "2000–2026",
+  "incompleteYear": 2026,
+  "sourceManifestSha256": "694efbb8e2aaa8bef995db2a3f721a05dbe9a3835e325c35e46daf94b01ba628",
+  "sourceField": "primary_location.source.id",
+  "journalScope": [
+    "Management Science",
+    "Operations Research",
+    "Manufacturing & Service Operations Management",
+    "Production and Operations Management",
+    "INFORMS Journal on Computing",
+    "Journal of Operations Management"
+  ],
+  "totalRecords": 20854,
+  "recordsWithAbstract": 17823,
+  "inventoryScopeRecords": 2174,
+  "openLanguageCandidates": 59,
+  "categories": [
+    "Lost sales / stockouts",
+    "Data-driven / robust inventory",
+    "Nonstationarity",
+    "Censored demand",
+    "Perishability",
+    "Supply uncertainty"
+  ],
+  "years": [
+    {
+      "year": 2000,
+      "incomplete": false,
+      "totalRecords": 401,
+      "recordsWithAbstract": 325,
+      "inventoryScopeRecords": 59,
+      "values": {
+        "Lost sales / stockouts": 10,
+        "Data-driven / robust inventory": 1,
+        "Nonstationarity": 0,
+        "Censored demand": 1,
+        "Perishability": 9,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2001,
+      "incomplete": false,
+      "totalRecords": 458,
+      "recordsWithAbstract": 343,
+      "inventoryScopeRecords": 58,
+      "values": {
+        "Lost sales / stockouts": 12,
+        "Data-driven / robust inventory": 2,
+        "Nonstationarity": 3,
+        "Censored demand": 2,
+        "Perishability": 2,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2002,
+      "incomplete": false,
+      "totalRecords": 493,
+      "recordsWithAbstract": 350,
+      "inventoryScopeRecords": 52,
+      "values": {
+        "Lost sales / stockouts": 9,
+        "Data-driven / robust inventory": 4,
+        "Nonstationarity": 2,
+        "Censored demand": 1,
+        "Perishability": 0,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2003,
+      "incomplete": false,
+      "totalRecords": 398,
+      "recordsWithAbstract": 283,
+      "inventoryScopeRecords": 43,
+      "values": {
+        "Lost sales / stockouts": 12,
+        "Data-driven / robust inventory": 0,
+        "Nonstationarity": 0,
+        "Censored demand": 0,
+        "Perishability": 2,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2004,
+      "incomplete": false,
+      "totalRecords": 534,
+      "recordsWithAbstract": 390,
+      "inventoryScopeRecords": 59,
+      "values": {
+        "Lost sales / stockouts": 12,
+        "Data-driven / robust inventory": 2,
+        "Nonstationarity": 2,
+        "Censored demand": 0,
+        "Perishability": 3,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2005,
+      "incomplete": false,
+      "totalRecords": 528,
+      "recordsWithAbstract": 380,
+      "inventoryScopeRecords": 55,
+      "values": {
+        "Lost sales / stockouts": 2,
+        "Data-driven / robust inventory": 3,
+        "Nonstationarity": 0,
+        "Censored demand": 1,
+        "Perishability": 1,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2006,
+      "incomplete": false,
+      "totalRecords": 542,
+      "recordsWithAbstract": 408,
+      "inventoryScopeRecords": 63,
+      "values": {
+        "Lost sales / stockouts": 9,
+        "Data-driven / robust inventory": 2,
+        "Nonstationarity": 3,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2007,
+      "incomplete": false,
+      "totalRecords": 629,
+      "recordsWithAbstract": 527,
+      "inventoryScopeRecords": 77,
+      "values": {
+        "Lost sales / stockouts": 8,
+        "Data-driven / robust inventory": 3,
+        "Nonstationarity": 0,
+        "Censored demand": 0,
+        "Perishability": 8,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2008,
+      "incomplete": false,
+      "totalRecords": 659,
+      "recordsWithAbstract": 516,
+      "inventoryScopeRecords": 97,
+      "values": {
+        "Lost sales / stockouts": 19,
+        "Data-driven / robust inventory": 4,
+        "Nonstationarity": 5,
+        "Censored demand": 2,
+        "Perishability": 10,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2009,
+      "incomplete": false,
+      "totalRecords": 686,
+      "recordsWithAbstract": 498,
+      "inventoryScopeRecords": 88,
+      "values": {
+        "Lost sales / stockouts": 14,
+        "Data-driven / robust inventory": 10,
+        "Nonstationarity": 1,
+        "Censored demand": 2,
+        "Perishability": 9,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2010,
+      "incomplete": false,
+      "totalRecords": 588,
+      "recordsWithAbstract": 434,
+      "inventoryScopeRecords": 80,
+      "values": {
+        "Lost sales / stockouts": 14,
+        "Data-driven / robust inventory": 10,
+        "Nonstationarity": 2,
+        "Censored demand": 1,
+        "Perishability": 8,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2011,
+      "incomplete": false,
+      "totalRecords": 629,
+      "recordsWithAbstract": 503,
+      "inventoryScopeRecords": 85,
+      "values": {
+        "Lost sales / stockouts": 10,
+        "Data-driven / robust inventory": 16,
+        "Nonstationarity": 5,
+        "Censored demand": 3,
+        "Perishability": 6,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2012,
+      "incomplete": false,
+      "totalRecords": 646,
+      "recordsWithAbstract": 521,
+      "inventoryScopeRecords": 85,
+      "values": {
+        "Lost sales / stockouts": 14,
+        "Data-driven / robust inventory": 8,
+        "Nonstationarity": 1,
+        "Censored demand": 3,
+        "Perishability": 4,
+        "Supply uncertainty": 4
+      }
+    },
+    {
+      "year": 2013,
+      "incomplete": false,
+      "totalRecords": 708,
+      "recordsWithAbstract": 621,
+      "inventoryScopeRecords": 91,
+      "values": {
+        "Lost sales / stockouts": 15,
+        "Data-driven / robust inventory": 16,
+        "Nonstationarity": 1,
+        "Censored demand": 5,
+        "Perishability": 6,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2014,
+      "incomplete": false,
+      "totalRecords": 677,
+      "recordsWithAbstract": 595,
+      "inventoryScopeRecords": 91,
+      "values": {
+        "Lost sales / stockouts": 16,
+        "Data-driven / robust inventory": 11,
+        "Nonstationarity": 3,
+        "Censored demand": 3,
+        "Perishability": 12,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2015,
+      "incomplete": false,
+      "totalRecords": 738,
+      "recordsWithAbstract": 622,
+      "inventoryScopeRecords": 93,
+      "values": {
+        "Lost sales / stockouts": 21,
+        "Data-driven / robust inventory": 10,
+        "Nonstationarity": 3,
+        "Censored demand": 2,
+        "Perishability": 7,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2016,
+      "incomplete": false,
+      "totalRecords": 866,
+      "recordsWithAbstract": 730,
+      "inventoryScopeRecords": 90,
+      "values": {
+        "Lost sales / stockouts": 12,
+        "Data-driven / robust inventory": 11,
+        "Nonstationarity": 2,
+        "Censored demand": 3,
+        "Perishability": 4,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2017,
+      "incomplete": false,
+      "totalRecords": 775,
+      "recordsWithAbstract": 708,
+      "inventoryScopeRecords": 95,
+      "values": {
+        "Lost sales / stockouts": 12,
+        "Data-driven / robust inventory": 10,
+        "Nonstationarity": 0,
+        "Censored demand": 2,
+        "Perishability": 5,
+        "Supply uncertainty": 4
+      }
+    },
+    {
+      "year": 2018,
+      "incomplete": false,
+      "totalRecords": 637,
+      "recordsWithAbstract": 558,
+      "inventoryScopeRecords": 66,
+      "values": {
+        "Lost sales / stockouts": 13,
+        "Data-driven / robust inventory": 15,
+        "Nonstationarity": 0,
+        "Censored demand": 1,
+        "Perishability": 4,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2019,
+      "incomplete": false,
+      "totalRecords": 857,
+      "recordsWithAbstract": 773,
+      "inventoryScopeRecords": 84,
+      "values": {
+        "Lost sales / stockouts": 10,
+        "Data-driven / robust inventory": 14,
+        "Nonstationarity": 3,
+        "Censored demand": 3,
+        "Perishability": 5,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2020,
+      "incomplete": false,
+      "totalRecords": 1081,
+      "recordsWithAbstract": 965,
+      "inventoryScopeRecords": 89,
+      "values": {
+        "Lost sales / stockouts": 17,
+        "Data-driven / robust inventory": 21,
+        "Nonstationarity": 2,
+        "Censored demand": 7,
+        "Perishability": 5,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2021,
+      "incomplete": false,
+      "totalRecords": 1247,
+      "recordsWithAbstract": 1087,
+      "inventoryScopeRecords": 92,
+      "values": {
+        "Lost sales / stockouts": 10,
+        "Data-driven / robust inventory": 17,
+        "Nonstationarity": 2,
+        "Censored demand": 1,
+        "Perishability": 3,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2022,
+      "incomplete": false,
+      "totalRecords": 1361,
+      "recordsWithAbstract": 1248,
+      "inventoryScopeRecords": 119,
+      "values": {
+        "Lost sales / stockouts": 21,
+        "Data-driven / robust inventory": 28,
+        "Nonstationarity": 1,
+        "Censored demand": 6,
+        "Perishability": 11,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2023,
+      "incomplete": false,
+      "totalRecords": 1194,
+      "recordsWithAbstract": 1106,
+      "inventoryScopeRecords": 91,
+      "values": {
+        "Lost sales / stockouts": 9,
+        "Data-driven / robust inventory": 20,
+        "Nonstationarity": 4,
+        "Censored demand": 2,
+        "Perishability": 8,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2024,
+      "incomplete": false,
+      "totalRecords": 1323,
+      "recordsWithAbstract": 1239,
+      "inventoryScopeRecords": 104,
+      "values": {
+        "Lost sales / stockouts": 22,
+        "Data-driven / robust inventory": 36,
+        "Nonstationarity": 3,
+        "Censored demand": 6,
+        "Perishability": 8,
+        "Supply uncertainty": 5
+      }
+    },
+    {
+      "year": 2025,
+      "incomplete": false,
+      "totalRecords": 1325,
+      "recordsWithAbstract": 1260,
+      "inventoryScopeRecords": 91,
+      "values": {
+        "Lost sales / stockouts": 10,
+        "Data-driven / robust inventory": 24,
+        "Nonstationarity": 4,
+        "Censored demand": 3,
+        "Perishability": 7,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2026,
+      "incomplete": true,
+      "totalRecords": 874,
+      "recordsWithAbstract": 833,
+      "inventoryScopeRecords": 77,
+      "values": {
+        "Lost sales / stockouts": 17,
+        "Data-driven / robust inventory": 29,
+        "Nonstationarity": 2,
+        "Censored demand": 2,
+        "Perishability": 6,
+        "Supply uncertainty": 0
+      }
+    }
+  ],
+  "inventoryPattern": "\\b(inventor(?:y|ies)|replenish(?:ment|ing|ed)?|newsvendor|base[- ]stock|order[- ]up[- ]to|lost[- ]sales?|stock[- ]?outs?|safety stock|backorders?|spare[- ]parts?|perishab(?:le|ility)|shelf[- ]life|deteriorating items?)\\b",
+  "categoryPatterns": {
+    "Lost sales / stockouts": "\\b(lost[- ]sales?|stock[- ]?outs?)\\b",
+    "Data-driven / robust inventory": "\\b(data[- ]driven|learning|machine learning|offline data|historical data|sample[- ]based|empirical risk|distributionally robust|robust optimization)\\b",
+    "Nonstationarity": "\\b(non[- ]?stationar\\w*|time[- ]varying demand|demand drift|regime changes?)\\b",
+    "Censored demand": "\\b(censor\\w*|lost[- ]sales data|sales observations?)\\b",
+    "Perishability": "\\b(perish\\w*|shelf[- ]life|deteriorat\\w*|outdat\\w*|expir\\w*)\\b",
+    "Supply uncertainty": "\\b(random yield|yield uncertainty|supply uncertainty|supply disruption|unreliable suppl\\w*|lead[- ]time uncertainty)\\b"
+  },
+  "categoriesOverlap": true,
+  "note": "Counts use titles, available abstracts, and OpenAlex keywords. The broad discovery screen differs from the WoS screen and should not be pooled with it. Topic categories overlap. Abstract availability and database coverage vary by year. The 2026 column is an incomplete indexing-year snapshot and can include papers assigned to later 2026 issues; it is not a full-year total or a forecast. Keyword hits and open-language candidates do not establish that a problem remains open."
+}

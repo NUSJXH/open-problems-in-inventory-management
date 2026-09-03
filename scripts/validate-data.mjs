@@ -59,6 +59,28 @@ if (bibliometrics.inventoryScopeRecords > bibliometrics.totalRecords) {
   throw new Error("Inventory-scope records cannot exceed total records.");
 }
 
+const publicTrends = JSON.parse(await fs.readFile(path.join(rootDir, "data", "openalex-trends.json"), "utf8"));
+if (/\p{Script=Han}/u.test(JSON.stringify(publicTrends))) throw new Error("Public trend data contain Han characters.");
+if (publicTrends.years.length !== 27 || publicTrends.incompleteYear !== 2026) throw new Error("Unexpected historical coverage.");
+let allCount = 0;
+let inventoryCount = 0;
+let abstractCount = 0;
+for (const [index, row] of publicTrends.years.entries()) {
+  if (row.year !== 2000 + index) throw new Error("Historical years must be contiguous and ordered.");
+  if (row.incomplete !== (row.year === 2026)) throw new Error("The 2026 row must be marked incomplete.");
+  for (const count of [row.totalRecords, row.inventoryScopeRecords, row.recordsWithAbstract, ...Object.values(row.values)]) {
+    if (!Number.isInteger(count) || count < 0) throw new Error("Invalid historical count.");
+  }
+  if (row.inventoryScopeRecords > row.totalRecords || row.recordsWithAbstract > row.totalRecords) throw new Error("Historical subset exceeds its denominator.");
+  for (const category of publicTrends.categories) {
+    if (row.values[category] === undefined || row.values[category] > row.inventoryScopeRecords) throw new Error(`Invalid count for ${category}.`);
+  }
+  allCount += row.totalRecords;
+  inventoryCount += row.inventoryScopeRecords;
+  abstractCount += row.recordsWithAbstract;
+}
+if (allCount !== publicTrends.totalRecords || inventoryCount !== publicTrends.inventoryScopeRecords || abstractCount !== publicTrends.recordsWithAbstract) throw new Error("Historical annual sums do not match the source totals.");
+
 const urls = [];
 for (const item of registry.openItems) urls.push(item.source.url);
 for (const item of registry.statusUpdates) urls.push(item.url);
@@ -68,3 +90,4 @@ for (const url of urls) {
 }
 
 console.log(`Validated ${registry.openItems.length} source-stated items, ${registry.statusUpdates.length} status updates, ${registry.literaturePath.length} literature-path entries, and ${registry.bibliometrics.series.length} bibliometric series.`);
+console.log(`Validated ${publicTrends.years.length} OpenAlex annual rows covering ${allCount} source records.`);

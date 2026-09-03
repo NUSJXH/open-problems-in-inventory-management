@@ -6,7 +6,7 @@
     <meta name="description" content="Source and bibliometric protocols for Open Problems in Inventory Management." />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/methodology.html" />
     <title>Methodology · Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.2.0" />
+    <link rel="stylesheet" href="assets/styles.css?v=2.3.0" />
   </head>
   <body>
     <a class="skip-link" href="#methodology">Skip to methodology</a>
@@ -48,7 +48,7 @@
       <section id="wos-protocol" class="shell method-grid" aria-labelledby="wos-title">
         <div class="method-heading"><p class="eyebrow">Bibliometric protocol</p><h2 id="wos-title">Web of Science trend construction</h2></div>
         <div class="prose-block">
-          <p>The published trend table uses a Web of Science Core Collection export dated 10 January 2026. It contains 6,105 records published from 2021 through 2025 in <em>Management Science</em>, <em>Operations Research</em>, <em>Manufacturing &amp; Service Operations Management</em>, <em>Production and Operations Management</em>, <em>INFORMS Journal on Computing</em>, and <em>Journal of Operations Management</em>. A conservative title, abstract, and keyword screen identifies 640 inventory-scope records.</p>
+          <p>The recent-year trend table uses a Web of Science Core Collection export dated 10 January 2026. It contains 6,105 records published from 2021 through 2025 in <em>Management Science</em>, <em>Operations Research</em>, <em>Manufacturing &amp; Service Operations Management</em>, <em>Production and Operations Management</em>, <em>INFORMS Journal on Computing</em>, and <em>Journal of Operations Management</em>. A conservative title, abstract, and keyword screen identifies 640 inventory-scope records.</p>
           <p>The archived export includes accession numbers, publication years, titles, abstracts, keywords, source titles, document types, and DOIs. Its cited-reference field is empty. The current release therefore reports descriptive keyword counts only; it does not report a citation network or forward-citation analysis.</p>
           <div class="query-table-wrap">
             <table class="query-table">
@@ -65,7 +65,17 @@
           </div>
           <p>Inventory scope requires at least one of the following term families: inventory, stockout, lost sales, replenishment, newsvendor, base stock, order-up-to, or safety stock. Category definitions are applied to titles, abstracts, author keywords, and Keywords Plus. Counts overlap and must not be added. Every open-language candidate is then checked in full text: a keyword match is never sufficient for publication as an open problem.</p>
           <p><strong>Reproducibility record.</strong> The source workbook is <code>core6_records_2021_2025.xlsx</code> (SHA-256: <code>E50FA1383CA9BC4C17551D2E729A4B309C22A724B84359D58064DB448B6C1CFB</code>). The public repository stores only aggregate counts and editorial records, not licensed row-level Web of Science data.</p>
-          <p><strong>Public cross-check.</strong> A separate OpenAlex snapshot retrieves all 20,854 works assigned to the same six journals as their primary source from 2000 through 2026. A disclosed title-abstract-keyword screen identifies 2,174 inventory-scope records and 59 records whose abstracts contain open-language phrases. These counts are discovery inputs, not open-problem counts; every candidate remains subject to full-text and subsequent-literature verification.</p>
+          <p><strong>Long-run WoS acquisition.</strong> A separate 2000–2026 query returns 16,819 records. As of 4 September 2026, 5,000 records have been archived in ten standard exports with the Full Record and Cited References option. This relevance-ordered prefix is incomplete and is not used to estimate historical trends or citation networks. The original 2021–2025 aggregate table remains a separate snapshot.</p>
+        </div>
+      </section>
+
+      <section id="openalex-protocol" class="shell method-grid" aria-labelledby="openalex-title">
+        <div class="method-heading"><p class="eyebrow">Public-data protocol</p><h2 id="openalex-title">OpenAlex historical screen</h2></div>
+        <div class="prose-block">
+          <p>A separate OpenAlex snapshot retrieves 20,854 works assigned to the same six journals through <code>primary_location.source.id</code>, with publication dates in 2000–2026. Of these records, 17,823 have an available abstract. The broad title, abstract, and OpenAlex-keyword screen identifies 2,174 inventory-scope records and 59 records whose abstracts contain open-language phrases. Annual counts are reported separately from the WoS series.</p>
+          <p>The broad inventory screen additionally includes backorders, spare parts, perishability, shelf life, and deteriorating items. The <em>Lost sales / stockouts</em> category includes both terms. The <em>Data-driven / robust inventory</em> category includes learning, historical or sample-based data, empirical risk, distributionally robust optimization, and robust optimization. The remaining categories screen nonstationarity, censoring, perishability, and supply uncertainty. Exact regular expressions, annual source denominators, and abstract-availability counts are included in the <a href="data/openalex-trends.json">public aggregate data</a>.</p>
+          <p>These categories overlap. The OpenAlex and WoS screens use different metadata fields and definitions; their levels must not be pooled or treated as interchangeable. Coverage and abstract availability vary by year. The 2026 row is an incomplete indexing-year snapshot and may include papers assigned to later 2026 issues; it is neither a full-year total nor a forecast.</p>
+          <p>Keyword counts describe the archived metadata, not the importance of a research stream or the number of unsolved problems. Open-language candidates require full-text and subsequent-literature verification before they can enter the paper list.</p>
         </div>
       </section>
 
