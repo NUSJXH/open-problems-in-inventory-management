@@ -10,8 +10,9 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" />
     <title>Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.3.0" />
-    <script defer src="assets/app.js?v=2.3.0"></script>
+    <link rel="stylesheet" href="assets/styles.css?v=2.4.0" />
+    <script defer src="assets/app.js?v=2.4.0"></script>
+    <script type="module" src="assets/trends.js?v=2.4.0"></script>
   </head>
   <body>
     <a class="skip-link" href="#paper-list">Skip to the paper list</a>
@@ -19,6 +20,7 @@
       <a class="brand" href="index.html">Open Problems in Inventory Management</a>
       <nav aria-label="Primary navigation">
         <a class="active" href="index.html">Paper list</a>
+        <a href="#research-trends">Research trends</a>
         <a href="#literature-path">Literature paths</a>
         <a href="methodology.html">Methodology</a>
         <a href="about.html">About</a>
@@ -43,10 +45,49 @@
       </section>
 
       <section class="shell summary-strip" aria-label="Registry summary">
-        <div><strong id="stat-open">7</strong><span>source-stated items</span></div>
+        <div><strong id="stat-open">8</strong><span>source-stated items</span></div>
         <div><strong id="stat-topics">5</strong><span>inventory streams</span></div>
         <div><strong id="stat-updates">6</strong><span>status updates</span></div>
         <div><strong id="stat-audit">2026-09-04</strong><span>audit through</span></div>
+      </section>
+
+      <section id="research-trends" class="shell trends-section" aria-labelledby="trends-title">
+        <div class="section-intro">
+          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals</h2></div>
+          <p>Keyword-screening counts support literature discovery; they are not counts of open problems.</p>
+        </div>
+        <div class="trend-controls" aria-label="Trend display controls">
+          <label>Source<select id="trend-source"><option value="wos">Web of Science</option><option value="openalex">OpenAlex · broader screen</option></select></label>
+          <label>Measure<select id="trend-measure"><option value="count">Number of records</option><option value="share">Share of records (%)</option></select></label>
+          <label>From<select id="trend-from" aria-label="First publication year"></select></label>
+          <label>To<select id="trend-to" aria-label="Last publication year"></select></label>
+        </div>
+        <p class="trend-note">2000–2025 is shown by default. Selecting 2026 includes an incomplete year, shown with dashed lines. Sources have different coverage and screening definitions; they are never combined.</p>
+        <p id="trend-state" class="trend-state" role="status">Loading the verified aggregate…</p>
+        <div class="trend-summary" aria-label="Summary for the selected years">
+          <div><strong id="trend-records">—</strong><span>source records in selected years</span></div>
+          <div><strong id="trend-inventory">—</strong><span>inventory keyword matches</span></div>
+          <div><strong id="trend-abstracts">—</strong><span>records with an abstract</span></div>
+          <div><strong id="trend-years">—</strong><span>selected publication years</span></div>
+        </div>
+        <figure class="chart-panel overview-panel">
+          <figcaption><h3>Inventory research over time</h3><p id="overview-unit">Annual inventory-scope records</p></figcaption>
+          <div id="overview-chart" class="chart-wrap"></div>
+        </figure>
+        <div class="chart-section-heading"><h3>Research topics</h3><p id="topic-unit">Annual keyword matches; panels use a common scale.</p></div>
+        <div id="topic-charts" class="topic-charts"></div>
+        <figure class="chart-panel">
+          <figcaption><h3>Topics by publication year</h3><p id="heatmap-unit">Darker cells indicate more matching records.</p></figcaption>
+          <div id="topic-heatmap" class="heatmap-wrap"></div>
+          <p class="chart-note">Topics overlap. A record may appear in more than one row. Hover or focus a cell for its count and denominator.</p>
+        </figure>
+        <details class="historical-screen">
+          <summary>Underlying counts and annual metadata coverage</summary>
+          <div id="trend-table" class="trend-table-wrap"></div>
+        </details>
+        <p id="trend-note" class="trend-note"></p>
+        <div class="data-links"><a class="method-link" href="methodology.html#wos-protocol">Methods and cohort reconciliation</a><a id="trend-download" class="method-link" href="data/wos-trends.json" download>Download aggregate JSON</a></div>
+        <div id="acquisition-summary" class="data-notice" aria-live="polite"></div>
       </section>
 
       <section id="paper-list" class="shell registry-section" aria-labelledby="paper-list-title">
@@ -81,42 +122,12 @@
         <div id="path-list" class="path-list"></div>
       </section>
 
-      <section class="shell trends-section" aria-labelledby="trends-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals</h2></div>
-          <p>Keyword-screening counts support literature discovery; they are not counts of open problems.</p>
-        </div>
-        <h3 class="trend-subheading">Web of Science, 2021–2025</h3>
-        <div class="trend-summary" aria-label="Web of Science source summary">
-          <div><strong id="trend-records">6,105</strong><span>records in the export</span></div>
-          <div><strong id="trend-inventory">640</strong><span>inventory-scope records</span></div>
-          <div><strong>6</strong><span>journal titles</span></div>
-          <div><strong>5</strong><span>complete publication years</span></div>
-        </div>
-        <div id="trend-table" class="trend-table-wrap"></div>
-        <p id="trend-note" class="trend-note"></p>
-        <a class="method-link" href="methodology.html#wos-protocol">Definitions, provenance, and reproducibility notes →</a>
-        <h3 class="trend-subheading">OpenAlex, 2000–2026</h3>
-        <p class="trend-note">A separate public-data screen with broader topic definitions. These counts are not pooled with the Web of Science series.</p>
-        <div class="trend-summary" aria-label="OpenAlex source summary">
-          <div><strong id="openalex-records">20,854</strong><span>records in the public snapshot</span></div>
-          <div><strong id="openalex-inventory">2,174</strong><span>broad inventory-scope records</span></div>
-          <div><strong id="openalex-abstracts">17,823</strong><span>records with available abstracts</span></div>
-          <div><strong>2026</strong><span>incomplete indexing year</span></div>
-        </div>
-        <details class="historical-screen">
-          <summary>Annual keyword counts, 2000–2026</summary>
-          <div id="openalex-trend-table" class="trend-table-wrap"></div>
-        </details>
-        <p id="openalex-note" class="trend-note"></p>
-        <a class="method-link" href="data/openalex-trends.json" download>Download aggregate data and screening definitions →</a>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div><strong>Open Problems in Inventory Management</strong><p>Maintained by Xianghua Jiang and Xiting Gong.</p></div>
-        <div><span>Data version</span><strong id="footer-version">2026-09-04</strong></div>
+        <div><span>Data version</span><strong id="footer-version">2.4.0 · 2026-09-04</strong></div>
       </div>
     </footer>
   </body>

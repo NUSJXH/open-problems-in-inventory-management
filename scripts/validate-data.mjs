@@ -46,7 +46,7 @@ for (const field of ["database", "exportDate", "timespan", "journalScope", "tota
 if (!Array.isArray(bibliometrics.series) || bibliometrics.series.length === 0) {
   throw new Error("Bibliometrics series must be a nonempty array.");
 }
-const trendYears = ["2021", "2022", "2023", "2024", "2025"];
+const trendYears = Array.from({length:27},(_,i)=>String(2000+i));
 for (const series of bibliometrics.series) {
   if (!series.category || !series.values) throw new Error("A bibliometric series is missing its category or values.");
   for (const year of trendYears) {
@@ -91,3 +91,29 @@ for (const url of urls) {
 
 console.log(`Validated ${registry.openItems.length} source-stated items, ${registry.statusUpdates.length} status updates, ${registry.literaturePath.length} literature-path entries, and ${registry.bibliometrics.series.length} bibliometric series.`);
 console.log(`Validated ${publicTrends.years.length} OpenAlex annual rows covering ${allCount} source records.`);
+
+const wos=JSON.parse(await fs.readFile(path.join(rootDir,'data/wos-trends.json'),'utf8'));
+if(wos.totalRecords!==16819||wos.inventoryScopeRecords!==2407||wos.years.length!==27)throw new Error('Unexpected verified WoS release');
+for(const [index,row] of wos.years.entries()){
+  if(row.year!==2000+index||row.incomplete!==(row.year===2026))throw new Error('WoS year ordering/partial flag');
+  for(const field of ['totalRecords','inventoryScopeRecords','recordsWithAbstract','recordsWithAuthorKeywords','recordsWithKeywordsPlus','recordsWithCitedReferences','citedReferenceEntries']){
+    if(!Number.isInteger(row[field])||row[field]<0)throw new Error(`Invalid WoS ${field}`);
+    if(field!=='citedReferenceEntries'&&row[field]>row.totalRecords)throw new Error(`WoS denominator violation: ${field}`);
+  }
+  for(const category of wos.categories){
+    if(!Number.isInteger(row.values[category])||row.values[category]<0||row.values[category]>row.inventoryScopeRecords)throw new Error('Invalid WoS topic count');
+    if(bibliometrics.series.find(s=>s.category===category)?.values[row.year]!==row.values[category])throw new Error('Registry and chart data disagree');
+  }
+}
+for(const field of ['totalRecords','inventoryScopeRecords','recordsWithAbstract','recordsWithCitedReferences','citedReferenceEntries'])if(wos.years.reduce((s,r)=>s+r[field],0)!==wos[field])throw new Error(`WoS aggregate identity: ${field}`);
+if(bibliometrics.totalRecords!==wos.totalRecords||bibliometrics.inventoryScopeRecords!==wos.inventoryScopeRecords)throw new Error('Stale registry totals');
+const c=wos.cohortComparison;
+if(c.commonRecords+c.oldOnlyRecords!==c.oldRecords||c.commonRecords+c.newOnlyRecords!==c.newRecords||c.oldOnlyFoundInOtherYears+c.oldOnlyAbsentFromLongRun!==c.oldOnlyRecords)throw new Error('Cohort reconciliation identity');
+const supplementary=JSON.parse(await fs.readFile(path.join(rootDir,'data/acquisition-summary.json'),'utf8'));
+if(supplementary.inventoryKeywordMatches>supplementary.uniqueRecords||supplementary.pendingQueries!==13)throw new Error('Invalid acquisition summary');
+for(const file of await fs.readdir(path.join(rootDir,'data'))){
+  if(!file.endsWith('.json'))continue;
+  const text=await fs.readFile(path.join(rootDir,'data',file),'utf8');
+  if(/\p{Script=Han}/u.test(text)||/WOS:\d{10,}/.test(text))throw new Error(`Non-English or row-level WoS data in ${file}`);
+}
+console.log(`Validated ${wos.totalRecords} WoS records, ${wos.inventoryScopeRecords} inventory matches, and cohort reconciliation.`);

@@ -1,0 +1,135 @@
+{
+  "asOfDate": "2026-09-04",
+  "provider": "OpenAlex",
+  "uniqueRecords": 14824,
+  "inventoryKeywordMatches": 6925,
+  "groups": [
+    {
+      "kind": "supplementary-journal",
+      "label": "Supplementary theory journals (including predecessor title)",
+      "queries": 5,
+      "plannedQueries": 5,
+      "complete": true,
+      "uniqueRecords": 2822,
+      "inventoryKeywordMatches": 1628
+    },
+    {
+      "kind": "all-venue-topic-search",
+      "label": "Cross-journal topic discovery",
+      "queries": 1,
+      "plannedQueries": 6,
+      "complete": false,
+      "uniqueRecords": 12024,
+      "inventoryKeywordMatches": 5323
+    },
+    {
+      "kind": "forward-citations",
+      "label": "Forward citations to anchor papers",
+      "queries": 4,
+      "plannedQueries": 12,
+      "complete": false,
+      "uniqueRecords": 330,
+      "inventoryKeywordMatches": 254
+    }
+  ],
+  "completedQueries": 10,
+  "pendingQueries": 13,
+  "queries": [
+    {
+      "id": "journal_mor",
+      "label": "Mathematics of Operations Research",
+      "kind": "supplementary-journal",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31,primary_location.source.id:S55826652",
+      "search": "(inventory OR inventories OR replenishment OR newsvendor OR \"lost sales\" OR \"base stock\" OR stockout)",
+      "records": 82,
+      "status": "complete"
+    },
+    {
+      "id": "journal_nrl",
+      "label": "Naval Research Logistics",
+      "kind": "supplementary-journal",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31,primary_location.source.id:S182666042",
+      "search": "(inventory OR inventories OR replenishment OR newsvendor OR \"lost sales\" OR \"base stock\" OR stockout)",
+      "records": 311,
+      "status": "complete"
+    },
+    {
+      "id": "journal_ejor",
+      "label": "European Journal of Operational Research",
+      "kind": "supplementary-journal",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31,primary_location.source.id:S103321696",
+      "search": "(inventory OR inventories OR replenishment OR newsvendor OR \"lost sales\" OR \"base stock\" OR stockout)",
+      "records": 1995,
+      "status": "complete"
+    },
+    {
+      "id": "journal_iise",
+      "label": "IISE Transactions",
+      "kind": "supplementary-journal",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31,primary_location.source.id:S4210225672",
+      "search": "(inventory OR inventories OR replenishment OR newsvendor OR \"lost sales\" OR \"base stock\" OR stockout)",
+      "records": 118,
+      "status": "complete"
+    },
+    {
+      "id": "journal_iie_legacy",
+      "label": "IIE Transactions (predecessor title)",
+      "kind": "supplementary-journal",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31,primary_location.source.id:S63835026",
+      "search": "(inventory OR inventories OR replenishment OR newsvendor OR \"lost sales\" OR \"base stock\" OR stockout)",
+      "records": 316,
+      "status": "complete"
+    },
+    {
+      "id": "topic_lost_sales",
+      "label": "Lost sales",
+      "kind": "all-venue-topic-search",
+      "filter": "from_publication_date:2000-01-01,to_publication_date:2026-12-31",
+      "search": "\"lost sales\"",
+      "records": 12024,
+      "status": "complete"
+    },
+    {
+      "id": "citations_1",
+      "label": "Managing Multitier Inventory Networks with Expediting Under Normal and Disrupted Modes",
+      "kind": "forward-citations",
+      "filter": "cites:W7140364621",
+      "search": null,
+      "records": 0,
+      "status": "complete",
+      "anchorDoi": "https://doi.org/10.1287/msom.2023.0249"
+    },
+    {
+      "id": "citations_2",
+      "label": "A survey of stochastic inventory models with fixed costs: Optimality of ( s , S ) and ( s , S )‐type policies—Discrete‐time case",
+      "kind": "forward-citations",
+      "filter": "cites:W4293279788",
+      "search": null,
+      "records": 35,
+      "status": "complete",
+      "anchorDoi": "https://doi.org/10.1111/poms.13820"
+    },
+    {
+      "id": "citations_3",
+      "label": "TECHNICAL NOTE—Exact Analysis of a Lost Sales Model Under Stuttering Poisson Demand",
+      "kind": "forward-citations",
+      "filter": "cites:W2114020259",
+      "search": null,
+      "records": 18,
+      "status": "complete",
+      "anchorDoi": "https://doi.org/10.1287/opre.1100.0872"
+    },
+    {
+      "id": "citations_4",
+      "label": "Provably Near-Optimal Sampling-Based Policies for Stochastic Inventory Control Models",
+      "kind": "forward-citations",
+      "filter": "cites:W2090343757",
+      "search": null,
+      "records": 281,
+      "status": "complete",
+      "anchorDoi": "https://doi.org/10.1287/moor.1070.0272"
+    }
+  ],
+  "remainingEvidence": "Remaining: five cross-journal topic searches (one partial), eight further anchor citation searches, preprint citation searches, and full-text status verification. OpenAlex requested a long backoff. No missing query is counted as zero. Keyword or citation matches do not establish an open problem.",
+  "note": "Counts within groups are deduplicated by OpenAlex ID. Groups overlap and must not be added. Broad search can match full text; the additional local inventory screen uses only titles, available abstracts, and OpenAlex keywords. These are separate from WoS counts and are not publication-quality full-text classifications."
+}

@@ -1,4 +1,4 @@
-const registryUrl = "data/registry.json?v=2.3.0";
+const registryUrl = "data/registry.json?v=2.4.0";
 
 const openList = document.querySelector("#open-list");
 const statusList = document.querySelector("#status-list");
@@ -7,8 +7,6 @@ const resultCount = document.querySelector("#result-count");
 const topicFilters = document.querySelector("#topic-filters");
 const searchInput = document.querySelector("#search");
 const emptyState = document.querySelector("#empty-state");
-const trendTable = document.querySelector("#trend-table");
-const trendNote = document.querySelector("#trend-note");
 
 const state = { query: "", topic: "All topics" };
 let registry = null;
@@ -136,79 +134,12 @@ function renderLiteraturePath() {
   });
 }
 
-function renderBibliometrics() {
-  const data = registry.bibliometrics;
-  const years = ["2021", "2022", "2023", "2024", "2025"];
-  const table = el("table", "trend-table");
-  const caption = el(
-    "caption",
-    "sr-only",
-    `Overlapping inventory-topic counts from ${data.database}, ${data.timespan}.`,
-  );
-  const head = document.createElement("thead");
-  const headRow = document.createElement("tr");
-  headRow.append(el("th", "", "Topic"));
-  years.forEach((year) => headRow.append(el("th", "trend-number", year)));
-  head.append(headRow);
-
-  const body = document.createElement("tbody");
-  data.series.forEach((series) => {
-    const row = document.createElement("tr");
-    row.append(el("th", "", series.category));
-    years.forEach((year) => row.append(el("td", "trend-number", series.values[year])));
-    body.append(row);
-  });
-
-  table.append(caption, head, body);
-  trendTable.replaceChildren(table);
-  trendNote.textContent = `${data.database}; export dated ${data.exportDate}. ${data.note}`;
-  document.querySelector("#trend-records").textContent = data.totalRecords.toLocaleString("en-US");
-  document.querySelector("#trend-inventory").textContent = data.inventoryScopeRecords.toLocaleString("en-US");
-}
-
-async function renderOpenAlexTrends() {
-  const target = document.querySelector("#openalex-trend-table");
-  try {
-    const response = await fetch("data/openalex-trends.json?v=2.3.0");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const data = await response.json();
-    const table = el("table", "trend-table historical-table");
-    const caption = el("caption", "sr-only", "Annual overlapping keyword counts from the OpenAlex six-journal snapshot. 2026 is incomplete.");
-    const head = document.createElement("thead");
-    const headRow = document.createElement("tr");
-    ["Year", "Inventory scope", ...data.categories].forEach((label) => {
-      const cell = el("th", "trend-number", label);
-      cell.scope = "col";
-      headRow.append(cell);
-    });
-    head.append(headRow);
-    const body = document.createElement("tbody");
-    data.years.forEach((item) => {
-      const row = el("tr", item.incomplete ? "incomplete-year" : "");
-      const year = el("th", "", `${item.year}${item.incomplete ? " (partial)" : ""}`);
-      year.scope = "row";
-      row.append(year, el("td", "trend-number", item.inventoryScopeRecords));
-      data.categories.forEach((category) => row.append(el("td", "trend-number", item.values[category])));
-      body.append(row);
-    });
-    table.append(caption, head, body);
-    target.replaceChildren(table);
-    document.querySelector("#openalex-records").textContent = data.totalRecords.toLocaleString("en-US");
-    document.querySelector("#openalex-inventory").textContent = data.inventoryScopeRecords.toLocaleString("en-US");
-    document.querySelector("#openalex-abstracts").textContent = data.recordsWithAbstract.toLocaleString("en-US");
-    document.querySelector("#openalex-note").textContent = `OpenAlex snapshot as of ${data.asOfDate}. ${data.note}`;
-  } catch (error) {
-    target.replaceChildren(el("p", "load-error", "The historical aggregate table could not be loaded. Please reload the page."));
-    console.error(error);
-  }
-}
-
 function updateStats() {
   document.querySelector("#stat-open").textContent = registry.openItems.length;
   document.querySelector("#stat-topics").textContent = new Set(registry.openItems.map((item) => item.topic)).size;
   document.querySelector("#stat-updates").textContent = registry.statusUpdates.length;
   document.querySelector("#stat-audit").textContent = registry.auditThrough;
-  document.querySelector("#footer-version").textContent = registry.dataVersion;
+  document.querySelector("#footer-version").textContent = `${registry.releaseVersion} · ${registry.dataVersion}`;
 }
 
 async function init() {
@@ -221,8 +152,6 @@ async function init() {
     renderOpenItems();
     renderStatusUpdates();
     renderLiteraturePath();
-    renderBibliometrics();
-    await renderOpenAlexTrends();
   } catch (error) {
     resultCount.textContent = "The registry could not be loaded.";
     openList.replaceChildren(el("p", "load-error", "Please reload the page or report the problem through the public issue tracker."));
@@ -232,7 +161,7 @@ async function init() {
 
 searchInput?.addEventListener("input", (event) => {
   state.query = event.target.value;
-  renderOpenItems();
+  if (registry) renderOpenItems();
 });
 
 init();

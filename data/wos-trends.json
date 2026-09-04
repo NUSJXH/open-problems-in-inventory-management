@@ -1,0 +1,680 @@
+{
+  "schemaVersion": "1.0",
+  "database": "Web of Science Core Collection",
+  "asOfDate": "2026-09-04",
+  "timespan": [
+    2000,
+    2026
+  ],
+  "incompleteYear": 2026,
+  "groupingField": "Exported PY",
+  "totalRecords": 16819,
+  "inventoryScopeRecords": 2407,
+  "recordsWithAbstract": 16297,
+  "recordsWithCitedReferences": 16556,
+  "citedReferenceEntries": 797846,
+  "referenceCountDiscrepancies": 537,
+  "categories": [
+    "Lost sales",
+    "Data-driven inventory",
+    "Nonstationarity",
+    "Censored demand",
+    "Perishability",
+    "Supply uncertainty"
+  ],
+  "categoriesOverlap": true,
+  "years": [
+    {
+      "year": 2000,
+      "incomplete": false,
+      "totalRecords": 286,
+      "inventoryScopeRecords": 53,
+      "recordsWithAbstract": 275,
+      "recordsWithAuthorKeywords": 182,
+      "recordsWithKeywordsPlus": 228,
+      "recordsWithCitedReferences": 279,
+      "citedReferenceEntries": 9142,
+      "values": {
+        "Lost sales": 6,
+        "Data-driven inventory": 1,
+        "Nonstationarity": 1,
+        "Censored demand": 1,
+        "Perishability": 6,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2001,
+      "incomplete": false,
+      "totalRecords": 293,
+      "inventoryScopeRecords": 43,
+      "recordsWithAbstract": 278,
+      "recordsWithAuthorKeywords": 199,
+      "recordsWithKeywordsPlus": 240,
+      "recordsWithCitedReferences": 285,
+      "citedReferenceEntries": 9373,
+      "values": {
+        "Lost sales": 4,
+        "Data-driven inventory": 0,
+        "Nonstationarity": 2,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2002,
+      "incomplete": false,
+      "totalRecords": 325,
+      "inventoryScopeRecords": 44,
+      "recordsWithAbstract": 274,
+      "recordsWithAuthorKeywords": 187,
+      "recordsWithKeywordsPlus": 250,
+      "recordsWithCitedReferences": 310,
+      "citedReferenceEntries": 10398,
+      "values": {
+        "Lost sales": 5,
+        "Data-driven inventory": 3,
+        "Nonstationarity": 3,
+        "Censored demand": 1,
+        "Perishability": 0,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2003,
+      "incomplete": false,
+      "totalRecords": 277,
+      "inventoryScopeRecords": 39,
+      "recordsWithAbstract": 268,
+      "recordsWithAuthorKeywords": 206,
+      "recordsWithKeywordsPlus": 230,
+      "recordsWithCitedReferences": 274,
+      "citedReferenceEntries": 10625,
+      "values": {
+        "Lost sales": 3,
+        "Data-driven inventory": 0,
+        "Nonstationarity": 0,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2004,
+      "incomplete": false,
+      "totalRecords": 312,
+      "inventoryScopeRecords": 52,
+      "recordsWithAbstract": 305,
+      "recordsWithAuthorKeywords": 258,
+      "recordsWithKeywordsPlus": 273,
+      "recordsWithCitedReferences": 308,
+      "citedReferenceEntries": 11817,
+      "values": {
+        "Lost sales": 4,
+        "Data-driven inventory": 1,
+        "Nonstationarity": 1,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2005,
+      "incomplete": false,
+      "totalRecords": 326,
+      "inventoryScopeRecords": 52,
+      "recordsWithAbstract": 315,
+      "recordsWithAuthorKeywords": 245,
+      "recordsWithKeywordsPlus": 283,
+      "recordsWithCitedReferences": 321,
+      "citedReferenceEntries": 11993,
+      "values": {
+        "Lost sales": 1,
+        "Data-driven inventory": 1,
+        "Nonstationarity": 2,
+        "Censored demand": 0,
+        "Perishability": 0,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2006,
+      "incomplete": false,
+      "totalRecords": 387,
+      "inventoryScopeRecords": 67,
+      "recordsWithAbstract": 375,
+      "recordsWithAuthorKeywords": 291,
+      "recordsWithKeywordsPlus": 342,
+      "recordsWithCitedReferences": 380,
+      "citedReferenceEntries": 14925,
+      "values": {
+        "Lost sales": 5,
+        "Data-driven inventory": 0,
+        "Nonstationarity": 3,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 1
+      }
+    },
+    {
+      "year": 2007,
+      "incomplete": false,
+      "totalRecords": 454,
+      "inventoryScopeRecords": 79,
+      "recordsWithAbstract": 445,
+      "recordsWithAuthorKeywords": 359,
+      "recordsWithKeywordsPlus": 381,
+      "recordsWithCitedReferences": 447,
+      "citedReferenceEntries": 18770,
+      "values": {
+        "Lost sales": 3,
+        "Data-driven inventory": 1,
+        "Nonstationarity": 0,
+        "Censored demand": 0,
+        "Perishability": 2,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2008,
+      "incomplete": false,
+      "totalRecords": 487,
+      "inventoryScopeRecords": 93,
+      "recordsWithAbstract": 452,
+      "recordsWithAuthorKeywords": 342,
+      "recordsWithKeywordsPlus": 413,
+      "recordsWithCitedReferences": 458,
+      "citedReferenceEntries": 17715,
+      "values": {
+        "Lost sales": 11,
+        "Data-driven inventory": 3,
+        "Nonstationarity": 5,
+        "Censored demand": 1,
+        "Perishability": 7,
+        "Supply uncertainty": 4
+      }
+    },
+    {
+      "year": 2009,
+      "incomplete": false,
+      "totalRecords": 432,
+      "inventoryScopeRecords": 80,
+      "recordsWithAbstract": 418,
+      "recordsWithAuthorKeywords": 305,
+      "recordsWithKeywordsPlus": 389,
+      "recordsWithCitedReferences": 425,
+      "citedReferenceEntries": 16424,
+      "values": {
+        "Lost sales": 8,
+        "Data-driven inventory": 3,
+        "Nonstationarity": 2,
+        "Censored demand": 1,
+        "Perishability": 4,
+        "Supply uncertainty": 4
+      }
+    },
+    {
+      "year": 2010,
+      "incomplete": false,
+      "totalRecords": 451,
+      "inventoryScopeRecords": 100,
+      "recordsWithAbstract": 438,
+      "recordsWithAuthorKeywords": 311,
+      "recordsWithKeywordsPlus": 415,
+      "recordsWithCitedReferences": 446,
+      "citedReferenceEntries": 18219,
+      "values": {
+        "Lost sales": 6,
+        "Data-driven inventory": 1,
+        "Nonstationarity": 3,
+        "Censored demand": 0,
+        "Perishability": 5,
+        "Supply uncertainty": 6
+      }
+    },
+    {
+      "year": 2011,
+      "incomplete": false,
+      "totalRecords": 469,
+      "inventoryScopeRecords": 84,
+      "recordsWithAbstract": 451,
+      "recordsWithAuthorKeywords": 335,
+      "recordsWithKeywordsPlus": 435,
+      "recordsWithCitedReferences": 456,
+      "citedReferenceEntries": 19124,
+      "values": {
+        "Lost sales": 8,
+        "Data-driven inventory": 4,
+        "Nonstationarity": 2,
+        "Censored demand": 1,
+        "Perishability": 5,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2012,
+      "incomplete": false,
+      "totalRecords": 457,
+      "inventoryScopeRecords": 78,
+      "recordsWithAbstract": 444,
+      "recordsWithAuthorKeywords": 338,
+      "recordsWithKeywordsPlus": 423,
+      "recordsWithCitedReferences": 449,
+      "citedReferenceEntries": 18810,
+      "values": {
+        "Lost sales": 4,
+        "Data-driven inventory": 4,
+        "Nonstationarity": 3,
+        "Censored demand": 0,
+        "Perishability": 1,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2013,
+      "incomplete": false,
+      "totalRecords": 522,
+      "inventoryScopeRecords": 85,
+      "recordsWithAbstract": 512,
+      "recordsWithAuthorKeywords": 416,
+      "recordsWithKeywordsPlus": 485,
+      "recordsWithCitedReferences": 512,
+      "citedReferenceEntries": 22714,
+      "values": {
+        "Lost sales": 6,
+        "Data-driven inventory": 6,
+        "Nonstationarity": 1,
+        "Censored demand": 1,
+        "Perishability": 4,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2014,
+      "incomplete": false,
+      "totalRecords": 558,
+      "inventoryScopeRecords": 103,
+      "recordsWithAbstract": 531,
+      "recordsWithAuthorKeywords": 438,
+      "recordsWithKeywordsPlus": 515,
+      "recordsWithCitedReferences": 544,
+      "citedReferenceEntries": 23261,
+      "values": {
+        "Lost sales": 15,
+        "Data-driven inventory": 2,
+        "Nonstationarity": 3,
+        "Censored demand": 2,
+        "Perishability": 5,
+        "Supply uncertainty": 0
+      }
+    },
+    {
+      "year": 2015,
+      "incomplete": false,
+      "totalRecords": 558,
+      "inventoryScopeRecords": 105,
+      "recordsWithAbstract": 529,
+      "recordsWithAuthorKeywords": 459,
+      "recordsWithKeywordsPlus": 508,
+      "recordsWithCitedReferences": 538,
+      "citedReferenceEntries": 24090,
+      "values": {
+        "Lost sales": 11,
+        "Data-driven inventory": 11,
+        "Nonstationarity": 5,
+        "Censored demand": 1,
+        "Perishability": 6,
+        "Supply uncertainty": 3
+      }
+    },
+    {
+      "year": 2016,
+      "incomplete": false,
+      "totalRecords": 564,
+      "inventoryScopeRecords": 100,
+      "recordsWithAbstract": 540,
+      "recordsWithAuthorKeywords": 532,
+      "recordsWithKeywordsPlus": 523,
+      "recordsWithCitedReferences": 559,
+      "citedReferenceEntries": 26037,
+      "values": {
+        "Lost sales": 7,
+        "Data-driven inventory": 4,
+        "Nonstationarity": 2,
+        "Censored demand": 2,
+        "Perishability": 3,
+        "Supply uncertainty": 5
+      }
+    },
+    {
+      "year": 2017,
+      "incomplete": false,
+      "totalRecords": 584,
+      "inventoryScopeRecords": 112,
+      "recordsWithAbstract": 573,
+      "recordsWithAuthorKeywords": 567,
+      "recordsWithKeywordsPlus": 556,
+      "recordsWithCitedReferences": 577,
+      "citedReferenceEntries": 25885,
+      "values": {
+        "Lost sales": 10,
+        "Data-driven inventory": 5,
+        "Nonstationarity": 1,
+        "Censored demand": 1,
+        "Perishability": 3,
+        "Supply uncertainty": 6
+      }
+    },
+    {
+      "year": 2018,
+      "incomplete": false,
+      "totalRecords": 691,
+      "inventoryScopeRecords": 93,
+      "recordsWithAbstract": 677,
+      "recordsWithAuthorKeywords": 676,
+      "recordsWithKeywordsPlus": 663,
+      "recordsWithCitedReferences": 685,
+      "citedReferenceEntries": 33718,
+      "values": {
+        "Lost sales": 11,
+        "Data-driven inventory": 10,
+        "Nonstationarity": 0,
+        "Censored demand": 2,
+        "Perishability": 4,
+        "Supply uncertainty": 5
+      }
+    },
+    {
+      "year": 2019,
+      "incomplete": false,
+      "totalRecords": 709,
+      "inventoryScopeRecords": 99,
+      "recordsWithAbstract": 696,
+      "recordsWithAuthorKeywords": 696,
+      "recordsWithKeywordsPlus": 659,
+      "recordsWithCitedReferences": 705,
+      "citedReferenceEntries": 35823,
+      "values": {
+        "Lost sales": 3,
+        "Data-driven inventory": 9,
+        "Nonstationarity": 4,
+        "Censored demand": 0,
+        "Perishability": 8,
+        "Supply uncertainty": 6
+      }
+    },
+    {
+      "year": 2020,
+      "incomplete": false,
+      "totalRecords": 755,
+      "inventoryScopeRecords": 95,
+      "recordsWithAbstract": 737,
+      "recordsWithAuthorKeywords": 735,
+      "recordsWithKeywordsPlus": 707,
+      "recordsWithCitedReferences": 747,
+      "citedReferenceEntries": 38610,
+      "values": {
+        "Lost sales": 6,
+        "Data-driven inventory": 13,
+        "Nonstationarity": 3,
+        "Censored demand": 3,
+        "Perishability": 1,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2021,
+      "incomplete": false,
+      "totalRecords": 1003,
+      "inventoryScopeRecords": 116,
+      "recordsWithAbstract": 970,
+      "recordsWithAuthorKeywords": 967,
+      "recordsWithKeywordsPlus": 869,
+      "recordsWithCitedReferences": 990,
+      "citedReferenceEntries": 52177,
+      "values": {
+        "Lost sales": 7,
+        "Data-driven inventory": 12,
+        "Nonstationarity": 1,
+        "Censored demand": 3,
+        "Perishability": 2,
+        "Supply uncertainty": 2
+      }
+    },
+    {
+      "year": 2022,
+      "incomplete": false,
+      "totalRecords": 1296,
+      "inventoryScopeRecords": 155,
+      "recordsWithAbstract": 1269,
+      "recordsWithAuthorKeywords": 1269,
+      "recordsWithKeywordsPlus": 1195,
+      "recordsWithCitedReferences": 1280,
+      "citedReferenceEntries": 67864,
+      "values": {
+        "Lost sales": 13,
+        "Data-driven inventory": 31,
+        "Nonstationarity": 4,
+        "Censored demand": 3,
+        "Perishability": 8,
+        "Supply uncertainty": 7
+      }
+    },
+    {
+      "year": 2023,
+      "incomplete": false,
+      "totalRecords": 1085,
+      "inventoryScopeRecords": 129,
+      "recordsWithAbstract": 1058,
+      "recordsWithAuthorKeywords": 1055,
+      "recordsWithKeywordsPlus": 990,
+      "recordsWithCitedReferences": 1075,
+      "citedReferenceEntries": 58292,
+      "values": {
+        "Lost sales": 18,
+        "Data-driven inventory": 26,
+        "Nonstationarity": 6,
+        "Censored demand": 4,
+        "Perishability": 10,
+        "Supply uncertainty": 4
+      }
+    },
+    {
+      "year": 2024,
+      "incomplete": false,
+      "totalRecords": 999,
+      "inventoryScopeRecords": 97,
+      "recordsWithAbstract": 968,
+      "recordsWithAuthorKeywords": 968,
+      "recordsWithKeywordsPlus": 913,
+      "recordsWithCitedReferences": 975,
+      "citedReferenceEntries": 54101,
+      "values": {
+        "Lost sales": 11,
+        "Data-driven inventory": 18,
+        "Nonstationarity": 2,
+        "Censored demand": 5,
+        "Perishability": 3,
+        "Supply uncertainty": 7
+      }
+    },
+    {
+      "year": 2025,
+      "incomplete": false,
+      "totalRecords": 1326,
+      "inventoryScopeRecords": 128,
+      "recordsWithAbstract": 1298,
+      "recordsWithAuthorKeywords": 1297,
+      "recordsWithKeywordsPlus": 1215,
+      "recordsWithCitedReferences": 1320,
+      "citedReferenceEntries": 76692,
+      "values": {
+        "Lost sales": 13,
+        "Data-driven inventory": 35,
+        "Nonstationarity": 5,
+        "Censored demand": 5,
+        "Perishability": 6,
+        "Supply uncertainty": 8
+      }
+    },
+    {
+      "year": 2026,
+      "incomplete": true,
+      "totalRecords": 1213,
+      "inventoryScopeRecords": 126,
+      "recordsWithAbstract": 1201,
+      "recordsWithAuthorKeywords": 1196,
+      "recordsWithKeywordsPlus": 1132,
+      "recordsWithCitedReferences": 1211,
+      "citedReferenceEntries": 71247,
+      "values": {
+        "Lost sales": 7,
+        "Data-driven inventory": 39,
+        "Nonstationarity": 7,
+        "Censored demand": 2,
+        "Perishability": 5,
+        "Supply uncertainty": 4
+      }
+    }
+  ],
+  "journals": [
+    {
+      "journal": "INFORMS JOURNAL ON COMPUTING",
+      "totalRecords": 1723,
+      "inventoryScopeRecords": 71
+    },
+    {
+      "journal": "JOURNAL OF OPERATIONS MANAGEMENT",
+      "totalRecords": 1182,
+      "inventoryScopeRecords": 108
+    },
+    {
+      "journal": "M&SOM-MANUFACTURING & SERVICE OPERATIONS MANAGEMENT",
+      "totalRecords": 1453,
+      "inventoryScopeRecords": 410
+    },
+    {
+      "journal": "MANAGEMENT SCIENCE",
+      "totalRecords": 6419,
+      "inventoryScopeRecords": 539
+    },
+    {
+      "journal": "OPERATIONS RESEARCH",
+      "totalRecords": 2962,
+      "inventoryScopeRecords": 567
+    },
+    {
+      "journal": "PRODUCTION AND OPERATIONS MANAGEMENT",
+      "totalRecords": 3080,
+      "inventoryScopeRecords": 712
+    }
+  ],
+  "documentTypes": {
+    "Article": 15228,
+    "Article; Proceedings Paper": 79,
+    "Editorial Material": 401,
+    "Review": 175,
+    "Biographical-Item": 29,
+    "Correction": 71,
+    "Article; Early Access": 802,
+    "Letter": 5,
+    "Review; Retracted Publication": 1,
+    "Reprint": 3,
+    "News Item": 12,
+    "Editorial Material; Early Access": 8,
+    "Article; Data Paper": 1,
+    "Article; Retracted Publication": 1,
+    "Review; Early Access": 2,
+    "Retraction": 1
+  },
+  "screening": {
+    "version": "wos-conservative-v1",
+    "fields": [
+      "TI",
+      "AB",
+      "DE",
+      "ID"
+    ],
+    "inventoryScopePattern": "\\binventor(?:y|ies)\\b|\\bstockout(?:s)?\\b|\\blost[- ]sales\\b|\\breplenish(?:ment|ing|ed)?\\b|\\bnewsvendor\\b|\\bbase[- ]stock\\b|\\border[- ]up[- ]to\\b|\\bsafety stock\\b",
+    "categoryPatterns": {
+      "Lost sales": "\\blost[- ]sales\\b|\\blost sale\\b",
+      "Data-driven inventory": "\\bdata[- ]driven\\b|\\boffline learning\\b|\\bmachine learning\\b|\\blearning\\b",
+      "Nonstationarity": "\\bnon[- ]?stationar\\w*\\b|\\bdemand drift\\b|\\bregime change\\b|\\bstructural break\\b",
+      "Censored demand": "\\bcensor(?:ed|ing) demand\\b|\\bsales censor(?:ing|ed)\\b|\\bcensored sales\\b",
+      "Perishability": "\\bperishab\\w*\\b|\\bshelf li(?:fe|ves)\\b|\\boutdat(?:e|ed|ing)\\w*\\b",
+      "Supply uncertainty": "\\bsupply disruption\\w*\\b|\\bsupply uncertaint\\w*\\b|\\brandom yield\\w*\\b|\\byield uncertaint\\w*\\b|\\brandom suppl(?:y|ies)\\b|\\bstochastic suppl(?:y|ies)\\b"
+    },
+    "rule": "Each category requires inventory scope. Case-insensitive; whitespace normalized. Keyword matches are not full-text classifications."
+  },
+  "sourceFiles": [
+    {
+      "file": "core6_2000_2020_with_CR.txt",
+      "records": 9897,
+      "bytes": 55834810,
+      "sha256": "9e3a71c2ac935676439d0b0b1ede5fbdfa461f0a925a5fd9f85a9ea31800ae74"
+    },
+    {
+      "file": "core6_2021_2025_with_CR.txt",
+      "records": 5709,
+      "bytes": 40132644,
+      "sha256": "9e9b730590fb4d02c85b4e6cfd9195965cb85a2622bd3be55db4038dfd85bab0"
+    },
+    {
+      "file": "core6_2026_YTD_with_CR.txt",
+      "records": 1213,
+      "bytes": 8951693,
+      "sha256": "91814ba098fa1e9982a80c940d9e660c426fb9f278c8ba30cce9e9c2eaf68da8"
+    }
+  ],
+  "cohortComparison": {
+    "oldRecords": 6105,
+    "newRecords": 5709,
+    "commonRecords": 5567,
+    "oldOnlyRecords": 538,
+    "newOnlyRecords": 142,
+    "oldOnlyFoundInOtherYears": 532,
+    "oldOnlyAbsentFromLongRun": 6,
+    "movedYearCounts": [
+      {
+        "oldYear": 2023,
+        "newYear": 2026,
+        "count": 3
+      },
+      {
+        "oldYear": 2024,
+        "newYear": 2026,
+        "count": 16
+      },
+      {
+        "oldYear": 2025,
+        "newYear": 2026,
+        "count": 513
+      }
+    ],
+    "oldOnlyJournalCounts": {
+      "OPERATIONS RESEARCH": 49,
+      "INFORMS JOURNAL ON COMPUTING": 53,
+      "MANAGEMENT SCIENCE": 312,
+      "PRODUCTION AND OPERATIONS MANAGEMENT": 105,
+      "JOURNAL OF OPERATIONS MANAGEMENT": 17,
+      "M&SOM-MANUFACTURING & SERVICE OPERATIONS MANAGEMENT": 2
+    },
+    "oldOnlyAbsentJournalCounts": {
+      "PRODUCTION AND OPERATIONS MANAGEMENT": 1,
+      "MANAGEMENT SCIENCE": 5
+    },
+    "newOnlyJournalCounts": {
+      "PRODUCTION AND OPERATIONS MANAGEMENT": 79,
+      "M&SOM-MANUFACTURING & SERVICE OPERATIONS MANAGEMENT": 30,
+      "JOURNAL OF OPERATIONS MANAGEMENT": 24,
+      "MANAGEMENT SCIENCE": 7,
+      "OPERATIONS RESEARCH": 1,
+      "INFORMS JOURNAL ON COMPUTING": 1
+    },
+    "commonYearChanges": 15,
+    "note": "Matched by WoS accession number. Differences are observed cohort differences, not an identified cause. Do not pool or splice the snapshots."
+  },
+  "coverageStandard": "Record coverage by native-file integrity, unique-UT count, six live journal totals, and per-record query-scope checks; not completeness of the contents of every field.",
+  "note": "Descriptive counts in a fixed six-journal export, not open-problem counts. All document types are retained. Categories overlap. Abstract and keyword coverage vary by year. 2026 is incomplete and not annualized. WoS and OpenAlex are separate snapshots."
+}

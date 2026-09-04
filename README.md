@@ -17,12 +17,14 @@ The site does not publish editor-created research ideas as open problems. Each r
 
 ## Current release
 
-- Seven source-stated items.
+- Eight source-stated items, including the explicitly stated joint-growth PIL question in Moradi, Arts, and Drent (2025, arXiv v4). Its forward-citation audit remains incomplete.
 - Six status updates.
-- A twelve-paper descriptive path from offline sample-based inventory to fixed-cost learning, capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies for perishable systems.
-- Reproducible, overlapping keyword-screening counts from 6,105 Web of Science Core Collection records across six journals and 2021–2025. The licensed export is summarized rather than redistributed; its cited-reference field is empty, so the release does not claim a citation-network analysis.
+- A thirteen-paper descriptive path from offline sample-based inventory to fixed-cost learning, capped base-stock learning, nonstationary lost-sales control, and projected-inventory-level policies.
+- Interactive annual and small-multiple line charts, a topic heatmap, and accessible count tables. Source, year range, and count/share controls use locally hosted SVG and aggregate JSON. The 2026 incomplete year is excluded by default and dashed when included.
+- Reproducible, overlapping keyword-screening counts from 16,819 Web of Science Core Collection records across six journals and 2000–2026. The screen finds 2,407 inventory matches. Licensed row-level exports remain local. Cited references are available, with 537 record-level count discrepancies, but no citation-network result is claimed.
 - A separate, downloadable OpenAlex historical table covering 20,854 records from the same six journals over 2000–2026, with 27 annual rows and explicit incomplete-year labeling. Its 2,174 broad inventory-scope records and 59 open-language candidates are discovery inputs rather than open-problem counts. Its broader definitions are not pooled with the WoS series.
-- A long-run licensed WoS acquisition has archived 5,000 of 16,819 query results locally. This incomplete relevance-ordered prefix is not used for trend or citation-network claims.
+- The older 6,105-record, 2021–2025 aggregate is retained as a separate snapshot. Accession-number reconciliation finds 5,567 common five-year records, 532 old-cohort records now assigned to 2026, six absent from the new archive, and 142 new-cohort additions. The snapshots are not spliced.
+- A public discovery supplement archives 14,824 distinct OpenAlex records from ten completed queries, with 6,925 local inventory keyword matches. Five topic and eight anchor-citation queries remain incomplete after provider backoff. The supplement is not merged into the six-journal trend denominator.
 - A complete audit of the 159-record Open Problems in OR snapshot. The specified filtered page contains no inventory-management record; its one inventory-adjacent reusable-resource item is recorded as resolved in a subsequent working paper rather than copied into the active list.
 - A light, list-based interface inspired by research bibliography sites rather than the visual identity of Open Problems in OR.
 
@@ -47,13 +49,16 @@ Then open `http://localhost:8000/`.
 
 ```powershell
 node scripts/validate-data.mjs
+node --test scripts/test-trends.mjs
 ```
 
-The validator checks required fields, duplicate record IDs, HTTPS source links, and the English-only public-data rule.
+The validators check source fields, English-only public files, count identities, share denominators, incomplete-year behavior, chart controls, and local links. They do not substitute for browser visual review or a scholarly proof audit.
 
 ## Web of Science import
 
-The methodology page records the fields, topic definitions, journal scope, export date, workbook checksum, and classification rules used for the trend table. Do not interpret the keyword-screening counts as counts of open problems.
+The methodology page records fields, topic definitions, journal scope, export dates, source checksums, cohort reconciliation, and chart denominators. Do not interpret keyword-screening counts as counts of open problems.
+
+The current long-run aggregate is built by `source_data/wos/build_verified_trends.py` in the private parent workspace. It verifies the native release checksums and writes aggregate JSON only to this repository. The licensed inputs are deliberately not vendored here.
 
 To reproduce the aggregate table from an authorized export:
 

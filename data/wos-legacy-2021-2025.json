@@ -1,0 +1,75 @@
+{
+  "database": "Web of Science Core Collection",
+  "exportDate": "2026-01-10",
+  "timespan": "2021–2025",
+  "journalScope": "Management Science; Operations Research; Manufacturing & Service Operations Management; Production and Operations Management; INFORMS Journal on Computing; Journal of Operations Management",
+  "totalRecords": 6105,
+  "inventoryScopeRecords": 640,
+  "citedReferencesIncluded": false,
+  "categoriesOverlap": true,
+  "series": [
+    {
+      "category": "Lost sales",
+      "values": {
+        "2021": 6,
+        "2022": 13,
+        "2023": 18,
+        "2024": 11,
+        "2025": 14
+      }
+    },
+    {
+      "category": "Data-driven inventory",
+      "values": {
+        "2021": 10,
+        "2022": 31,
+        "2023": 24,
+        "2024": 18,
+        "2025": 47
+      }
+    },
+    {
+      "category": "Nonstationarity",
+      "values": {
+        "2021": 1,
+        "2022": 4,
+        "2023": 6,
+        "2024": 2,
+        "2025": 6
+      }
+    },
+    {
+      "category": "Censored demand",
+      "values": {
+        "2021": 2,
+        "2022": 3,
+        "2023": 4,
+        "2024": 5,
+        "2025": 5
+      }
+    },
+    {
+      "category": "Perishability",
+      "values": {
+        "2021": 2,
+        "2022": 8,
+        "2023": 10,
+        "2024": 3,
+        "2025": 9
+      }
+    },
+    {
+      "category": "Supply uncertainty",
+      "values": {
+        "2021": 2,
+        "2022": 7,
+        "2023": 4,
+        "2024": 7,
+        "2025": 10
+      }
+    }
+  ],
+  "note": "Counts are keyword-screening statistics for literature discovery, not counts of open problems. Categories overlap and therefore must not be added. The export contains no cited-reference data and cannot support a citation-network analysis.",
+  "snapshotStatus": "Archived baseline; not spliced into the 2026-09-04 release.",
+  "sourceSha256": "E50FA1383CA9BC4C17551D2E729A4B309C22A724B84359D58064DB448B6C1CFB"
+}
