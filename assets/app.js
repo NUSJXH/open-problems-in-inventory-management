@@ -1,167 +1,69 @@
-const registryUrl = "data/registry.json?v=2.5.0";
-
-const openList = document.querySelector("#open-list");
-const statusList = document.querySelector("#status-list");
-const pathList = document.querySelector("#path-list");
-const resultCount = document.querySelector("#result-count");
-const topicFilters = document.querySelector("#topic-filters");
-const searchInput = document.querySelector("#search");
-const emptyState = document.querySelector("#empty-state");
-
-const state = { query: "", topic: "All topics" };
-let registry = null;
-
-function el(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined) node.textContent = text;
-  return node;
+import {filterRecords,readFilters,validateProblems} from './problem-model.mjs?v=3.0.0';
+const $=id=>document.getElementById(id);
+const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+const link=(label,url)=>{const n=node('a','',label);n.href=url;return n;};
+const state=readFilters(location.search);
+if(location.hash==='#research-trends')location.replace('trends.html');
+if(location.hash==='#literature-path')location.replace('index.html#OIM-R03');
+let data;
+const controls={query:'search',topic:'filter-topic',progress:'filter-progress',kind:'filter-kind',sort:'filter-sort'};
+function paragraph(parent,label,text){const p=node('p');p.append(node('strong','',label+' '),document.createTextNode(text));parent.append(p);}
+function detailsFor(record){
+ const body=node('div','problem-expanded'),columns=node('div','record-detail-grid'),findings=node('div');
+ findings.append(node('h3','','Result and remaining scope'));
+ paragraph(findings,'Paper establishes.',record.result);paragraph(findings,'Scope.',record.boundary);
+ const meta=node('aside','record-source');meta.append(node('h3','','Source'));
+ meta.append(link(record.source.citationOnly?record.source.title:record.source.authors+' ('+record.source.year+'). '+record.source.title,record.source.url));
+ meta.append(node('p','',record.source.outlet),node('p','',record.source.location),node('p','','Source review date: '+record.auditDate));
+ meta.append(link('Link to this record','index.html#'+record.id));columns.append(findings,meta);body.append(columns);
+ const progress=node('div','progress-explanation');paragraph(progress,'Progress.',record.progressNote);body.append(progress);
+ body.append(node('h3','','Literature path'),node('p','timeline-note',data.timelineNote));
+ const timeline=node('ol','record-timeline');
+ for(const p of record.timeline){
+  const li=node('li');li.append(node('span','timeline-year',String(p.year)));
+  const detail=node('div');detail.append(node('span','timeline-role',p.relationship),link(p.title,p.url));
+  if(p.dataRegime)detail.append(node('p','timeline-meta',p.dataRegime+' · '+p.policyBenchmark));
+  if(p.result)detail.append(node('p','',p.result));
+  if(p.boundary)detail.append(node('p','timeline-scope',p.boundary));li.append(detail);timeline.append(li);
+ }
+ body.append(timeline);
+ if(record.relatedRecords.length){const p=node('p','related-records');p.append(node('strong','','Related records: '));for(const id of record.relatedRecords){const r=data.records.find(x=>x.id===id);p.append(link(r.title,'index.html#'+id),document.createTextNode(' · '));}body.append(p);}
+ return body;
 }
-
-function externalLink(label, url, className = "") {
-  const link = el("a", className, label);
-  link.href = url;
-  link.target = "_blank";
-  link.rel = "noreferrer";
-  return link;
+function card(record){
+ const details=node('details','problem-record');details.id=record.id;
+ const summary=node('summary'),top=node('div','record-topline');
+ top.append(node('span','progress-pill progress-'+record.progress,data.progressLabels[record.progress]),node('span','record-topic',record.topic),node('span','record-kind',record.kind));
+ summary.append(top,node('h2','record-title',record.title),node('p','record-summary',record.statement),node('p','record-citation',record.source.authors+' · '+record.source.year+' · '+record.id));
+ const bottom=node('div','record-keywords');for(const word of record.keywords)bottom.append(node('span','',word));bottom.append(node('span','expand-label','Details & literature path'));
+ summary.append(bottom);details.append(summary,detailsFor(record));
+ details.addEventListener('toggle',()=>{if(details.open){const url=new URL(location.href);url.hash=record.id;history.replaceState(null,'',url);}});
+ return details;
 }
-
-function tagClass(label) {
-  if (label === "Explicit conjecture") return "tag tag-conjecture";
-  if (label === "Explicit open question") return "tag tag-open";
-  if (label === "Source-stated extension") return "tag tag-extension";
-  return "tag tag-resolved";
+function syncUrl(){const url=new URL(location.href);url.search='';for(const [key,value]of Object.entries(state)){if(value&&!(key==='sort'&&value==='default'))url.searchParams.set(key==='query'?'q':key,value);}history.replaceState(null,'',url);}
+function render(){
+ const visible=filterRecords(data,state);$('open-list').replaceChildren(...visible.map(card));
+ $('result-count').textContent=visible.length+' of '+data.records.length+' records';$('empty-state').hidden=visible.length>0;
 }
-
-function searchableText(item) {
-  return [
-    item.id,
-    item.evidenceClass,
-    item.topic,
-    item.title,
-    item.statement,
-    item.paperEstablishes,
-    item.scopeBoundary,
-    item.source.authors,
-    item.source.title,
-    item.source.outlet,
-  ].join(" ").toLowerCase();
+function openLinkedRecord(){
+ const id=location.hash.slice(1);if(!data.records.some(r=>r.id===id))return;
+ if(!$(id)){Object.assign(state,{query:'',topic:'',progress:'',kind:'',sort:'default'});setControls();syncUrl();render();}
+ $(id).open=true;$(id).scrollIntoView({block:'start',behavior:'auto'});
 }
-
-function renderOpenItems() {
-  const query = state.query.trim().toLowerCase();
-  const visible = registry.openItems.filter((item) => {
-    const topicMatch = state.topic === "All topics" || item.topic === state.topic;
-    return topicMatch && (!query || searchableText(item).includes(query));
-  });
-
-  openList.replaceChildren();
-  visible.forEach((item, index) => {
-    const article = el("article", "paper-row");
-    const number = el("div", "paper-number", String(index + 1).padStart(2, "0"));
-    const body = el("div", "paper-body");
-    const tags = el("div", "paper-tags");
-    tags.append(el("span", tagClass(item.evidenceClass), item.evidenceClass));
-    tags.append(el("span", "tag tag-topic", item.topic));
-    body.append(tags, el("h3", "paper-title", item.title), el("p", "paper-statement", item.statement));
-
-    const established = el("p", "paper-detail");
-    established.append(el("strong", "", "Paper establishes. "), document.createTextNode(item.paperEstablishes));
-    const boundary = el("p", "paper-detail paper-boundary");
-    boundary.append(el("strong", "", "Recorded boundary. "), document.createTextNode(item.scopeBoundary));
-
-    const citation = el("p", "paper-citation");
-    citation.append(
-      externalLink(
-        `${item.source.authors} (${item.source.year}). ${item.source.title}. ${item.source.outlet}.`,
-        item.source.url,
-      ),
-      document.createTextNode(` Source location: ${item.source.location}.`),
-    );
-    body.append(established, boundary, citation);
-    article.append(number, body);
-    openList.append(article);
-  });
-
-  resultCount.textContent = `Showing ${visible.length} of ${registry.openItems.length} source-stated items`;
-  emptyState.hidden = visible.length !== 0;
-}
-
-function renderTopicFilters() {
-  const topics = ["All topics", ...new Set(registry.openItems.map((item) => item.topic))];
-  topicFilters.replaceChildren();
-  topics.forEach((topic) => {
-    const button = el("button", "topic-button", topic);
-    button.type = "button";
-    button.setAttribute("aria-pressed", String(topic === state.topic));
-    button.addEventListener("click", () => {
-      state.topic = topic;
-      topicFilters.querySelectorAll("button").forEach((candidate) => {
-        candidate.setAttribute("aria-pressed", String(candidate.textContent === topic));
-      });
-      renderOpenItems();
-    });
-    topicFilters.append(button);
-  });
-}
-
-function renderStatusUpdates() {
-  statusList.replaceChildren();
-  registry.statusUpdates.forEach((item) => {
-    const article = el("article", "status-row");
-    const header = el("div", "status-header");
-    header.append(el("span", "tag tag-resolved", item.status), el("span", "status-topic", item.topic));
-    article.append(header, el("h3", "", item.title), el("p", "", item.summary));
-    article.append(externalLink(item.citation, item.url, "citation-link"));
-    statusList.append(article);
-  });
-}
-
-function renderLiteraturePath() {
-  pathList.replaceChildren();
-  registry.literaturePath.forEach((item) => {
-    const article = el("article", "path-row");
-    const year = el("div", "path-year", String(item.year));
-    const body = el("div", "path-body");
-    const meta = el("div", "path-meta");
-    meta.append(el("span", "tag tag-topic", item.dataRegime), el("span", "tag tag-benchmark", item.policyBenchmark));
-    body.append(meta, externalLink(item.paper, item.url, "path-paper"), el("p", "", item.result));
-    const boundary = el("p", "path-boundary");
-    boundary.append(el("strong", "", "Scope. "), document.createTextNode(item.boundary));
-    body.append(boundary);
-    article.append(year, body);
-    pathList.append(article);
-  });
-}
-
-function updateStats() {
-  document.querySelector("#stat-open").textContent = registry.openItems.length;
-  document.querySelector("#stat-topics").textContent = new Set(registry.openItems.map((item) => item.topic)).size;
-  document.querySelector("#stat-updates").textContent = registry.statusUpdates.length;
-  document.querySelector("#stat-audit").textContent = registry.auditThrough;
-  document.querySelector("#footer-version").textContent = `${registry.releaseVersion} · ${registry.dataVersion}`;
-}
-
-async function init() {
-  try {
-    const response = await fetch(registryUrl);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    registry = await response.json();
-    updateStats();
-    renderTopicFilters();
-    renderOpenItems();
-    renderStatusUpdates();
-    renderLiteraturePath();
-  } catch (error) {
-    resultCount.textContent = "The registry could not be loaded.";
-    openList.replaceChildren(el("p", "load-error", "Please reload the page or report the problem through the public issue tracker."));
-    console.error(error);
-  }
-}
-
-searchInput?.addEventListener("input", (event) => {
-  state.query = event.target.value;
-  if (registry) renderOpenItems();
-});
-
-init();
+function setControls(){for(const[key,id]of Object.entries(controls))$(id).value=state[key];}
+function options(id,values){for(const[value,label]of values){const o=node('option','',label);o.value=value;$(id).append(o);}}
+try{
+ const response=await fetch('data/problem-index.json?v=3.0.0');if(!response.ok)throw new Error('HTTP '+response.status);
+ data=validateProblems(await response.json());
+ options('filter-topic',[...new Set(data.records.map(r=>r.topic))].sort().map(v=>[v,v]));
+ options('filter-kind',[...new Set(data.records.map(r=>r.kind))].map(v=>[v,v]));
+ options('filter-progress',Object.entries(data.progressLabels));
+ for(const key of ['topic','progress','kind','sort'])if(!Array.from($(controls[key]).options).some(o=>o.value===state[key]))state[key]=key==='sort'?'default':'';
+ const stats=[[data.records.length,'catalogue records'],...Object.entries(data.progressLabels).map(([key,label])=>[data.records.filter(r=>r.progress===key).length,label])];
+ $('record-overview').replaceChildren(...stats.map(([n,label])=>{const item=node('div');item.append(node('strong','',String(n)),node('span','',label));return item;}));
+ setControls();render();openLinkedRecord();
+ $('problem-filters').addEventListener('submit',event=>event.preventDefault());
+ for(const[key,id]of Object.entries(controls))$(id).addEventListener(key==='query'?'input':'change',()=>{state[key]=$(id).value;const url=new URL(location.href);url.hash='';history.replaceState(null,'',url);syncUrl();render();});
+ $('clear-filters').addEventListener('click',()=>{Object.assign(state,{query:'',topic:'',progress:'',kind:'',sort:'default'});setControls();const url=new URL(location.href);url.hash='';history.replaceState(null,'',url);syncUrl();render();});
+ window.addEventListener('hashchange',openLinkedRecord);
+}catch(error){$('record-overview').replaceChildren();$('result-count').textContent='The catalogue could not be loaded.';$('open-list').replaceChildren(node('p','data-notice','Please reload the page. The source data remain available through the About page.'));console.error(error);}

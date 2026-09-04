@@ -1,137 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A source-led list of open questions, stated limitations, and status updates in inventory management." />
-    <meta property="og:title" content="Open Problems in Inventory Management" />
-    <meta property="og:description" content="What inventory papers state, what they establish, and what they explicitly leave open." />
-    <meta property="og:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" />
-    <title>Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.5.0" />
-    <script defer src="assets/app.js?v=2.5.0"></script>
-    <script type="module" src="assets/trends.js?v=2.5.0"></script>
-    <script type="module" src="assets/evidence.js?v=2.5.0"></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#paper-list">Skip to the paper list</a>
-    <header class="site-header">
-      <a class="brand" href="index.html">Open Problems in Inventory Management</a>
-      <nav aria-label="Primary navigation">
-        <a class="active" href="index.html">Paper list</a>
-        <a href="#research-trends">Research trends</a>
-        <a href="#literature-path">Literature paths</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero shell">
-        <div>
-          <p class="eyebrow">Source-led research registry · audit dated 4 September 2026</p>
-          <h1>What inventory papers state, establish, and leave open.</h1>
-          <p class="lede">
-            This site records research questions only when a paper states a conjecture, an open question,
-            or a limitation or extension in its own text. Editorially inferred ideas are not presented as
-            open problems.
-          </p>
-        </div>
-        <aside class="principle-note">
-          <strong>Public wording rule</strong>
-          <p>Report the source. Preserve its scope. Do not add an importance or novelty judgment.</p>
-        </aside>
-      </section>
-
-      <section class="shell summary-strip" aria-label="Registry summary">
-        <div><strong id="stat-open">8</strong><span>source-stated items</span></div>
-        <div><strong id="stat-topics">5</strong><span>inventory streams</span></div>
-        <div><strong id="stat-updates">6</strong><span>status updates</span></div>
-        <div><strong id="stat-audit">2026-09-04</strong><span>audit through</span></div>
-      </section>
-
-      <section id="research-trends" class="shell trends-section" aria-labelledby="trends-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">Descriptive research activity</p><h2 id="trends-title">Inventory topics in six journals</h2></div>
-          <p>Keyword-screening counts support literature discovery; they are not counts of open problems.</p>
-        </div>
-        <div class="trend-controls" aria-label="Trend display controls">
-          <label>Source<select id="trend-source"><option value="wos">Web of Science</option><option value="openalex">OpenAlex · broader screen</option></select></label>
-          <label>Measure<select id="trend-measure"><option value="count">Number of records</option><option value="share">Share of records (%)</option></select></label>
-          <label>From<select id="trend-from" aria-label="First publication year"></select></label>
-          <label>To<select id="trend-to" aria-label="Last publication year"></select></label>
-        </div>
-        <p class="trend-note">2000–2025 is shown by default. Selecting 2026 includes an incomplete year, shown with dashed lines. Sources have different coverage and screening definitions; they are never combined.</p>
-        <p id="trend-state" class="trend-state" role="status">Loading the verified aggregate…</p>
-        <div class="trend-summary" aria-label="Summary for the selected years">
-          <div><strong id="trend-records">—</strong><span>source records in selected years</span></div>
-          <div><strong id="trend-inventory">—</strong><span>inventory keyword matches</span></div>
-          <div><strong id="trend-abstracts">—</strong><span>records with an abstract</span></div>
-          <div><strong id="trend-years">—</strong><span>selected publication years</span></div>
-        </div>
-        <figure class="chart-panel overview-panel">
-          <figcaption><h3>Inventory research over time</h3><p id="overview-unit">Annual inventory-scope records</p></figcaption>
-          <div id="overview-chart" class="chart-wrap"></div>
-        </figure>
-        <div class="chart-section-heading"><h3>Research topics</h3><p id="topic-unit">Annual keyword matches; panels use a common scale.</p></div>
-        <div id="topic-charts" class="topic-charts"></div>
-        <figure class="chart-panel">
-          <figcaption><h3>Topics by publication year</h3><p id="heatmap-unit">Darker cells indicate more matching records.</p></figcaption>
-          <div id="topic-heatmap" class="heatmap-wrap"></div>
-          <p class="chart-note">Topics overlap. A record may appear in more than one row. Hover or focus a cell for its count and denominator.</p>
-        </figure>
-        <details class="historical-screen">
-          <summary>Underlying counts and annual metadata coverage</summary>
-          <div id="trend-table" class="trend-table-wrap"></div>
-        </details>
-        <p id="trend-note" class="trend-note"></p>
-        <div class="data-links"><a class="method-link" href="methodology.html#wos-protocol">Methods and cohort reconciliation</a><a id="trend-download" class="method-link" href="data/wos-trends.json" download>Download aggregate JSON</a></div>
-        <div id="acquisition-summary" class="data-notice" aria-live="polite"></div>
-      </section>
-
-      <section id="evidence-coverage" class="shell evidence-section" aria-label="Supplementary search and citation coverage"><p>Loading supplementary search coverage…</p></section>
-
-      <section id="paper-list" class="shell registry-section" aria-labelledby="paper-list-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">Paper list</p><h2 id="paper-list-title">Questions stated in the literature</h2></div>
-          <p id="result-count" class="result-count" aria-live="polite">Loading records…</p>
-        </div>
-        <div class="list-tools">
-          <label class="search-field">
-            <span class="sr-only">Search records</span>
-            <input id="search" type="search" placeholder="Search title, author, topic, or phrase…" autocomplete="off" />
-          </label>
-          <div id="topic-filters" class="topic-filters" aria-label="Filter by topic"></div>
-        </div>
-        <div id="open-list" class="paper-list"></div>
-        <div id="empty-state" class="empty-state" hidden><h3>No matching paper statements</h3><p>Clear the search or select a different topic.</p></div>
-      </section>
-
-      <section class="shell status-section" aria-labelledby="status-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">Status control</p><h2 id="status-title">Questions that should not be listed as open</h2></div>
-          <p>Later results and scope corrections recorded separately.</p>
-        </div>
-        <div id="status-list" class="status-list"></div>
-      </section>
-
-      <section id="literature-path" class="shell path-section" aria-labelledby="path-title">
-        <div class="section-intro">
-          <div><p class="eyebrow">Descriptive literature path</p><h2 id="path-title">Sample-based inventory and policy learning</h2></div>
-          <p>This chronology reports each paper's benchmark and result; it does not itself assert an open problem.</p>
-        </div>
-        <div id="path-list" class="path-list"></div>
-      </section>
-
-    </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-grid">
-        <div><strong>Open Problems in Inventory Management</strong><p>Maintained by Xianghua Jiang and Xiting Gong.</p></div>
-        <div><span>Data version</span><strong id="footer-version">2.5.0 · 2026-09-04</strong></div>
-      </div>
-    </footer>
-  </body>
-</html>
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Problems · Open Problems in Inventory Management</title><meta name="description" content="Research questions and subsequent results in inventory management, with source papers, scope conditions, and related literature." /><link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/" /><link rel="stylesheet" href="assets/styles.css?v=3.0.0" /><script type="module" src="assets/app.js?v=3.0.0"></script><meta property="og:title" content="Open Problems in Inventory Management" /><meta property="og:description" content="Research questions, source papers, and subsequent results." /><meta property="og:image" content="https://nusjxh.github.io/open-problems-in-inventory-management/assets/open-graph.png" /><meta name="twitter:card" content="summary_large_image" /></head>
+<body class="problems-page"><a class="skip-link" href="#paper-list">Skip to problems</a><header class="site-header"><a class="brand" href="index.html">Open Problems in Inventory Management</a><nav aria-label="Primary navigation"><a class="active" aria-current="page" href="index.html">Problems</a><a href="trends.html">Research Trends</a><a href="about.html">About</a></nav></header>
+<main class="shell catalogue-main">
+<section class="catalogue-intro" aria-labelledby="page-title"><h1 id="page-title">Research questions &amp; subsequent results</h1><p>Questions stated in inventory papers, the results they establish, and the literature that follows.</p></section>
+<section id="record-overview" class="record-overview" aria-label="Record overview"><p>Loading the research catalogue…</p></section>
+<section id="paper-list" aria-labelledby="list-title"><h2 id="list-title" class="sr-only">Browse research questions and results</h2>
+<form id="problem-filters" class="problem-filters" role="search">
+<label class="catalogue-search">Search<input id="search" name="q" type="search" placeholder="Keyword, problem, author, or paper…" autocomplete="off" /></label>
+<div class="filter-row">
+<label>Research topic<select id="filter-topic"><option value="">All topics</option></select></label>
+<label>Progress<select id="filter-progress"><option value="">All progress</option></select></label>
+<label>Record type<select id="filter-kind"><option value="">All types</option></select></label>
+<label>Order<select id="filter-sort"><option value="default">Catalogue order</option><option value="newest">Newest source first</option><option value="oldest">Oldest source first</option></select></label>
+<button id="clear-filters" type="button">Clear filters</button></div></form>
+<div class="catalogue-list-heading"><p id="result-count" role="status" aria-live="polite">Loading records…</p><p>Expand a record for its sources and literature path.</p></div>
+<div id="open-list" class="problem-catalogue"></div>
+<div id="empty-state" class="empty-state" hidden><h3>No matching records</h3><p>Try a broader search or clear the filters.</p></div>
+<noscript><p>Enable JavaScript to search the catalogue, or read the <a href="data/problem-index.json">source-linked record data</a>.</p></noscript></section>
+<p class="catalogue-footnote">Progress labels report source-specific evidence, not an independent proof certification. Questions, extensions, and subsequent results are distinguished. <a href="about.html#inclusion">About the catalogue</a>.</p>
+</main><footer class="site-footer"><div class="shell footer-grid"><div><strong>Xianghua Jiang · Xiting Gong</strong><p>Open Problems in Inventory Management</p></div><div><span id="footer-version">Version 3.0.0 · Sources reviewed through 4 September 2026</span></div></div></footer></body></html>

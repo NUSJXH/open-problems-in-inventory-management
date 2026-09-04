@@ -25,7 +25,7 @@ for(const source of ['wos','openalex']){
 test('Undefined shares are gaps, not zeros',()=>{assert.equal(measureValue(0,0,'share'),null);assert.equal(measureValue(0,0,'count'),0);assert.equal(upperBound([null,0]),1);});
 test('Shared scale contains every nonmissing value',()=>{for(const values of [[0,1],[2,9.8],[4,42],[0.03,0.04]])assert.ok(upperBound(values)>=Math.max(...values));});
 test('Static pages have unique IDs, English content, and valid local links',async()=>{
-  for(const name of ['index.html','methodology.html','about.html','problem.html']){
+  for(const name of ['index.html','trends.html','methodology.html','about.html','problem.html']){
     const html=await readFile(path.join(root,name),'utf8');assert.match(html,/<html lang="en">/);assert.ok(!/\p{Script=Han}/u.test(html));
     const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(new Set(ids).size,ids.length,name);
     for(const [,url] of html.matchAll(/\b(?:href|src)="([^"]+)"/g)){
@@ -37,7 +37,7 @@ test('Static pages have unique IDs, English content, and valid local links',asyn
   }
 });
 test('Every chart control and target referenced by the module exists',async()=>{
-  const html=await readFile(path.join(root,'index.html'),'utf8'),js=await readFile(path.join(root,'assets/trends.js'),'utf8');
+  const html=await readFile(path.join(root,'trends.html'),'utf8'),js=await readFile(path.join(root,'assets/trends.js'),'utf8');
   for(const [,id] of js.matchAll(/\$\('([^']+)'\)/g))assert.ok(html.includes(`id="${id}"`),id);
   assert.match(js,/value='2000'/);assert.match(js,/value='2025'/);
   assert.ok(!js.includes('innerHTML'));assert.ok(!js.replace('http://www.w3.org/2000/svg','').includes('http://'));

@@ -1,0 +1,842 @@
+{
+  "schemaVersion": "1.0",
+  "releaseVersion": "3.0.0",
+  "auditThrough": "2026-09-04",
+  "progressLabels": {
+    "pending": "Status review pending",
+    "partial": "Partial resolution reported",
+    "resolved": "Resolution reported in stated scope"
+  },
+  "countingNote": "Eight source-stated questions or extensions and five additional result records. The sixth legacy status update is integrated into OIM-007, not counted twice. Records are not a census of currently open problems.",
+  "timelineNote": "Selected source papers and related literature. Chronological order does not imply a citation relationship or resolution of the stated question.",
+  "records": [
+    {
+      "id": "OIM-008",
+      "kind": "Explicit open question",
+      "topic": "Lost sales policies",
+      "title": "PIL optimality when lead time and the lost-sales penalty grow together",
+      "statement": "Moradi, Arts, and Drent ask whether PIL is asymptotically optimal when lead time and the unit lost-sales penalty increase at the same rate.",
+      "progress": "pending",
+      "keywords": [
+        "PIL",
+        "lead time",
+        "joint limits",
+        "penalty"
+      ],
+      "result": "Theorem 1 states an iterated-limit guarantee: first let lead time tend to infinity, then let the penalty tend to infinity, under the paper's i.i.d. demand assumptions.",
+      "boundary": "The order of limits is essential. This is the question stated in the 2025 working paper, not a claim about every joint-growth regime. A complete forward-citation audit is pending.",
+      "source": {
+        "authors": "Moradi, Arts, and Drent",
+        "year": 2025,
+        "title": "Asymptotic Optimality of Projected Inventory Level Policies for Lost Sales Inventory Systems with Large Leadtime and Penalty Cost",
+        "outlet": "arXiv working paper, version 4 (4 August 2025)",
+        "location": "p. 4, Theorem 1; p. 12, Section 4",
+        "url": "https://arxiv.org/abs/2504.10132v4"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "year": 2024,
+          "title": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
+          "authors": "van Jaarsveld and Arts",
+          "url": "https://doi.org/10.1287/opre.2021.0032",
+          "relationship": "Related result: different scope",
+          "result": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions."
+        },
+        {
+          "authors": "Moradi, Arts, and Drent",
+          "year": 2025,
+          "title": "Asymptotic Optimality of Projected Inventory Level Policies for Lost Sales Inventory Systems with Large Leadtime and Penalty Cost",
+          "outlet": "arXiv working paper, version 4 (4 August 2025)",
+          "location": "p. 4, Theorem 1; p. 12, Section 4",
+          "url": "https://arxiv.org/abs/2504.10132v4",
+          "relationship": "Source paper",
+          "result": "Theorem 1 states an iterated-limit guarantee: first let lead time tend to infinity, then let the penalty tend to infinity, under the paper's i.i.d. demand assumptions."
+        }
+      ],
+      "relatedRecords": [
+        "OIM-001",
+        "OIM-R01",
+        "OIM-R04"
+      ]
+    },
+    {
+      "id": "OIM-001",
+      "kind": "Explicit conjecture",
+      "topic": "Lost sales policies",
+      "title": "Optimality of the fixed non-stockout-probability policy",
+      "statement": "For the classical periodic-review lost-sales model with linear holding and penalty costs and continuous demand, the paper conjectures that the FP3 policy whose target satisfies its optimality equation is optimal.",
+      "progress": "pending",
+      "keywords": [
+        "FP3",
+        "lost sales",
+        "stationarity",
+        "optimality"
+      ],
+      "result": "The paper derives an optimality equation, develops an FP3 policy and its approximation, and reports numerical comparisons. Its long-lead-time discussion argues that FP3 approaches a constant-order policy after assuming that the system reaches stationarity.",
+      "boundary": "The conjecture is stronger than the long-lead-time argument. The paper states that the numerical evidence is not a formal proof of close-to-optimality.",
+      "source": {
+        "authors": "de Kok and Meijer",
+        "year": 2024,
+        "title": "Fixed Non-Stockout-Probability Policies for the Single-Item Lost-Sales Model",
+        "outlet": "Working paper",
+        "location": "p. 18, Conjecture; p. 12, asymptotic discussion",
+        "url": "https://arxiv.org/abs/2304.06936"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Xin",
+          "authors": "Xin",
+          "url": "https://doi.org/10.1287/opre.2020.2019",
+          "relationship": "Related literature",
+          "result": "Shows convergence to a constant-order policy and constructs a sequence that is asymptotically optimal as lead time grows.",
+          "boundary": "This paper analyzes policy performance rather than learning from historical or censored data.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Capped base-stock policy"
+        },
+        {
+          "authors": "de Kok and Meijer",
+          "year": 2024,
+          "title": "Fixed Non-Stockout-Probability Policies for the Single-Item Lost-Sales Model",
+          "outlet": "Working paper",
+          "location": "p. 18, Conjecture; p. 12, asymptotic discussion",
+          "url": "https://arxiv.org/abs/2304.06936",
+          "relationship": "Source paper",
+          "result": "The paper derives an optimality equation, develops an FP3 policy and its approximation, and reports numerical comparisons. Its long-lead-time discussion argues that FP3 approaches a constant-order policy after assuming that the system reaches stationarity."
+        },
+        {
+          "year": 2024,
+          "title": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
+          "authors": "van Jaarsveld and Arts",
+          "url": "https://doi.org/10.1287/opre.2021.0032",
+          "relationship": "Related result: different scope",
+          "result": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions."
+        },
+        {
+          "year": 2025,
+          "title": "Moradi, Arts, and Drent",
+          "authors": "Moradi, Arts, and Drent",
+          "url": "https://arxiv.org/abs/2504.10132v4",
+          "relationship": "Related literature",
+          "result": "States asymptotic optimality in the iterated large-lead-time, then large-penalty limit.",
+          "boundary": "The stated iterated limit does not establish simultaneous growth at the same rate.",
+          "dataRegime": "Known i.i.d. demand distribution",
+          "policyBenchmark": "Projected-inventory-level policy under average cost"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-008",
+        "OIM-R01",
+        "OIM-R04"
+      ]
+    },
+    {
+      "id": "OIM-002",
+      "kind": "Explicit open question",
+      "topic": "Nonstationary inventory",
+      "title": "Matching lower bounds for nonstationary lost sales with positive lead times",
+      "statement": "For nonstationary lost-sales systems with strictly positive lead times, the paper identifies matching lower bounds for its dynamic-regret guarantees as an open question.",
+      "progress": "pending",
+      "keywords": [
+        "nonstationarity",
+        "dynamic regret",
+        "lower bounds",
+        "base stock"
+      ],
+      "result": "The paper develops adaptive algorithms for backlogging and lost-sales systems under piecewise-stationary demand. The positive-lead-time lost-sales guarantee is weaker than the rates obtained for backlogging and zero-lead-time lost sales.",
+      "boundary": "The benchmark is the time-varying optimal base-stock policy. The question does not concern regret relative to the globally optimal dynamic inventory policy.",
+      "source": {
+        "authors": "Amiri, Sinclair, and Udenio",
+        "year": 2026,
+        "title": "Non-Stationary Inventory Control with Lead Times",
+        "outlet": "arXiv working paper",
+        "location": "p. 4 and p. 24; Theorem 4 discussion",
+        "url": "https://arxiv.org/abs/2602.05799"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "year": 2009,
+          "title": "Huh, Janakiraman, Muckstadt, and Rusmevichientong",
+          "authors": "Huh, Janakiraman, Muckstadt, and Rusmevichientong",
+          "url": "https://doi.org/10.1287/moor.1080.0367",
+          "relationship": "Related literature",
+          "result": "Develops a nonparametric adaptive algorithm with a cubic-root convergence rate.",
+          "boundary": "The benchmark is the best base-stock policy, not the globally optimal dynamic policy.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best base-stock policy in lost sales with positive lead times"
+        },
+        {
+          "year": 2020,
+          "title": "Zhang, Chao, and Shi",
+          "authors": "Zhang, Chao, and Shi",
+          "url": "https://doi.org/10.1287/mnsc.2019.3288",
+          "relationship": "Related literature",
+          "result": "Attains the square-root regret lower bound with a simulated cycle-update policy.",
+          "boundary": "The paper closes the rate question for the base-stock benchmark.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best base-stock policy in lost sales with positive lead times"
+        },
+        {
+          "year": 2024,
+          "title": "Lyu, Zhang, and Xin",
+          "authors": "Lyu, Zhang, and Xin",
+          "url": "https://doi.org/10.1287/opre.2022.0273",
+          "relationship": "Related literature",
+          "result": "Uses a UCB framework with a Kaplan–Meier estimator; the regret is tight up to a logarithmic factor in the horizon.",
+          "boundary": "For capped base-stock learning, Remark 5 reports an upper bound with exponential dependence on lead time and attributes it to policy switching. The paper states that this dependence seems inevitable for the capped base-stock system.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best capped base-stock and best base-stock policies"
+        },
+        {
+          "authors": "Amiri, Sinclair, and Udenio",
+          "year": 2026,
+          "title": "Non-Stationary Inventory Control with Lead Times",
+          "outlet": "arXiv working paper",
+          "location": "p. 4 and p. 24; Theorem 4 discussion",
+          "url": "https://arxiv.org/abs/2602.05799",
+          "relationship": "Source paper",
+          "result": "The paper develops adaptive algorithms for backlogging and lost-sales systems under piecewise-stationary demand. The positive-lead-time lost-sales guarantee is weaker than the rates obtained for backlogging and zero-lead-time lost sales."
+        }
+      ],
+      "relatedRecords": [
+        "OIM-003"
+      ]
+    },
+    {
+      "id": "OIM-003",
+      "kind": "Source-stated extension",
+      "topic": "Nonstationary inventory",
+      "title": "Demand drift, stochastic lead times, and transient-cost regret",
+      "statement": "The paper lists gradually drifting demand and stochastic lead times as extensions and asks whether positive-lead-time regret bounds under transient expected cost can retain the same dependence on the horizon while remaining sublinear in the number of demand regimes when that number is unknown.",
+      "progress": "pending",
+      "keywords": [
+        "demand drift",
+        "random lead times",
+        "transient cost"
+      ],
+      "result": "The paper studies unknown piecewise-stationary demand, deterministic lead times, and base-stock-policy optimization. It reports guarantees under stationary-average-cost regret and discusses a transient-cost comparison separately.",
+      "boundary": "This item records the extensions named in the paper's conclusion; it does not assert that every stationary inventory theorem fails under nonstationarity.",
+      "source": {
+        "authors": "Amiri, Sinclair, and Udenio",
+        "year": 2026,
+        "title": "Non-Stationary Inventory Control with Lead Times",
+        "outlet": "arXiv working paper",
+        "location": "pp. 30–31, conclusion",
+        "url": "https://arxiv.org/abs/2602.05799"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "authors": "Amiri, Sinclair, and Udenio",
+          "year": 2026,
+          "title": "Non-Stationary Inventory Control with Lead Times",
+          "outlet": "arXiv working paper",
+          "location": "pp. 30–31, conclusion",
+          "url": "https://arxiv.org/abs/2602.05799",
+          "relationship": "Source paper",
+          "result": "The paper studies unknown piecewise-stationary demand, deterministic lead times, and base-stock-policy optimization. It reports guarantees under stationary-average-cost regret and discusses a transient-cost comparison separately."
+        },
+        {
+          "year": 2026,
+          "title": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "authors": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "url": "https://arxiv.org/abs/2404.11509v3",
+          "relationship": "Related literature",
+          "result": "Establishes generalization bounds with arbitrary temporal dependence within demand trajectories. For average cost, nonstationary base-stock policies have horizon-independent bounds; stationary (s, S) policies exhibit logarithmic horizon dependence.",
+          "boundary": "The sampled trajectories are i.i.d.; demand within each trajectory need not be stationary or independent. The nonstationary base-stock result assumes no fixed ordering cost. These are best-in-class guarantees under the paper's boundedness conditions, not guarantees for censored online learning or unrestricted train–test distribution shift. Source: author manuscript dated January 31, 2026, Sections 2–4; arXiv v3 posted February 1, 2026.",
+          "dataRegime": "Offline i.i.d. full demand trajectories",
+          "policyBenchmark": "Best-in-class base-stock and (s, S) policies under backlogging"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-002"
+      ]
+    },
+    {
+      "id": "OIM-004",
+      "kind": "Explicit open question",
+      "topic": "Disruptions and networks",
+      "title": "Sharp constant in the disrupted-mode decentralization condition",
+      "statement": "The paper asks whether the sufficient requirement lambda at least a plus 1 can be tightened to lambda at least a plus epsilon-zero for a universal positive constant. It also records a counterexample implying epsilon-zero must exceed 0.25.",
+      "progress": "pending",
+      "keywords": [
+        "supply disruptions",
+        "expediting",
+        "Poisson tails"
+      ],
+      "result": "The paper proves the Poisson-tail comparison needed for its decentralization criterion under the stated plus-1 condition and uses the result in a multitier inventory network with expediting and disruptions.",
+      "boundary": "The question concerns the constant in the paper's tail comparison and the associated sufficient condition; it is not a general characterization of optimal disruption allocation.",
+      "source": {
+        "authors": "Zhao, Birge, DeValve, and Inman",
+        "year": 2026,
+        "title": "Managing Multitier Inventory Networks with Expediting Under Normal and Disrupted Modes",
+        "outlet": "Manufacturing & Service Operations Management",
+        "location": "Endnote 3",
+        "url": "https://doi.org/10.1287/msom.2023.0249"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "authors": "Zhao, Birge, DeValve, and Inman",
+          "year": 2026,
+          "title": "Managing Multitier Inventory Networks with Expediting Under Normal and Disrupted Modes",
+          "outlet": "Manufacturing & Service Operations Management",
+          "location": "Endnote 3",
+          "url": "https://doi.org/10.1287/msom.2023.0249",
+          "relationship": "Source paper",
+          "result": "The paper proves the Poisson-tail comparison needed for its decentralization criterion under the stated plus-1 condition and uses the result in a multitier inventory network with expediting and disruptions."
+        }
+      ],
+      "relatedRecords": []
+    },
+    {
+      "id": "OIM-005",
+      "kind": "Source-stated extension",
+      "topic": "Fixed ordering costs",
+      "title": "Policy structure under exponentially growing loss functions",
+      "statement": "Perera and Sethi identify the existence of feedback policies and the optimality of an (s, S) policy under exponentially growing loss functions as a mathematical extension of the discrete-time fixed-cost inventory literature.",
+      "progress": "pending",
+      "keywords": [
+        "fixed costs",
+        "exponential loss",
+        "policy structure"
+      ],
+      "result": "The survey reports that the available existence and structural results it reviews permit loss functions with at most polynomial growth.",
+      "boundary": "This record attributes a research direction to the survey. It does not assert that every risk-sensitive, exponential-utility, or otherwise nonlinear inventory model lacks a structural result.",
+      "source": {
+        "authors": "Perera and Sethi",
+        "year": 2023,
+        "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+        "outlet": "Production and Operations Management 32(1):131–153",
+        "location": "Section 6, p. 18 of the article file",
+        "url": "https://doi.org/10.1111/poms.13820"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Yuan, Luo, and Shi",
+          "authors": "Yuan, Luo, and Shi",
+          "url": "https://doi.org/10.1287/mnsc.2020.3799",
+          "relationship": "Related literature",
+          "result": "Combines stochastic gradient descent, bandit control, and simulation in a (δ, S) learning policy and proves cumulative regret of order O(√T log T), tight up to a logarithmic factor.",
+          "boundary": "The model is single-product and online. It does not provide an offline estimator for capped base-stock policies in positive-lead-time lost-sales systems.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Clairvoyant full-information benchmark"
+        },
+        {
+          "authors": "Perera and Sethi",
+          "year": 2023,
+          "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+          "outlet": "Production and Operations Management 32(1):131–153",
+          "location": "Section 6, p. 18 of the article file",
+          "url": "https://doi.org/10.1111/poms.13820",
+          "relationship": "Source paper",
+          "result": "The survey reports that the available existence and structural results it reviews permit loss functions with at most polynomial growth."
+        },
+        {
+          "year": 2025,
+          "title": "Zhang, Ye, and Haskell",
+          "authors": "Zhang, Ye, and Haskell",
+          "url": "https://doi.org/10.1287/opre.2020.0568",
+          "relationship": "Related literature",
+          "result": "Accounts for recursive estimation-error propagation and establishes influence-function representations and joint asymptotic normality for the estimated policy parameters.",
+          "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems. The journal issue is dated 2025; the article first appeared online in 2024.",
+          "dataRegime": "Offline uncensored demand samples",
+          "policyBenchmark": "Data-driven (s, S) policy"
+        },
+        {
+          "year": 2026,
+          "title": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "authors": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "url": "https://arxiv.org/abs/2404.11509v3",
+          "relationship": "Related literature",
+          "result": "Establishes generalization bounds with arbitrary temporal dependence within demand trajectories. For average cost, nonstationary base-stock policies have horizon-independent bounds; stationary (s, S) policies exhibit logarithmic horizon dependence.",
+          "boundary": "The sampled trajectories are i.i.d.; demand within each trajectory need not be stationary or independent. The nonstationary base-stock result assumes no fixed ordering cost. These are best-in-class guarantees under the paper's boundedness conditions, not guarantees for censored online learning or unrestricted train–test distribution shift. Source: author manuscript dated January 31, 2026, Sections 2–4; arXiv v3 posted February 1, 2026.",
+          "dataRegime": "Offline i.i.d. full demand trajectories",
+          "policyBenchmark": "Best-in-class base-stock and (s, S) policies under backlogging"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-006"
+      ]
+    },
+    {
+      "id": "OIM-006",
+      "kind": "Source-stated extension",
+      "topic": "Fixed ordering costs",
+      "title": "Forecast horizons for stochastic fixed-cost inventory models",
+      "statement": "Perera and Sethi propose establishing decision and forecast horizons for stochastic inventory models with fixed ordering costs as a direction for future research.",
+      "progress": "pending",
+      "keywords": [
+        "forecast horizon",
+        "fixed costs",
+        "stochastic inventory"
+      ],
+      "result": "The survey synthesizes optimality results for (s, S) and related policy structures across discrete-time stochastic inventory models with fixed costs.",
+      "boundary": "This statement concerns the stochastic fixed-cost setting reviewed by the survey. Earlier forecast-horizon results for deterministic lot-sizing or stationary continuous-review approximations do not by themselves settle this stated extension.",
+      "source": {
+        "authors": "Perera and Sethi",
+        "year": 2023,
+        "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+        "outlet": "Production and Operations Management 32(1):131–153",
+        "location": "Section 6, p. 18 of the article file",
+        "url": "https://doi.org/10.1111/poms.13820"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "The source states this question or extension. A complete subsequent-literature review is not recorded; this label does not certify that it remains open.",
+      "timeline": [
+        {
+          "year": 2007,
+          "title": "Levi, Roundy, and Shmoys",
+          "authors": "Levi, Roundy, and Shmoys",
+          "url": "https://doi.org/10.1287/moor.1070.0272",
+          "relationship": "Related literature",
+          "result": "Computes sample-based policies and provides distribution-free sample-size guarantees for near-optimal expected cost.",
+          "boundary": "This is the sampling-based starting point; it is not the canonical positive-lead-time censored lost-sales model.",
+          "dataRegime": "Offline i.i.d. samples",
+          "policyBenchmark": "Single-period newsvendor and a multiperiod inventory model"
+        },
+        {
+          "year": 2021,
+          "title": "Yuan, Luo, and Shi",
+          "authors": "Yuan, Luo, and Shi",
+          "url": "https://doi.org/10.1287/mnsc.2020.3799",
+          "relationship": "Related literature",
+          "result": "Combines stochastic gradient descent, bandit control, and simulation in a (δ, S) learning policy and proves cumulative regret of order O(√T log T), tight up to a logarithmic factor.",
+          "boundary": "The model is single-product and online. It does not provide an offline estimator for capped base-stock policies in positive-lead-time lost-sales systems.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Clairvoyant full-information benchmark"
+        },
+        {
+          "authors": "Perera and Sethi",
+          "year": 2023,
+          "title": "A Survey of Stochastic Inventory Models with Fixed Costs: Optimality of (s, S) and (s, S)-Type Policies—Discrete-Time Case",
+          "outlet": "Production and Operations Management 32(1):131–153",
+          "location": "Section 6, p. 18 of the article file",
+          "url": "https://doi.org/10.1111/poms.13820",
+          "relationship": "Source paper",
+          "result": "The survey synthesizes optimality results for (s, S) and related policy structures across discrete-time stochastic inventory models with fixed costs."
+        },
+        {
+          "year": 2025,
+          "title": "Zhang, Ye, and Haskell",
+          "authors": "Zhang, Ye, and Haskell",
+          "url": "https://doi.org/10.1287/opre.2020.0568",
+          "relationship": "Related literature",
+          "result": "Accounts for recursive estimation-error propagation and establishes influence-function representations and joint asymptotic normality for the estimated policy parameters.",
+          "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems. The journal issue is dated 2025; the article first appeared online in 2024.",
+          "dataRegime": "Offline uncensored demand samples",
+          "policyBenchmark": "Data-driven (s, S) policy"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-005"
+      ]
+    },
+    {
+      "id": "OIM-007",
+      "kind": "Explicit open question",
+      "topic": "Compound-Poisson lost sales",
+      "title": "Exact pipeline distribution under partial rejection and general compound-Poisson demand",
+      "statement": "For a continuous-review (S − 1, S) lost-sales system with independently and identically distributed replenishment lead times, the source paper asks for the exact stationary distribution of the number of units on order under general compound-Poisson demand. Subsequent work narrows the unresolved case to partial rejection with a nongeometric demand-size distribution.",
+      "progress": "partial",
+      "keywords": [
+        "compound Poisson",
+        "partial rejection",
+        "pipeline distribution"
+      ],
+      "result": "Chen, Jackson, and Muckstadt derive an exact stationary distribution for geometric demand sizes, also called stuttering Poisson demand, and show that this distribution depends on the lead-time distribution only through its mean. Kouki, Babai, Jemai, and Minner later give an exact recursive procedure for general compound-Poisson demand under complete rejection.",
+      "boundary": "Under partial rejection, the 2019 recursion is exact for geometric demand sizes and approximate for a general demand-size distribution. The active question records only this residual exact-analysis case; it excludes complete rejection and the stuttering-Poisson model.",
+      "source": {
+        "authors": "Chen, Jackson, and Muckstadt",
+        "year": 2011,
+        "title": "Exact Analysis of a Lost Sales Model Under Stuttering Poisson Demand",
+        "outlet": "Operations Research 59(1):249–253",
+        "location": "Abstract; source manuscript, Section 5",
+        "url": "https://doi.org/10.1287/opre.1100.0872"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "A subsequent result resolves complete rejection; the partial-rejection case stated here remains outside that result.",
+      "timeline": [
+        {
+          "authors": "Chen, Jackson, and Muckstadt",
+          "year": 2011,
+          "title": "Exact Analysis of a Lost Sales Model Under Stuttering Poisson Demand",
+          "outlet": "Operations Research 59(1):249–253",
+          "location": "Abstract; source manuscript, Section 5",
+          "url": "https://doi.org/10.1287/opre.1100.0872",
+          "relationship": "Source paper",
+          "result": "Chen, Jackson, and Muckstadt derive an exact stationary distribution for geometric demand sizes, also called stuttering Poisson demand, and show that this distribution depends on the lead-time distribution only through its mean. Kouki, Babai, Jemai, and Minner later give an exact recursive procedure for general compound-Poisson demand under complete rejection."
+        },
+        {
+          "year": 2019,
+          "title": "Kouki, Babai, Jemai, and Minner (2019), International Journal of Production Economics 209:172–182",
+          "authors": "Kouki, Babai, Jemai, and Minner",
+          "url": "https://doi.org/10.1016/j.ijpe.2018.01.021",
+          "relationship": "Subsequent result",
+          "result": "Chen, Jackson, and Muckstadt identify exact analysis under general compound-Poisson demand as open. Kouki, Babai, Jemai, and Minner give an exact recursive procedure under complete rejection; under partial rejection, their procedure is exact for geometric demand sizes and approximate for a general demand-size distribution. The active list therefore retains only the latter residual case."
+        }
+      ],
+      "relatedRecords": []
+    },
+    {
+      "id": "OIM-R01",
+      "kind": "Reported result",
+      "topic": "Lost sales policies",
+      "title": "Long-lead-time asymptotic optimality of PIL",
+      "statement": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions.",
+      "progress": "resolved",
+      "keywords": [
+        "PIL",
+        "lead time",
+        "exponential demand"
+      ],
+      "result": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions.",
+      "boundary": "The large-lead-time theorem assumes exponentially distributed demand. It does not settle arbitrary demand or joint lead-time/penalty limits.",
+      "source": {
+        "authors": "van Jaarsveld and Arts",
+        "year": 2024,
+        "title": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
+        "citationOnly": true,
+        "outlet": "Source-linked result record",
+        "location": "Consult the linked paper for the full theorem and assumptions; a theorem-page reference has not been recorded for this entry.",
+        "url": "https://doi.org/10.1287/opre.2021.0032"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "Source-reported status: Resolved in stated regime. The recorded conclusion is confined to the model and benchmark described here.",
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Xin",
+          "authors": "Xin",
+          "url": "https://doi.org/10.1287/opre.2020.2019",
+          "relationship": "Related literature",
+          "result": "Shows convergence to a constant-order policy and constructs a sequence that is asymptotically optimal as lead time grows.",
+          "boundary": "This paper analyzes policy performance rather than learning from historical or censored data.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Capped base-stock policy"
+        },
+        {
+          "year": 2024,
+          "title": "van Jaarsveld and Arts (2024), Operations Research 72(5):1790–1805",
+          "authors": "van Jaarsveld and Arts",
+          "url": "https://doi.org/10.1287/opre.2021.0032",
+          "relationship": "Reported result",
+          "result": "van Jaarsveld and Arts prove that PIL dominates the constant-order policy for every finite lead time and is asymptotically optimal as lead time grows for exponentially distributed demand per period. They also establish high-penalty asymptotic optimality under mild distributional assumptions."
+        },
+        {
+          "year": 2025,
+          "title": "Moradi, Arts, and Drent",
+          "authors": "Moradi, Arts, and Drent",
+          "url": "https://arxiv.org/abs/2504.10132v4",
+          "relationship": "Related literature",
+          "result": "States asymptotic optimality in the iterated large-lead-time, then large-penalty limit.",
+          "boundary": "The stated iterated limit does not establish simultaneous growth at the same rate.",
+          "dataRegime": "Known i.i.d. demand distribution",
+          "policyBenchmark": "Projected-inventory-level policy under average cost"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-008",
+        "OIM-001",
+        "OIM-R04"
+      ]
+    },
+    {
+      "id": "OIM-R02",
+      "kind": "Reported result",
+      "topic": "Perishable inventory",
+      "title": "PIL guarantees for perishable systems with positive lead times",
+      "statement": "Bu, Gong, and Yin establish asymptotic optimality of the best PIL policy as the unit penalty grows for a broad class of unbounded demand distributions in perishable backlogging and lost-sales systems. They also report large-population asymptotic guarantees. The asymptotic regimes stated in the paper are penalty and demand population size, rather than lead time.",
+      "progress": "resolved",
+      "keywords": [
+        "PIL",
+        "perishability",
+        "penalty",
+        "population"
+      ],
+      "result": "Bu, Gong, and Yin establish asymptotic optimality of the best PIL policy as the unit penalty grows for a broad class of unbounded demand distributions in perishable backlogging and lost-sales systems. They also report large-population asymptotic guarantees. The asymptotic regimes stated in the paper are penalty and demand population size, rather than lead time.",
+      "boundary": "The stated limits concern penalty and demand population, not long lead time.",
+      "source": {
+        "authors": "Bu, Gong, and Yin",
+        "year": 2026,
+        "title": "Bu, Gong, and Yin (2026), Management Science, Articles in Advance",
+        "citationOnly": true,
+        "outlet": "Source-linked result record",
+        "location": "Consult the linked paper for the full theorem and assumptions; a theorem-page reference has not been recorded for this entry.",
+        "url": "https://ssrn.com/abstract=4638265"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "Source-reported status: Resolved in additional regimes. The recorded conclusion is confined to the model and benchmark described here.",
+      "timeline": [
+        {
+          "year": 2026,
+          "title": "Bu, Gong, and Yin",
+          "authors": "Bu, Gong, and Yin",
+          "url": "https://ssrn.com/abstract=4638265",
+          "relationship": "Related literature",
+          "result": "Establishes PIL asymptotic optimality in large-penalty and large-demand-population regimes and compares PIL with base-stock policies across issuance rules.",
+          "boundary": "The stated asymptotic regimes are penalty and demand population size; the paper does not report long-lead-time asymptotic optimality.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Best projected-inventory-level and base-stock policies for perishable systems"
+        }
+      ],
+      "relatedRecords": []
+    },
+    {
+      "id": "OIM-R03",
+      "kind": "Reported result",
+      "topic": "Data-driven lost sales",
+      "title": "Square-root regret under censored demand and positive lead times",
+      "statement": "Zhang, Chao, and Shi give an affirmative answer to the rate question posed after Huh et al. (2009): their nonparametric algorithm attains the square-root regret rate relative to the full-information optimal base-stock policy.",
+      "progress": "resolved",
+      "keywords": [
+        "online learning",
+        "censored demand",
+        "regret",
+        "base stock",
+        "offline learning"
+      ],
+      "result": "Zhang, Chao, and Shi give an affirmative answer to the rate question posed after Huh et al. (2009): their nonparametric algorithm attains the square-root regret rate relative to the full-information optimal base-stock policy.",
+      "boundary": "The benchmark is the optimal base-stock policy, not the globally optimal dynamic policy.",
+      "source": {
+        "authors": "Zhang, Chao, and Shi",
+        "year": 2020,
+        "title": "Zhang, Chao, and Shi (2020), Management Science 66(5):1962–1980",
+        "citationOnly": true,
+        "outlet": "Source-linked result record",
+        "location": "Consult the linked paper for the full theorem and assumptions; a theorem-page reference has not been recorded for this entry.",
+        "url": "https://doi.org/10.1287/mnsc.2019.3288"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "Source-reported status: Resolved for the base-stock benchmark. The recorded conclusion is confined to the model and benchmark described here.",
+      "timeline": [
+        {
+          "year": 2007,
+          "title": "Levi, Roundy, and Shmoys",
+          "authors": "Levi, Roundy, and Shmoys",
+          "url": "https://doi.org/10.1287/moor.1070.0272",
+          "relationship": "Related literature",
+          "result": "Computes sample-based policies and provides distribution-free sample-size guarantees for near-optimal expected cost.",
+          "boundary": "This is the sampling-based starting point; it is not the canonical positive-lead-time censored lost-sales model.",
+          "dataRegime": "Offline i.i.d. samples",
+          "policyBenchmark": "Single-period newsvendor and a multiperiod inventory model"
+        },
+        {
+          "year": 2009,
+          "title": "Huh, Janakiraman, Muckstadt, and Rusmevichientong",
+          "authors": "Huh, Janakiraman, Muckstadt, and Rusmevichientong",
+          "url": "https://doi.org/10.1287/moor.1080.0367",
+          "relationship": "Related literature",
+          "result": "Develops a nonparametric adaptive algorithm with a cubic-root convergence rate.",
+          "boundary": "The benchmark is the best base-stock policy, not the globally optimal dynamic policy.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best base-stock policy in lost sales with positive lead times"
+        },
+        {
+          "year": 2020,
+          "title": "Zhang, Chao, and Shi",
+          "authors": "Zhang, Chao, and Shi",
+          "url": "https://doi.org/10.1287/mnsc.2019.3288",
+          "relationship": "Related literature",
+          "result": "Attains the square-root regret lower bound with a simulated cycle-update policy.",
+          "boundary": "The paper closes the rate question for the base-stock benchmark.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best base-stock policy in lost sales with positive lead times"
+        },
+        {
+          "year": 2021,
+          "title": "Xin",
+          "authors": "Xin",
+          "url": "https://doi.org/10.1287/opre.2020.2019",
+          "relationship": "Related literature",
+          "result": "Shows convergence to a constant-order policy and constructs a sequence that is asymptotically optimal as lead time grows.",
+          "boundary": "This paper analyzes policy performance rather than learning from historical or censored data.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Capped base-stock policy"
+        },
+        {
+          "year": 2021,
+          "title": "Yuan, Luo, and Shi",
+          "authors": "Yuan, Luo, and Shi",
+          "url": "https://doi.org/10.1287/mnsc.2020.3799",
+          "relationship": "Related literature",
+          "result": "Combines stochastic gradient descent, bandit control, and simulation in a (δ, S) learning policy and proves cumulative regret of order O(√T log T), tight up to a logarithmic factor.",
+          "boundary": "The model is single-product and online. It does not provide an offline estimator for capped base-stock policies in positive-lead-time lost-sales systems.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Clairvoyant full-information benchmark"
+        },
+        {
+          "year": 2023,
+          "title": "Bu, Simchi-Levi, and Wang",
+          "authors": "Bu, Simchi-Levi, and Wang",
+          "url": "https://doi.org/10.1287/mnsc.2022.4382",
+          "relationship": "Related literature",
+          "result": "Studies offline pricing and demand learning with censored data and develops near-optimal or minimax-optimal procedures under the paper's identifiable and unidentifiable settings.",
+          "boundary": "The model allocates a fixed initial inventory through pricing; it does not learn a replenishment policy with positive lead times or a capped base-stock benchmark.",
+          "dataRegime": "Offline censored transactions",
+          "policyBenchmark": "Finite-inventory pricing policies"
+        },
+        {
+          "year": 2024,
+          "title": "Lyu, Zhang, and Xin",
+          "authors": "Lyu, Zhang, and Xin",
+          "url": "https://doi.org/10.1287/opre.2022.0273",
+          "relationship": "Related literature",
+          "result": "Uses a UCB framework with a Kaplan–Meier estimator; the regret is tight up to a logarithmic factor in the horizon.",
+          "boundary": "For capped base-stock learning, Remark 5 reports an upper bound with exponential dependence on lead time and attributes it to policy switching. The paper states that this dependence seems inevitable for the capped base-stock system.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best capped base-stock and best base-stock policies"
+        },
+        {
+          "year": 2025,
+          "title": "Zhang, Ye, and Haskell",
+          "authors": "Zhang, Ye, and Haskell",
+          "url": "https://doi.org/10.1287/opre.2020.0568",
+          "relationship": "Related literature",
+          "result": "Accounts for recursive estimation-error propagation and establishes influence-function representations and joint asymptotic normality for the estimated policy parameters.",
+          "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems. The journal issue is dated 2025; the article first appeared online in 2024.",
+          "dataRegime": "Offline uncensored demand samples",
+          "policyBenchmark": "Data-driven (s, S) policy"
+        },
+        {
+          "year": 2026,
+          "title": "Kumar and Mouchtaki",
+          "authors": "Kumar and Mouchtaki",
+          "url": "https://arxiv.org/abs/2602.16842",
+          "relationship": "Related literature",
+          "result": "Provides an exact worst-case analysis for data-driven newsvendor policies under censored observations and examines the roles of Kaplan–Meier estimation and exploration.",
+          "boundary": "The model is single-period; it does not address positive-lead-time lost-sales replenishment or offline learning of capped base-stock policies.",
+          "dataRegime": "Offline censored sales",
+          "policyBenchmark": "Data-driven newsvendor policies"
+        },
+        {
+          "year": 2026,
+          "title": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "authors": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+          "url": "https://arxiv.org/abs/2404.11509v3",
+          "relationship": "Related literature",
+          "result": "Establishes generalization bounds with arbitrary temporal dependence within demand trajectories. For average cost, nonstationary base-stock policies have horizon-independent bounds; stationary (s, S) policies exhibit logarithmic horizon dependence.",
+          "boundary": "The sampled trajectories are i.i.d.; demand within each trajectory need not be stationary or independent. The nonstationary base-stock result assumes no fixed ordering cost. These are best-in-class guarantees under the paper's boundedness conditions, not guarantees for censored online learning or unrestricted train–test distribution shift. Source: author manuscript dated January 31, 2026, Sections 2–4; arXiv v3 posted February 1, 2026.",
+          "dataRegime": "Offline i.i.d. full demand trajectories",
+          "policyBenchmark": "Best-in-class base-stock and (s, S) policies under backlogging"
+        }
+      ],
+      "relatedRecords": []
+    },
+    {
+      "id": "OIM-R04",
+      "kind": "Reported result",
+      "topic": "Lost sales policies",
+      "title": "A constant-factor guarantee for capped base-stock policies",
+      "statement": "A July 2026 working paper proves that the best capped base-stock policy is a 7/3-approximation. The paper describes approximation guarantees for this policy class as previously open and identifies a ratio below 2 as a possible direction for refinement.",
+      "progress": "partial",
+      "keywords": [
+        "capped base stock",
+        "approximation",
+        "7/3",
+        "CBS"
+      ],
+      "result": "A July 2026 working paper proves that the best capped base-stock policy is a 7/3-approximation. The paper describes approximation guarantees for this policy class as previously open and identifies a ratio below 2 as a possible direction for refinement.",
+      "boundary": "This is a working-paper approximation guarantee with known demand, not an online-regret or offline-estimation result.",
+      "source": {
+        "authors": "Xin",
+        "year": 2026,
+        "title": "Xin (2026), Capped Base-Stock Policies: A 2.33-Approximation",
+        "citationOnly": true,
+        "outlet": "Source-linked result record",
+        "location": "Consult the linked paper for the full theorem and assumptions; a theorem-page reference has not been recorded for this entry.",
+        "url": "https://ssrn.com/abstract=7134538"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "Source-reported status: New partial resolution. The recorded conclusion is confined to the model and benchmark described here.",
+      "timeline": [
+        {
+          "year": 2021,
+          "title": "Xin",
+          "authors": "Xin",
+          "url": "https://doi.org/10.1287/opre.2020.2019",
+          "relationship": "Related literature",
+          "result": "Shows convergence to a constant-order policy and constructs a sequence that is asymptotically optimal as lead time grows.",
+          "boundary": "This paper analyzes policy performance rather than learning from historical or censored data.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Capped base-stock policy"
+        },
+        {
+          "year": 2024,
+          "title": "Lyu, Zhang, and Xin",
+          "authors": "Lyu, Zhang, and Xin",
+          "url": "https://doi.org/10.1287/opre.2022.0273",
+          "relationship": "Related literature",
+          "result": "Uses a UCB framework with a Kaplan–Meier estimator; the regret is tight up to a logarithmic factor in the horizon.",
+          "boundary": "For capped base-stock learning, Remark 5 reports an upper bound with exponential dependence on lead time and attributes it to policy switching. The paper states that this dependence seems inevitable for the capped base-stock system.",
+          "dataRegime": "Online censored sales",
+          "policyBenchmark": "Best capped base-stock and best base-stock policies"
+        },
+        {
+          "year": 2026,
+          "title": "Xin",
+          "authors": "Xin",
+          "url": "https://ssrn.com/abstract=7134538",
+          "relationship": "Related literature",
+          "result": "Proves a 7/3 approximation guarantee for the best capped base-stock policy.",
+          "boundary": "This working paper concerns full-information approximation, not offline statistical estimation or online regret.",
+          "dataRegime": "Known demand distribution",
+          "policyBenchmark": "Best capped base-stock policy"
+        }
+      ],
+      "relatedRecords": [
+        "OIM-008",
+        "OIM-001",
+        "OIM-R01"
+      ]
+    },
+    {
+      "id": "OIM-R05",
+      "kind": "Reported result",
+      "topic": "Reusable-resource allocation",
+      "title": "Logarithmic loss in the large-capacity guarantee",
+      "statement": "Feng, Niazadeh, and Saberi ask whether the square-root logarithmic loss in their large-inventory guarantee for reusable-resource Bayesian online assortment can be removed. Aminian, Niazadeh, and Nuti subsequently state that their Bayesian online allocation policy attains 1 − sqrt(2/(pi k)) + O(1/k), matches the best explicit nonreusable bound, and solves the earlier reusable-resource open problem. The follow-up is currently a working paper, and this record does not extend its resolution claim beyond the model and reductions stated by its authors.",
+      "progress": "resolved",
+      "keywords": [
+        "reusable resources",
+        "Bayesian allocation",
+        "large capacity"
+      ],
+      "result": "Feng, Niazadeh, and Saberi ask whether the square-root logarithmic loss in their large-inventory guarantee for reusable-resource Bayesian online assortment can be removed. Aminian, Niazadeh, and Nuti subsequently state that their Bayesian online allocation policy attains 1 − sqrt(2/(pi k)) + O(1/k), matches the best explicit nonreusable bound, and solves the earlier reusable-resource open problem. The follow-up is currently a working paper, and this record does not extend its resolution claim beyond the model and reductions stated by its authors.",
+      "boundary": "The resolution is reported by a subsequent working paper and is confined to its reusable-resource allocation model.",
+      "source": {
+        "authors": "Aminian, Niazadeh, and Nuti",
+        "year": 2026,
+        "title": "Aminian, Niazadeh, and Nuti (2026), Optimal Bayesian Online Allocation of Reusable Resources",
+        "citationOnly": true,
+        "outlet": "Source-linked result record",
+        "location": "Consult the linked paper for the full theorem and assumptions; a theorem-page reference has not been recorded for this entry.",
+        "url": "https://ssrn.com/abstract=6384158"
+      },
+      "auditDate": "2026-09-04",
+      "progressNote": "Source-reported status: Resolved in a subsequent working paper. The recorded conclusion is confined to the model and benchmark described here.",
+      "timeline": [
+        {
+          "year": 2026,
+          "title": "Aminian, Niazadeh, and Nuti (2026), Optimal Bayesian Online Allocation of Reusable Resources",
+          "authors": "Aminian, Niazadeh, and Nuti",
+          "url": "https://ssrn.com/abstract=6384158",
+          "relationship": "Reported result",
+          "result": "Feng, Niazadeh, and Saberi ask whether the square-root logarithmic loss in their large-inventory guarantee for reusable-resource Bayesian online assortment can be removed. Aminian, Niazadeh, and Nuti subsequently state that their Bayesian online allocation policy attains 1 − sqrt(2/(pi k)) + O(1/k), matches the best explicit nonreusable bound, and solves the earlier reusable-resource open problem. The follow-up is currently a working paper, and this record does not extend its resolution claim beyond the model and reductions stated by its authors."
+        }
+      ],
+      "relatedRecords": []
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "asOf": "2026-09-04",
+  "source": "Crossref metadata already archived for five selected source papers",
+  "identityRule": "ORCID is used to link identities across papers. Authors without an ORCID are retained as paper-specific identities; surname or initial matching is not used.",
+  "note": "A five-paper illustration, not a field-wide collaboration network. An edge denotes a shared byline in these papers; it does not imply a citation, endorsement, or research ranking.",
+  "authors": [
+    {
+      "id": "https://orcid.org/0000-0003-3564-3391",
+      "name": "Cong Shi",
+      "orcid": "https://orcid.org/0000-0003-3564-3391"
+    },
+    {
+      "id": "https://orcid.org/0000-0002-4650-1519",
+      "name": "David Simchi-Levi",
+      "orcid": "https://orcid.org/0000-0002-4650-1519"
+    },
+    {
+      "id": "10.1287/moor.1080.0367::Ganesh Janakiraman",
+      "name": "Ganesh Janakiraman",
+      "orcid": null
+    },
+    {
+      "id": "https://orcid.org/0000-0003-1738-8673",
+      "name": "Hao Yuan",
+      "orcid": "https://orcid.org/0000-0003-1738-8673"
+    },
+    {
+      "id": "https://orcid.org/0000-0002-0672-5227",
+      "name": "Huanan Zhang",
+      "orcid": "https://orcid.org/0000-0002-0672-5227"
+    },
+    {
+      "id": "https://orcid.org/0000-0003-2355-5992",
+      "name": "Jinzhi Bu",
+      "orcid": "https://orcid.org/0000-0003-2355-5992"
+    },
+    {
+      "id": "10.1287/moor.1080.0367::John A. Muckstadt",
+      "name": "John A. Muckstadt",
+      "orcid": null
+    },
+    {
+      "id": "https://orcid.org/0000-0001-9009-2057",
+      "name": "Li Wang",
+      "orcid": "https://orcid.org/0000-0001-9009-2057"
+    },
+    {
+      "id": "10.1287/moor.1080.0367::Paat Rusmevichientong",
+      "name": "Paat Rusmevichientong",
+      "orcid": null
+    },
+    {
+      "id": "https://orcid.org/0000-0002-4103-7112",
+      "name": "Qi Luo",
+      "orcid": "https://orcid.org/0000-0002-4103-7112"
+    },
+    {
+      "id": "https://orcid.org/0009-0009-2727-5489",
+      "name": "William B. Haskell",
+      "orcid": "https://orcid.org/0009-0009-2727-5489"
+    },
+    {
+      "id": "10.1287/moor.1080.0367::Woonghee Tim Huh",
+      "name": "Woonghee Tim Huh",
+      "orcid": null
+    },
+    {
+      "id": "https://orcid.org/0000-0001-5233-4385",
+      "name": "Xiuli Chao",
+      "orcid": "https://orcid.org/0000-0001-5233-4385"
+    },
+    {
+      "id": "https://orcid.org/0000-0003-4391-1026",
+      "name": "Xun Zhang",
+      "orcid": "https://orcid.org/0000-0003-4391-1026"
+    },
+    {
+      "id": "https://orcid.org/0000-0001-5731-3911",
+      "name": "Zhi-Sheng Ye",
+      "orcid": "https://orcid.org/0000-0001-5731-3911"
+    }
+  ],
+  "papers": [
+    {
+      "doi": "10.1287/moor.1080.0367",
+      "title": "An Adaptive Algorithm for Finding the Optimal Base-Stock Policy in Lost Sales Inventory Systems with Censored Demand",
+      "authors": [
+        "10.1287/moor.1080.0367::Woonghee Tim Huh",
+        "10.1287/moor.1080.0367::Ganesh Janakiraman",
+        "10.1287/moor.1080.0367::John A. Muckstadt",
+        "10.1287/moor.1080.0367::Paat Rusmevichientong"
+      ]
+    },
+    {
+      "doi": "10.1287/mnsc.2019.3288",
+      "title": "Closing the Gap: A Learning Algorithm for Lost-Sales Inventory Systems with Lead Times",
+      "authors": [
+        "https://orcid.org/0000-0002-0672-5227",
+        "https://orcid.org/0000-0001-5233-4385",
+        "https://orcid.org/0000-0003-3564-3391"
+      ]
+    },
+    {
+      "doi": "10.1287/mnsc.2020.3799",
+      "title": "Marrying Stochastic Gradient Descent with Bandits: Learning Algorithms for Inventory Systems with Fixed Costs",
+      "authors": [
+        "https://orcid.org/0000-0003-1738-8673",
+        "https://orcid.org/0000-0002-4103-7112",
+        "https://orcid.org/0000-0003-3564-3391"
+      ]
+    },
+    {
+      "doi": "10.1287/mnsc.2022.4382",
+      "title": "Offline Pricing and Demand Learning with Censored Data",
+      "authors": [
+        "https://orcid.org/0000-0003-2355-5992",
+        "https://orcid.org/0000-0002-4650-1519",
+        "https://orcid.org/0000-0001-9009-2057"
+      ]
+    },
+    {
+      "doi": "10.1287/opre.2020.0568",
+      "title": "Error Propagation in Asymptotic Analysis of the Data-Driven ( s , S ) Inventory Policy",
+      "authors": [
+        "https://orcid.org/0000-0003-4391-1026",
+        "https://orcid.org/0000-0001-5731-3911",
+        "https://orcid.org/0009-0009-2727-5489"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "a": "10.1287/moor.1080.0367::Ganesh Janakiraman",
+      "b": "10.1287/moor.1080.0367::Woonghee Tim Huh",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "10.1287/moor.1080.0367::John A. Muckstadt",
+      "b": "10.1287/moor.1080.0367::Woonghee Tim Huh",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "10.1287/moor.1080.0367::Paat Rusmevichientong",
+      "b": "10.1287/moor.1080.0367::Woonghee Tim Huh",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "10.1287/moor.1080.0367::Ganesh Janakiraman",
+      "b": "10.1287/moor.1080.0367::John A. Muckstadt",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "10.1287/moor.1080.0367::Ganesh Janakiraman",
+      "b": "10.1287/moor.1080.0367::Paat Rusmevichientong",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "10.1287/moor.1080.0367::John A. Muckstadt",
+      "b": "10.1287/moor.1080.0367::Paat Rusmevichientong",
+      "papers": [
+        "10.1287/moor.1080.0367"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-5233-4385",
+      "b": "https://orcid.org/0000-0002-0672-5227",
+      "papers": [
+        "10.1287/mnsc.2019.3288"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0002-0672-5227",
+      "b": "https://orcid.org/0000-0003-3564-3391",
+      "papers": [
+        "10.1287/mnsc.2019.3288"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-5233-4385",
+      "b": "https://orcid.org/0000-0003-3564-3391",
+      "papers": [
+        "10.1287/mnsc.2019.3288"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0002-4103-7112",
+      "b": "https://orcid.org/0000-0003-1738-8673",
+      "papers": [
+        "10.1287/mnsc.2020.3799"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0003-1738-8673",
+      "b": "https://orcid.org/0000-0003-3564-3391",
+      "papers": [
+        "10.1287/mnsc.2020.3799"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0002-4103-7112",
+      "b": "https://orcid.org/0000-0003-3564-3391",
+      "papers": [
+        "10.1287/mnsc.2020.3799"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0002-4650-1519",
+      "b": "https://orcid.org/0000-0003-2355-5992",
+      "papers": [
+        "10.1287/mnsc.2022.4382"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-9009-2057",
+      "b": "https://orcid.org/0000-0003-2355-5992",
+      "papers": [
+        "10.1287/mnsc.2022.4382"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-9009-2057",
+      "b": "https://orcid.org/0000-0002-4650-1519",
+      "papers": [
+        "10.1287/mnsc.2022.4382"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-5731-3911",
+      "b": "https://orcid.org/0000-0003-4391-1026",
+      "papers": [
+        "10.1287/opre.2020.0568"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0003-4391-1026",
+      "b": "https://orcid.org/0009-0009-2727-5489",
+      "papers": [
+        "10.1287/opre.2020.0568"
+      ]
+    },
+    {
+      "a": "https://orcid.org/0000-0001-5731-3911",
+      "b": "https://orcid.org/0009-0009-2727-5489",
+      "papers": [
+        "10.1287/opre.2020.0568"
+      ]
+    }
+  ]
+}

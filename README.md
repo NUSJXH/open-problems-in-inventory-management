@@ -17,6 +17,9 @@ The site does not publish editor-created research ideas as open problems. Each r
 
 ## Current release
 
+- Version 3.0.0 uses three primary pages: **Problems**, **Research Trends**, and **About**. The homepage supports keyword, topic, progress, and record-type filters, with expandable source evidence and chronological literature paths. Methods and collection coverage accompany the trends rather than occupying a separate primary page.
+- The catalogue presents 13 records: seven with status review pending, two with partial resolution reported, and four with resolution reported in the stated scope. These are descriptive progress labels, not 13 certified open problems. One of the six underlying status updates is integrated into its corresponding question rather than listed twice.
+- A supplementary coauthor view on About uses five selected papers, 15 author identities, and 18 shared-byline edges. ORCID identifies cross-paper matches; names without ORCID remain paper-specific. This illustration is not a field-wide collaboration network.
 - Eight source-stated items, including the explicitly stated joint-growth PIL question in Moradi, Arts, and Drent (2025, arXiv v4). Its forward-citation audit remains incomplete.
 - Six status updates.
 - A fourteen-paper descriptive path covering offline sample-based inventory, fixed-cost and capped base-stock learning, nonstationary control, PIL, and the 2026 version of Xie, Ma, and Xin's VC analysis. Nonstationarity within an offline demand trajectory is distinguished from online adaptation and distribution shift.
@@ -51,14 +54,14 @@ Then open `http://localhost:8000/`.
 
 ```powershell
 node scripts/validate-data.mjs
-node --test scripts/test-trends.mjs
+node --test scripts/test-trends.mjs scripts/test-evidence.mjs scripts/test-catalogue.mjs
 ```
 
 The validators check source fields, English-only public files, count identities, share denominators, incomplete-year behavior, chart controls, and local links. They do not substitute for browser visual review or a scholarly proof audit.
 
 ## Web of Science import
 
-The methodology page records fields, topic definitions, journal scope, export dates, source checksums, cohort reconciliation, and chart denominators. Do not interpret keyword-screening counts as counts of open problems.
+The expandable methods section on Research Trends records fields, topic definitions, journal scope, export dates, source checksums, cohort reconciliation, and chart denominators. Do not interpret keyword-screening counts as counts of open problems. Previously shared methodology and problem URLs redirect to their corresponding sections.
 
 The current long-run aggregate is built by `source_data/wos/build_verified_trends.py` in the private parent workspace. It verifies the native release checksums and writes aggregate JSON only to this repository. The licensed inputs are deliberately not vendored here.
 

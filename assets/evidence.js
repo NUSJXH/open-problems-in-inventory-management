@@ -1,4 +1,4 @@
-import {validateCoverage, coverageRows} from './evidence-model.mjs?v=2.5.0';
+import {validateCoverage, coverageRows} from './evidence-model.mjs?v=3.0.0';
 
 const host = document.getElementById('evidence-coverage');
 const number = n => n.toLocaleString('en-US');
@@ -12,7 +12,7 @@ function link(label, url) {
   const a = el('a', '', label); a.href = url; return a;
 }
 try {
-  const response = await fetch('data/evidence-coverage.json?v=2.5.0');
+  const response = await fetch('data/evidence-coverage.json?v=3.0.0');
   if (!response.ok) throw new Error('Coverage data unavailable');
   const data = validateCoverage(await response.json());
   host.replaceChildren();
@@ -63,7 +63,7 @@ try {
   details.append(papers,el('h3','','Remaining evidence'));
   const pending=el('ul'); for (const note of data.remainingEvidence) pending.append(el('li','',note)); details.append(pending);
   host.append(details);
-  const links=el('div','data-links'); links.append(link('Coverage methodology','methodology.html#evidence-protocol'),link('Download aggregate coverage JSON','data/evidence-coverage.json')); host.append(links);
+  const links=el('div','data-links'); links.append(link('Coverage methodology','trends.html#evidence-protocol'),link('Download aggregate coverage JSON','data/evidence-coverage.json')); host.append(links);
 } catch (error) {
   host.replaceChildren(el('p','data-notice','The supplementary coverage data could not be loaded. Please reload the page; the six-journal trends are independent of this panel.'));
   console.error(error);

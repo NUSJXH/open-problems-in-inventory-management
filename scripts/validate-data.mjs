@@ -2,11 +2,17 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { validateCoverage } from '../assets/evidence-model.mjs';
+import { validateProblems } from '../assets/problem-model.mjs';
+import { validateCoauthors } from '../assets/coauthor-model.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
 const registryPath = path.join(rootDir, "data", "registry.json");
 const registry = JSON.parse(await fs.readFile(registryPath, "utf8"));
+const catalogue = validateProblems(JSON.parse(await fs.readFile(path.join(rootDir, 'data/problem-index.json'), 'utf8')));
+const coauthors = validateCoauthors(JSON.parse(await fs.readFile(path.join(rootDir, 'data/coauthors.json'), 'utf8')));
+if (registry.releaseVersion !== catalogue.releaseVersion) throw new Error('Catalogue and registry release versions differ.');
+console.log(`Validated ${catalogue.records.length} catalogue records and ${coauthors.papers.length} selected coauthor-source papers.`);
 
 const requiredTopLevel = ["schemaVersion", "dataVersion", "auditThrough", "openItems", "statusUpdates", "literaturePath", "bibliometrics"];
 for (const field of requiredTopLevel) {
