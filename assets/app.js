@@ -1,4 +1,4 @@
-const registryUrl = "data/registry.json?v=2.4.0";
+const registryUrl = "data/registry.json?v=2.5.0";
 
 const openList = document.querySelector("#open-list");
 const statusList = document.querySelector("#status-list");

@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-09-04",
+  "database": "Web of Science Core Collection",
+  "provenance": "Aggregate counts from locally archived Full Record and Cited References exports. Native records are not redistributed.",
+  "cohortsArePooledWithTrends": false,
+  "uniqueRecords": 6328,
+  "coreSixOverlap": 312,
+  "additionalToCoreSix": 6016,
+  "referenceCountDiscrepancies": 42,
+  "queries": [
+    {
+      "id": "data_driven",
+      "label": "Data-driven inventory",
+      "query": "TS=((inventory OR inventories OR \"lost sales\" OR newsvendor) AND (\"data driven\" OR \"data-driven\" OR \"online learning\" OR \"offline learning\" OR \"sample average approximation\") AND (replenish* OR \"inventory control\" OR \"inventory management\" OR \"inventory model*\" OR newsvendor OR \"lost sales\" OR \"supply chain\")) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 698,
+      "exportedRows": 698,
+      "uniqueRecords": 698,
+      "complete": true
+    },
+    {
+      "id": "nonstationary",
+      "label": "Nonstationary demand",
+      "query": "TS=((inventory OR inventories OR \"lost sales\" OR newsvendor) AND (nonstationar* OR \"non-stationary\" OR \"time-varying demand\" OR \"demand drift\" OR \"distribution shift\") AND (replenish* OR \"inventory control\" OR \"inventory management\" OR \"inventory model*\" OR newsvendor OR \"lost sales\" OR \"supply chain\")) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 666,
+      "exportedRows": 666,
+      "uniqueRecords": 666,
+      "complete": true
+    },
+    {
+      "id": "censored",
+      "label": "Censored demand",
+      "query": "TS=((inventory OR inventories OR \"lost sales\" OR newsvendor) AND (censor* OR \"unobserved demand\") AND (replenish* OR \"inventory control\" OR \"inventory management\" OR \"inventory model*\" OR newsvendor OR \"lost sales\" OR \"supply chain\")) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 147,
+      "exportedRows": 147,
+      "uniqueRecords": 147,
+      "complete": true
+    },
+    {
+      "id": "supply_uncertainty_all_venues",
+      "label": "Supply uncertainty: all venues",
+      "query": "TS=((inventory OR inventories OR \"lost sales\" OR newsvendor) AND (\"supply uncertainty\" OR \"random yield\" OR \"supply disruption*\" OR \"random supply\" OR \"stochastic lead time*\") AND (replenish* OR \"inventory control\" OR \"inventory management\" OR \"inventory model*\" OR newsvendor OR \"lost sales\" OR \"supply chain\")) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 824,
+      "exportedRows": 824,
+      "uniqueRecords": 824,
+      "complete": true
+    },
+    {
+      "id": "perishable_all_venues",
+      "label": "Perishable inventory: all venues",
+      "query": "TS=((inventory OR inventories OR \"lost sales\" OR newsvendor) AND (perishab* OR deteriorat* OR \"shelf life\") AND (replenish* OR \"inventory control\" OR \"inventory management\" OR \"inventory model*\" OR newsvendor OR \"lost sales\" OR \"supply chain\")) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 3911,
+      "exportedRows": 2000,
+      "uniqueRecords": 1999,
+      "complete": false
+    },
+    {
+      "id": "theory_journals",
+      "label": "Supplementary theory journals",
+      "query": "SO=(\"MATHEMATICS OF OPERATIONS RESEARCH\" OR \"NAVAL RESEARCH LOGISTICS\" OR \"EUROPEAN JOURNAL OF OPERATIONAL RESEARCH\" OR \"IISE TRANSACTIONS\" OR \"IIE TRANSACTIONS\") AND TS=(inventory OR inventories OR \"lost sales\" OR newsvendor) AND PY=(2000-2026)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 2530,
+      "exportedRows": 2530,
+      "uniqueRecords": 2530,
+      "complete": true
+    },
+    {
+      "id": "anchor_set",
+      "label": "Eight DOI anchor papers",
+      "query": "DO=(10.1287/moor.1080.0367 OR 10.1287/mnsc.2019.3288 OR 10.1287/opre.2020.2019 OR 10.1287/mnsc.2020.3799 OR 10.1287/mnsc.2022.4382 OR 10.1287/opre.2022.0273 OR 10.1287/opre.2020.0568 OR 10.1287/opre.2021.0032)",
+      "observedOn": "2026-09-04",
+      "reportedResults": 8,
+      "exportedRows": 8,
+      "uniqueRecords": 8,
+      "complete": true
+    },
+    {
+      "id": "anchor_citing",
+      "label": "Forward citations to the eight anchors",
+      "query": "WoS Citation Report -> Total citing articles (including self-citations) for the eight-DOI anchor set",
+      "observedOn": "2026-09-04",
+      "reportedResults": 142,
+      "exportedRows": 142,
+      "uniqueRecords": 142,
+      "complete": true
+    }
+  ],
+  "queryLimitations": [
+    "Complete means the observed query result was acquired, not that every relevant publication was identified. Topic cohorts overlap and are not added to the fixed six-journal trend denominator.",
+    "The perishable-inventory export contains 2,000 rows but 1,999 distinct records, against 3,911 reported results. The unexported portion remains pending.",
+    "There are 42 source-record discrepancies between reported reference counts and exported reference lines across the acquired sets; these are retained for review.",
+    "Search-defined cohorts require relevance and model-assumption screening. The 2026 publication year is incomplete."
+  ],
+  "citations": {
+    "distinctCitingRecords": 142,
+    "doiMatchedEdges": 224,
+    "recordsWithoutDoiMatch": 0,
+    "selfCitationsIncluded": true,
+    "anchors": [
+      {
+        "doi": "10.1287/moor.1080.0367",
+        "label": "Huh et al. (2009)",
+        "title": "An Adaptive Algorithm for Finding the Optimal Base-Stock Policy in Lost Sales Inventory Systems with Censored Demand",
+        "year": 2009,
+        "citingRecords": 62
+      },
+      {
+        "doi": "10.1287/mnsc.2019.3288",
+        "label": "Zhang, Chao, and Shi (2020)",
+        "title": "Closing the Gap: A Learning Algorithm for Lost-Sales Inventory Systems with Lead Times",
+        "year": 2020,
+        "citingRecords": 64
+      },
+      {
+        "doi": "10.1287/opre.2020.2019",
+        "label": "Xin (2021)",
+        "title": "Technical Note-Understanding the Performance of Capped Base-Stock Policies in Lost-Sales Inventory Models",
+        "year": 2021,
+        "citingRecords": 22
+      },
+      {
+        "doi": "10.1287/mnsc.2020.3799",
+        "label": "Yuan, Luo, and Shi (2021)",
+        "title": "Marrying Stochastic Gradient Descent with Bandits: Learning Algorithms for Inventory Systems with Fixed Costs",
+        "year": 2021,
+        "citingRecords": 46
+      },
+      {
+        "doi": "10.1287/mnsc.2022.4382",
+        "label": "Bu, Simchi-Levi, and Wang (2023)",
+        "title": "Offline Pricing and Demand Learning with Censored Data",
+        "year": 2023,
+        "citingRecords": 14
+      },
+      {
+        "doi": "10.1287/opre.2022.0273",
+        "label": "Lyu, Zhang, and Xin (2024)",
+        "title": "UCB-Type Learning Algorithms with Kaplan-Meier Estimator for Lost-Sales Inventory Models with Lead Times",
+        "year": 2024,
+        "citingRecords": 5
+      },
+      {
+        "doi": "10.1287/opre.2021.0032",
+        "label": "van Jaarsveld and Arts (2024)",
+        "title": "Projected Inventory-Level Policies for Lost Sales Inventory Systems: Asymptotic Optimality in Two Regimes",
+        "year": 2024,
+        "citingRecords": 5
+      },
+      {
+        "doi": "10.1287/opre.2020.0568",
+        "label": "Zhang, Ye, and Haskell (2025)",
+        "title": "Error Propagation in Asymptotic Analysis of the Data-Driven (s, S) Inventory Policy",
+        "year": 2025,
+        "citingRecords": 6
+      }
+    ],
+    "note": "DOI-matched citing records within the archived set, including self-citations. One paper may cite several anchors. These are neither live citation totals nor evidence that a question is resolved. Version-specific preprint citation searches, including FP3, remain incomplete."
+  },
+  "newlyArchivedPublicFullTexts": [
+    {
+      "title": "An Adaptive Algorithm for Finding the Optimal Base-Stock Policy in Lost Sales Inventory Systems with Censored Demand",
+      "authors": "Huh et al.",
+      "year": 2009,
+      "pages": 22,
+      "version": "Author-posted manuscript",
+      "url": "https://www.columbia.edu/~th2113/files/Mixing-MOR-final-version.pdf"
+    },
+    {
+      "title": "Offline Pricing and Demand Learning with Censored Data",
+      "authors": "Bu, Simchi-Levi, and Wang",
+      "year": 2023,
+      "pages": 56,
+      "version": "Institutional manuscript, including appendices",
+      "url": "https://ira.lib.polyu.edu.hk/bitstream/10397/94981/1/Bu_Offline_Pricing_Demand.pdf"
+    },
+    {
+      "title": "VC Theory for Inventory Policies",
+      "authors": "Xie, Ma, and Xin",
+      "year": 2026,
+      "pages": 50,
+      "version": "Author-posted manuscript dated January 31, 2026; arXiv v3 posted February 1, 2026",
+      "url": "https://www.columbia.edu/~wm2428/papers/vc_theory_inventory.pdf"
+    }
+  ],
+  "remainingEvidence": [
+    "The remaining perishable-inventory search records, subject to database and institutional export permissions.",
+    "Version-specific forward citations to FP3 and other preprints, followed by primary-text screening.",
+    "Final-version and appendix checks for selected learning papers, with manuscript and journal versions distinguished."
+  ]
+}

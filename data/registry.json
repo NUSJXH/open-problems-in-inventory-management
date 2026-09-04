@@ -256,12 +256,12 @@
       "url": "https://doi.org/10.1287/opre.2022.0273"
     },
     {
-      "year": 2024,
+      "year": 2025,
       "dataRegime": "Offline uncensored demand samples",
       "policyBenchmark": "Data-driven (s, S) policy",
       "paper": "Zhang, Ye, and Haskell",
       "result": "Accounts for recursive estimation-error propagation and establishes influence-function representations and joint asymptotic normality for the estimated policy parameters.",
-      "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems.",
+      "boundary": "The analysis uses historical demand observations rather than censored sales and does not study capped base-stock learning in positive-lead-time lost-sales systems. The journal issue is dated 2025; the article first appeared online in 2024.",
       "url": "https://doi.org/10.1287/opre.2020.0568"
     },
     {
@@ -308,9 +308,18 @@
       "result": "Establishes PIL asymptotic optimality in large-penalty and large-demand-population regimes and compares PIL with base-stock policies across issuance rules.",
       "boundary": "The stated asymptotic regimes are penalty and demand population size; the paper does not report long-lead-time asymptotic optimality.",
       "url": "https://ssrn.com/abstract=4638265"
+    },
+    {
+      "year": 2026,
+      "dataRegime": "Offline i.i.d. full demand trajectories",
+      "policyBenchmark": "Best-in-class base-stock and (s, S) policies under backlogging",
+      "paper": "Xie, Ma, and Xin — VC Theory for Inventory Policies",
+      "result": "Establishes generalization bounds with arbitrary temporal dependence within demand trajectories. For average cost, nonstationary base-stock policies have horizon-independent bounds; stationary (s, S) policies exhibit logarithmic horizon dependence.",
+      "boundary": "The sampled trajectories are i.i.d.; demand within each trajectory need not be stationary or independent. The nonstationary base-stock result assumes no fixed ordering cost. These are best-in-class guarantees under the paper's boundedness conditions, not guarantees for censored online learning or unrestricted train–test distribution shift. Source: author manuscript dated January 31, 2026, Sections 2–4; arXiv v3 posted February 1, 2026.",
+      "url": "https://arxiv.org/abs/2404.11509v3"
     }
   ],
-  "releaseVersion": "2.4.0",
+  "releaseVersion": "2.5.0",
   "bibliometrics": {
     "database": "Web of Science Core Collection",
     "exportDate": "2026-09-04",

@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateCoverage } from '../assets/evidence-model.mjs';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
@@ -110,6 +111,8 @@ if(bibliometrics.totalRecords!==wos.totalRecords||bibliometrics.inventoryScopeRe
 const c=wos.cohortComparison;
 if(c.commonRecords+c.oldOnlyRecords!==c.oldRecords||c.commonRecords+c.newOnlyRecords!==c.newRecords||c.oldOnlyFoundInOtherYears+c.oldOnlyAbsentFromLongRun!==c.oldOnlyRecords)throw new Error('Cohort reconciliation identity');
 const supplementary=JSON.parse(await fs.readFile(path.join(rootDir,'data/acquisition-summary.json'),'utf8'));
+const evidence = validateCoverage(JSON.parse(await fs.readFile(path.join(rootDir,'data/evidence-coverage.json'),'utf8')));
+console.log(`Validated ${evidence.queries.length} acquisition sets and ${evidence.citations.anchors.length} citation anchors.`);
 if(supplementary.inventoryKeywordMatches>supplementary.uniqueRecords||supplementary.pendingQueries!==13)throw new Error('Invalid acquisition summary');
 for(const file of await fs.readdir(path.join(rootDir,'data'))){
   if(!file.endsWith('.json'))continue;

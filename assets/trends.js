@@ -1,4 +1,4 @@
-import { colors, selectYears, makeSeries, upperBound } from './chart-model.mjs?v=2.4.0';
+import { colors, selectYears, makeSeries, upperBound } from './chart-model.mjs?v=2.5.0';
 
 const $ = id => document.getElementById(id);
 const fmt = n => n.toLocaleString('en-US');
@@ -115,7 +115,7 @@ async function update(){
   try{
     if(!dataCache.has(source)){
       $('trend-state').textContent='Loading source aggregates…';
-      const response=await fetch(`data/${source==='wos'?'wos':'openalex'}-trends.json?v=2.4.0`);
+      const response=await fetch(`data/${source==='wos'?'wos':'openalex'}-trends.json?v=2.5.0`);
       if(!response.ok)throw new Error(`HTTP ${response.status}`);
       dataCache.set(source,await response.json());
     }
@@ -131,7 +131,7 @@ for(const id of ['trend-source','trend-measure','trend-from','trend-to'])$(id).a
   update();
 });
 update();
-fetch('data/acquisition-summary.json?v=2.4.0').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
+fetch('data/acquisition-summary.json?v=2.5.0').then(r=>{if(!r.ok)throw new Error(r.status);return r.json();}).then(data=>{
   const container=$('acquisition-summary');
   container.append(node('h3','','Additional literature discovery'),node('p','',`${fmt(data.uniqueRecords)} distinct OpenAlex search records were archived from supplementary journals, cross-journal topic searches, and forward-citation searches. A local title, abstract, and keyword screen retains ${fmt(data.inventoryKeywordMatches)} inventory matches. These records are kept separate from the six-journal trends. They are discovery candidates, not additional open-problem entries.`));
   const details=node('details'),summary=node('summary','','Search coverage and remaining evidence');details.append(summary);

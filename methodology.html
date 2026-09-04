@@ -6,7 +6,7 @@
     <meta name="description" content="Source and bibliometric protocols for Open Problems in Inventory Management." />
     <link rel="canonical" href="https://nusjxh.github.io/open-problems-in-inventory-management/methodology.html" />
     <title>Methodology · Open Problems in Inventory Management</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.4.0" />
+    <link rel="stylesheet" href="assets/styles.css?v=2.5.0" />
   </head>
   <body>
     <a class="skip-link" href="#methodology">Skip to methodology</a>
@@ -95,6 +95,17 @@
           <p>A separate public-data acquisition contains 14,824 distinct OpenAlex records from completed queries: five supplementary-journal searches, one cross-journal lost-sales search, and four forward-citation searches. The supplementary sources are <em>Mathematics of Operations Research</em>, <em>Naval Research Logistics</em>, <em>European Journal of Operational Research</em>, <em>IISE Transactions</em>, and its predecessor <em>IIE Transactions</em>. This is a search-based supplement, not a full export of these journals.</p>
           <p>Broad search can match full text and references. A separate local screen of titles, available abstracts, and OpenAlex keywords retains 6,925 inventory matches, including 1,628 from the supplementary-journal queries. These remain discovery candidates, not verified classifications or new open-problem entries. The source groups overlap and must not be added.</p>
           <p>Five cross-journal topic searches and eight further anchor-citation queries remain incomplete because the provider requested a long backoff. One partial topic batch is retained locally but excluded from the complete-query totals. Preprint citation searches and version-aware primary-text review also remain necessary. OpenAlex citation sets are not substituted for WoS citing-article exports. The <a href="data/acquisition-summary.json">acquisition summary</a> records query definitions, coverage, and remaining work. Search and citation mechanics follow the <a href="https://help.openalex.org/api/searching/">OpenAlex search documentation</a> and <a href="https://help.openalex.org/how-to/api-recipes/">citation-query documentation</a>.</p>
+        </div>
+      </section>
+
+      <section id="evidence-protocol" class="shell method-grid" aria-labelledby="coverage-method-title">
+        <div class="method-heading"><p class="eyebrow">Acquisition and citation coverage</p><h2 id="coverage-method-title">Separate cohorts, explicit denominators</h2></div>
+        <div class="prose-block">
+          <p>The September 4, 2026 WoS supplement contains 6,328 distinct records across eight overlapping query sets. Seven observed result sets were acquired in full. The perishable-inventory search remains partial: 2,000 exported rows represent 1,999 distinct records against 3,911 reported results. Completion refers to acquisition of a dated query result, not exhaustive literature coverage.</p>
+          <p>Of the 6,328 records, 312 also occur in the fixed six-journal archive and 6,016 do not. These discovery cohorts are not pooled with annual trends. Keyword matches require subsequent relevance and model-assumption screening. The archive retains 42 discrepancies between reported and exported reference counts for review.</p>
+          <p>The eight-anchor citing set contains 142 distinct citing records and 224 exact DOI-matched reference links. Self-citations are retained; one record may cite multiple anchors. The chart reports matches within this archived set, not live citation totals, relative scholarly impact, or resolution of an open question. Version-specific preprint searches, including FP3, remain incomplete.</p>
+          <p>The <a href="data/evidence-coverage.json">aggregate coverage file</a> includes query definitions, observed counts, source-version descriptions, and outstanding evidence. Licensed row-level records and full-text copies are retained locally and are not published. The separate OpenAlex supplement retains its own completion status; WoS acquisition does not retrospectively complete an OpenAlex query.</p>
+          <p>The new descriptive entry for <a href="https://arxiv.org/abs/2404.11509v3">Xie, Ma, and Xin</a> concerns independent sampled demand trajectories that may contain temporal dependence and nonstationarity. It is not classified as an open question. Best-in-class generalization is distinguished from online censored-demand learning and unrestricted distribution-shift robustness.</p>
         </div>
       </section>
 

@@ -18,6 +18,26 @@
   --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.evidence-section { padding-block: 2.5rem; border-top: 1px solid var(--line); }
+.evidence-section .evidence-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem; }
+.evidence-panel { margin: 0; min-width: 0; }
+.evidence-panel figcaption p { color: var(--muted); font-size: 0.9rem; min-height: 3rem; }
+.evidence-bars { padding: 0; list-style: none; display: grid; gap: 1rem; }
+.evidence-row-label { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: 0.9rem; line-height: 1.4; }
+.evidence-row-label strong { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.evidence-track { height: 0.5rem; margin-top: 0.5rem; background: var(--surface-soft); border-radius: 2px; overflow: hidden; }
+.evidence-track span { display: block; height: 100%; background: var(--teal); }
+.is-partial .evidence-track span { background: var(--orange); }
+.evidence-row-status { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.875rem; }
+.citation-bars { gap: 1.45rem; }
+.citation-bars .evidence-track span { background: var(--blue); }
+.query-definition { font-family: ui-monospace, monospace; font-size: 0.875rem; overflow-wrap: anywhere; }
+.evidence-section details li { margin-block: 0.5rem; }
+.evidence-section details h3 { margin-top: 1.3rem; }
+@media (max-width: 800px) { .evidence-grid { grid-template-columns: 1fr; } .evidence-panel figcaption p { min-height: 0; } }
+@media (max-width: 520px) { .evidence-section .evidence-stats { grid-template-columns: 1fr; } }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
